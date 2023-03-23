@@ -1,7 +1,5 @@
-import type { Metadata } from 'next'
 import 'reflect-metadata'
-import { container, inject, injectable, Lifecycle, scoped } from 'tsyringe'
-import { Level } from "lib/type"
+import { inject, injectable, Lifecycle, scoped } from 'tsyringe'
 
 export interface IPostService {
     showDetail(postId: string) : React.ElementType;
