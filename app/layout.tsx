@@ -3,6 +3,7 @@ import 'reflect-metadata'
 import { container } from "tsyringe";
 import { KanjiPostModel, KanjiPostListModel } from 'lib/model'
 import './globals.css'
+import { LogoPart } from 'lib/part';
 
 container.register("IPostListService", {
   useClass: KanjiPostListModel
@@ -19,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang= "vi">
-      <body>
+      <body className="container">
         <Link href="/">
-          <h1>今日も頑張れ！</h1>
+          <LogoPart/>
         </Link>
         { children }
       </body>
