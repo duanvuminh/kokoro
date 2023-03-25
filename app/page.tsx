@@ -1,12 +1,11 @@
 import Home from 'lib/mdx/home.mdx'
 import type { Metadata } from 'next'
 
-export async function generateMetadata({ params }:{params: { id: string }}): Promise<Metadata> {
-  return (await import('lib/mdx/home.mdx') as any).metadata
-}
+import { metadata as meta, jsonLd } from 'lib/mdx/home.mdx'
+
+export const metadata: Metadata = meta
 
 export default async function Page() {
-  const jsonLd = (await import('lib/mdx/home.mdx') as any).jsonLd;
 
   return (
     <>
