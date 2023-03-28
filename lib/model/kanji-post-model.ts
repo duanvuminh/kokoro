@@ -1,6 +1,7 @@
 import { IPostService, PostListClient } from "lib/service";
 import dynamic from "next/dynamic";
 import { container } from "tsyringe";
+import * as Kanji from 'lib/mdx/kanji'
 
 
 export class KanjiPostModel implements IPostService {
@@ -33,7 +34,7 @@ export class KanjiPostModel implements IPostService {
   }
 
   showDetail(postId: string){
-    return dynamic(() => import(`lib/${this._path}/${postId}.mdx`))
+    return dynamic(() => import('lib/mdx/kanji').then(posts => posts[postId as keyof typeof posts]))
   }
 }
 
