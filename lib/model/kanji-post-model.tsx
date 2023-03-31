@@ -1,8 +1,6 @@
 import { IPostService, PostListClient } from "lib/service";
-import dynamic from "next/dynamic";
 import { container } from "tsyringe";
-import * as Kanji from 'lib/mdx/kanji'
-
+import * as KanjiList from "@/lib/mdx"
 
 export class KanjiPostModel implements IPostService {
 
@@ -25,16 +23,19 @@ export class KanjiPostModel implements IPostService {
 
   async getMetadata(postId: string) {
     await this._setPost(postId)
-    return this._post.metadata;
+    return this._post?.metadata;
   }
 
   async getJsonLd(postId: string) {
     await this._setPost(postId)
-    return this._post.jsonLd;
+    return this._post?.jsonLd;
   }
 
   showDetail(postId: string){
-    return dynamic(() => import('lib/mdx/kanji').then(posts => posts[postId as keyof typeof posts]))
+    if (KanjiList[postId as keyof typeof KanjiList] !== undefined) {
+      return KanjiList[postId as keyof typeof KanjiList]
+    }
+    return KanjiList.Blank
   }
 }
 

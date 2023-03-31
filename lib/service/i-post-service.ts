@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import { inject, injectable, Lifecycle, scoped } from 'tsyringe'
 
 export interface IPostService {
-    showDetail(postId: string) : any;
+    showDetail(postId: string):(props: any) => JSX.Element;
     getJsonLd(postId: string): any;
     getMetadata(postId: string): any;
 }
