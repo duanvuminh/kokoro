@@ -1,16 +1,15 @@
-import Home from 'lib/mdx/home.mdx'
+import { Home } from 'lib/mdx'
 import type { Metadata } from 'next'
 
-import { metadata as meta, jsonLd } from 'lib/mdx/home.mdx'
 
-export const metadata: Metadata = meta
+export const metadata: Metadata = Home.metadata
 
 export default async function Page() {
 
   return (
     <>
-        <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(jsonLd)}}/>
-        <Home/>
+        <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(Home.jsonLd)}}/>
+        <Home.default/>
     </>
   )
 }

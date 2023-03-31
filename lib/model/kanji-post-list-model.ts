@@ -4,9 +4,9 @@ import { getAllPostIds } from 'lib/repository'
 
 export class KanjiPostListModel implements IPostListService {
   constructor(){
-    this.pathToMdx = 'mdx/kanji'
+    this.pathToMdx = 'lib/mdx/kanji'
   }
-  pathToMdx: string
+  private pathToMdx: string
   getAllPath(): PostParameterModel[] {
     return getAllPostIds(this.pathToMdx)
   }

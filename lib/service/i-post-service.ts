@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { inject, injectable, Lifecycle, scoped } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
 export interface IPostService {
     showDetail(postId: string):(props: any) => JSX.Element;
@@ -7,7 +7,6 @@ export interface IPostService {
     getMetadata(postId: string): any;
 }
 
-@scoped(Lifecycle.ContainerScoped)
 @injectable()
 export class PostClient {
   constructor(@inject('IPostService') public readonly client: IPostService) {}

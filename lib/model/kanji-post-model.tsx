@@ -1,41 +1,33 @@
 import { IPostService, PostListClient } from "lib/service";
-import { container } from "tsyringe";
 import * as KanjiList from "@/lib/mdx"
 
 export class KanjiPostModel implements IPostService {
-
-  constructor(){
-    this._postId = null
-    const postListClient = container.resolve(PostListClient)
-    this._path = postListClient.client.pathToMdx
-  }
-  private _postId: string | null
-
-  private _path: string | null
-
   private _post: any
 
-  private async _setPost(postId: string){
-    if(this._postId == postId) return
-    this._postId = postId
-    this._post = await import(`lib/${this._path}/${postId}.mdx`)
+  private _setPost(postId: string){
+    this._post = this._getPost(postId)
   }
 
-  async getMetadata(postId: string) {
-    await this._setPost(postId)
-    return this._post?.metadata;
+  private _getPost(postId: string){
+    if (KanjiList[postId as keyof typeof KanjiList] !== undefined) {
+      return this._post =  KanjiList[postId as keyof typeof KanjiList]
+    }
+    return this._post = KanjiList.Blank
   }
 
-  async getJsonLd(postId: string) {
-    await this._setPost(postId)
-    return this._post?.jsonLd;
+  getMetadata(postId: string) {
+    this._setPost(postId)
+    return this._post?.metadata??{};
+  }
+
+  getJsonLd(postId: string) {
+    this._setPost(postId)
+    return this._post?.jsonLd??{};
   }
 
   showDetail(postId: string){
-    if (KanjiList[postId as keyof typeof KanjiList] !== undefined) {
-      return KanjiList[postId as keyof typeof KanjiList]
-    }
-    return KanjiList.Blank
+    this._setPost(postId)
+    return this._post?.default;
   }
 }
 

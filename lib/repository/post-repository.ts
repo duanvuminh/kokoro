@@ -3,7 +3,7 @@ import path from 'path'
 import { PostParameterModel } from 'lib/model'
 
 export function getAllPostIds(mdxPath: string) {
-  const postsDirectory = path.join(process.cwd(), `lib/${mdxPath}`)
+  const postsDirectory = path.join(process.cwd(), mdxPath)
 
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.map(fileName => {

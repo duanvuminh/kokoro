@@ -1,6 +1,3 @@
-import 日 from './kanji/日.mdx'
-import Home from './home.mdx'
-import Blank from './blank.mdx'
-
-
-export {日,Home,Blank}
+export * as 日 from './kanji/日.mdx'
+export * as Home from './home.mdx'
+export * as Blank from './blank.mdx'
