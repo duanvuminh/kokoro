@@ -1,3 +1,3 @@
-export * as 日 from './kanji/日.mdx'
+ //make gen later
 export * as Home from './home.mdx'
 export * as Blank from './blank.mdx'

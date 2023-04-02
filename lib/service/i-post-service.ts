@@ -2,9 +2,10 @@ import 'reflect-metadata'
 import { inject, injectable } from 'tsyringe'
 
 export interface IPostService {
-    showDetail(postId: string):(props: any) => JSX.Element;
-    getJsonLd(postId: string): any;
-    getMetadata(postId: string): any;
+    overView(id: string): (props: any) => JSX.Element
+    showDetail(postId: string):(props: any) => JSX.Element
+    getJsonLd(postId: string): any
+    getMetadata(postId: string): any
 }
 
 @injectable()

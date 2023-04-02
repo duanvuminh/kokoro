@@ -4,6 +4,9 @@ const nextConfig = {
     appDir: true,
     mdxRs: true,
   },
+  images: {
+    domains: ['kanjivg.tagaini.net'],
+  },
 }
 
 const withMDX = require('@next/mdx')()

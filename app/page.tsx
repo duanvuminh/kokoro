@@ -1,4 +1,4 @@
-import { Home } from 'lib/mdx'
+import { Home } from '@/lib/mdx-page'
 import type { Metadata } from 'next'
 
 
