@@ -20,7 +20,7 @@ export function OverViewPartClient({name, children}:{name: string, children: any
         <AccordionDetails>
           <Grid container spacing={2}>
             <Grid item>
-            <Image src={path} alt={id} width='200' height='200'/>
+              <Image src={path} alt={id} width='200' height='200'/>
             </Grid>
             <Grid item>
               {children}

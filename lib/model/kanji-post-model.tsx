@@ -1,15 +1,15 @@
 import "server-only";
 
-import { IPostService, PostListClient } from "lib/service";
+import { IPostService } from "lib/service";
 import * as KanjiList from "lib/mdx-kanji"
 import * as OverVIewList from "lib/mdx-kanji-overview"
-import { Blank } from "lib/mdx-page"
-import { OverViewPartClient } from "lib/part-client";
+import { Default } from "lib/mdx-page"
+import { Blank } from "lib/part-server";
 
 export class KanjiPostModel implements IPostService {
   overView(postId: string): (props: any) => JSX.Element{
     this._setOverview(postId)
-    return this._overView.default
+    return this._overView?.default?? Blank
   }
 
   getMetadata(postId: string) {
@@ -24,7 +24,7 @@ export class KanjiPostModel implements IPostService {
 
   showDetail(postId: string){
     this._setPost(postId)
-    return this._post?.default;
+    return this._post.default;
   }
 
   private _post: any
@@ -42,14 +42,13 @@ export class KanjiPostModel implements IPostService {
     if (KanjiList[postId as keyof typeof KanjiList] !== undefined) {
       return this._post =  KanjiList[postId as keyof typeof KanjiList]
     }
-    return this._post = Blank
+    return this._post = Default
   }
 
   private _getOverView(postId: string){
     if (OverVIewList[postId as keyof typeof OverVIewList] !== undefined) {
       return this._overView =  OverVIewList[postId as keyof typeof OverVIewList]
     }
-    return this._overView = Blank
   }
 }
 
