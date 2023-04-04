@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { container } from 'tsyringe';
-import { PostClient, PostListClient } from 'lib/service'
-import { OverViewPartClient } from '@/lib/part-client';
+import { PostClient, PostListClient } from 'lib/repository'
+import { OverViewPartClient } from 'lib/part/index-client';
 
 export const generateStaticParams = async () => {
     const postListClient = container.resolve(PostListClient)

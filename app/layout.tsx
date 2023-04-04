@@ -1,16 +1,17 @@
 import Link from 'next/link'
 import 'reflect-metadata'
 import { container } from "tsyringe";
-import { KanjiPostModel, KanjiPostListModel } from 'lib/model'
 import './globals.css'
-import { LogoPartServer } from 'lib/part-server';
+import { LogoPartServer } from 'lib/part/index-server';
+import { KanjiPostListRepository, KanjiPostRepository } from 'lib/repository';
+import { IJPostListRepository, IJPostRepository } from 'lib/type';
 
-container.register("IPostListService", {
-  useClass: KanjiPostListModel
+container.register(IJPostListRepository, {
+  useClass: KanjiPostListRepository
 });
 
-container.register("IPostService", {
-  useClass: KanjiPostModel
+container.register(IJPostRepository, {
+  useClass: KanjiPostRepository
 });
 
 export default function RootLayout({
