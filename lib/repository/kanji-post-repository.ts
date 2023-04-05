@@ -1,11 +1,8 @@
-import "server-only";
-
 import { IPostRepository } from "lib/repository";
-import * as KanjiList from "lib/mdx-post"
-import * as Summary from "lib/mdx-post/index_summary"
-import { Default } from "lib/mdx-page"
+import * as KanjiList from "mdx/mdx-post"
+import * as Summary from "mdx/mdx-post-summary"
+import { Default } from "mdx/mdx-page"
 import { Blank } from "lib/part/index-server";
-import { PostfixSummary } from "lib/type";
 
 export class KanjiPostRepository implements IPostRepository {
   init(postId: string): void {
@@ -51,7 +48,7 @@ export class KanjiPostRepository implements IPostRepository {
   }
 
   private _getSummary(postId: string){
-    const id = `${postId}${PostfixSummary}` as keyof typeof Summary
+    const id = postId as keyof typeof Summary
     if (Summary[id] !== undefined) {
       return this._summary =  Summary[id]
     }
