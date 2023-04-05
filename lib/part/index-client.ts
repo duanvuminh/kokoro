@@ -1,4 +1,4 @@
 "use client"
 
 //make gen later
-export * from './over-view-part-client'
+export * from './summary-part-client'

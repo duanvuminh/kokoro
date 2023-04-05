@@ -8,23 +8,27 @@ import { Blank } from "lib/part/index-server";
 import { PostfixSummary } from "lib/type";
 
 export class KanjiPostRepository implements IPostRepository {
-  overView(postId: string): (props: any) => JSX.Element{
-    this._setOverview(postId)
+  init(postId: string): void {
+    this._setSummary(postId)
+    this._setPost(postId)
+  }
+  summaryTitle(): string {
+    return this._summary?.metadata as string ?? 'Blank'
+  }
+
+  summaryContent(): (props: any) => JSX.Element{
     return this._summary?.default?? Blank
   }
 
-  getMetadata(postId: string) {
-    this._setPost(postId)
+  getMetadata() {
     return this._post?.metadata??{};
   }
 
-  getJsonLd(postId: string) {
-    this._setPost(postId)
+  getJsonLd() {
     return this._post?.jsonLd??{};
   }
 
-  showDetail(postId: string){
-    this._setPost(postId)
+  showDetail(){
     return this._post.default;
   }
 
@@ -35,8 +39,8 @@ export class KanjiPostRepository implements IPostRepository {
     this._post = this._getPost(postId)
   }
 
-  private _setOverview(postId: string){
-    this._summary = this._getOverView(postId)
+  private _setSummary(postId: string){
+    this._summary = this._getSummary(postId)
   }
 
   private _getPost(postId: string){
@@ -46,7 +50,7 @@ export class KanjiPostRepository implements IPostRepository {
     return this._post = Default
   }
 
-  private _getOverView(postId: string){
+  private _getSummary(postId: string){
     const id = `${postId}${PostfixSummary}` as keyof typeof Summary
     if (Summary[id] !== undefined) {
       return this._summary =  Summary[id]

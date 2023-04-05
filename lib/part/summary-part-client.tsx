@@ -8,14 +8,14 @@ import Grid from '@mui/material/Grid';
 import { ExpandMoreIcon, SvgPath } from 'lib/type';
 
 
-export function OverViewPartClient({name, children}:{name: string, children: any}): JSX.Element{
+export function SummaryPartClient({name, title, children}:{name: string, title: string, children: any}): JSX.Element{
     const id = name.charCodeAt(0).toString(16)
     const path = `${SvgPath}0${id}.svg`
     return(
       <Accordion>
         <AccordionSummary
           expandIcon={ExpandMoreIcon}>
-          <Typography>Tóm tắt</Typography>
+          <Typography>{title}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Grid container spacing={2}>

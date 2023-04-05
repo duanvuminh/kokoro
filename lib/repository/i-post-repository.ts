@@ -3,10 +3,12 @@ import { inject, injectable } from 'tsyringe'
 import { IJPostRepository } from 'lib/type'
 
 export interface IPostRepository {
-    overView(id: string): (props: any) => JSX.Element
-    showDetail(postId: string):(props: any) => JSX.Element
-    getJsonLd(postId: string): any
-    getMetadata(postId: string): any
+    init(id: string): void
+    summaryTitle(): string
+    summaryContent(): (props: any) => JSX.Element
+    showDetail():(props: any) => JSX.Element
+    getJsonLd(): any
+    getMetadata(): any
 }
 
 @injectable()
