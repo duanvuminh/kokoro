@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { container } from 'tsyringe';
-import { PostClient, PostListClient } from 'lib/repository'
+import { PostClient, PostStaticPathClient } from 'lib/repository'
 import { SummaryPartClient } from 'lib/part/index-client';
 
-const postClient:PostClient = container.resolve(PostClient)
-let postListClient:PostListClient = container.resolve(PostListClient)
+const pageClient:PostClient = container.resolve(PostClient)
+let pagePathClient:PostStaticPathClient = container.resolve(PostStaticPathClient)
 
 export const generateStaticParams = async () => {
-    return postListClient.client.getAllPath()
+    return pagePathClient.client.getAllPath()
 }
 
 export async function generateMetadata({ params }:{params: { id: string }}): Promise<Metadata> {
     const id = decodeURIComponent(params.id)
-    return postClient.client.getMetadata()
+    return pageClient.client.getMetadata()
 }
 
 export default function Page({
@@ -22,11 +22,11 @@ export default function Page({
     params: { id: string };
 }) {
     const id = decodeURIComponent(params.id)
-    postClient.client.init(id)
-    const jsonLd = postClient.client.getJsonLd()
-    const Content = postClient.client.showDetail()
-    const Summary = postClient.client.summaryContent()
-    const title = postClient.client.summaryTitle()
+    pageClient.client.init(id)
+    const jsonLd = pageClient.client.getJsonLd()
+    const Content = pageClient.client.showDetail()
+    const Summary = pageClient.client.summaryContent()
+    const title = pageClient.client.summaryTitle()
     return (
         <>
             <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(jsonLd)}}/>

@@ -1,17 +1,25 @@
 import Link from 'next/link'
 import 'reflect-metadata'
-import { container } from "tsyringe";
+import { container } from "tsyringe"
 import './globals.css'
-import { LogoPartServer } from 'lib/part/index-server';
-import { KanjiPostListRepository, KanjiPostRepository } from 'lib/repository';
-import { IJPostListRepository, IJPostRepository } from 'lib/type';
+import { LogoPartServer } from 'lib/part/index-server'
+import { KanjiPostStaticPathRepository, KanjiPostRepository, KanjiSubjectStaticPathRepository, KanjiSubjectRepository } from 'lib/repository'
+import { IJPostStaticPathClient, IJPostClient, IJSubjectStatiPathClient, IJSubjectClient } from 'lib/type'
 
-container.register(IJPostListRepository, {
-  useClass: KanjiPostListRepository
+container.register(IJPostClient, {
+  useClass: KanjiPostRepository
 });
 
-container.register(IJPostRepository, {
-  useClass: KanjiPostRepository
+container.register(IJPostStaticPathClient, {
+  useClass: KanjiPostStaticPathRepository
+});
+
+container.register(IJSubjectClient, {
+  useClass: KanjiSubjectRepository
+});
+
+container.register(IJSubjectStatiPathClient, {
+  useClass: KanjiSubjectStaticPathRepository
 });
 
 export default function RootLayout({
