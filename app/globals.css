@@ -6,6 +6,9 @@ body {
 }
 a {
     text-decoration: none;
+    display:inline-block;
+    min-width: 3rem;
+    min-height: 3rem;
 }
 
 .container {
