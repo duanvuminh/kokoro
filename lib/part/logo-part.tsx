@@ -1,7 +1,7 @@
 import { SiteName } from 'lib/type';
-import styles from './logo-part-server.module.css';
+import styles from './logo-part.module.css';
 
-export function LogoPartServer() {
+export function LogoPart() {
     return(
         <p>
             <span className={styles['site-name']}>{SiteName}</span>

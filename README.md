@@ -24,6 +24,7 @@ home
 subject
     [subjectid]
         Chi tiết về các tính năng
+        Gồm nhiều post
 
 random_page
     Random post

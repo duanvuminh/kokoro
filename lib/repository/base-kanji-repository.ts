@@ -1,6 +1,5 @@
 import { Default } from "mdx/mdx-random-page";
-import { Blank } from "lib/part/blank-part-server";
-import { EmptyString } from "lib/type";
+import { Blank } from "lib/part";
 import { IPageContentRepository } from "lib/repository";
 
 export abstract class BaseKanjiRepository implements IPageContentRepository {
@@ -16,9 +15,6 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
       return this._post?.jsonLd??{};
     }
     
-    summaryTitle(): string {
-      return this._summary?.metadata as string ?? EmptyString
-    }
     summaryContent(): (props: any) => JSX.Element{
       return this._summary?.default?? Blank
     }
@@ -57,6 +53,5 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
       if (this.SummaryList !== undefined && this.SummaryList[id] !== undefined) {
         return this._summary =  this.SummaryList[id]
       }
-      return Default
     }
   }

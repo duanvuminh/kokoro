@@ -1,5 +1,5 @@
 import { PostParameterModel } from "lib/model";
-import { IPageStaticPathRepository } from "./i-page-static-path-repository";
+import { IPageStaticPathRepository } from "lib/repository";
 
 export abstract class BaseKanjiStaticPathRepository implements IPageStaticPathRepository {
   abstract paths: string[]

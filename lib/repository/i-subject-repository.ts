@@ -1,7 +1,7 @@
 import 'reflect-metadata'
 import { inject, injectable } from 'tsyringe'
 import { IJSubjectClient } from 'lib/type'
-import type{ IPageContentRepository } from './i-page-content-repository'
+import type{ IPageContentRepository } from 'lib/repository'
 
 @injectable()
 export class SubjectClient {

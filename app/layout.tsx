@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import 'reflect-metadata'
 import { container } from "tsyringe"
 import './globals.css'
-import { LogoPartServer } from 'lib/part/index-server'
+import { LogoPart } from 'lib/part'
 import { KanjiPostStaticPathRepository, KanjiPostRepository, KanjiSubjectStaticPathRepository, KanjiSubjectRepository } from 'lib/repository'
 import { IJPostStaticPathClient, IJPostClient, IJSubjectStatiPathClient, IJSubjectClient } from 'lib/type'
 
@@ -22,6 +23,14 @@ container.register(IJSubjectStatiPathClient, {
   useClass: KanjiSubjectStaticPathRepository
 });
 
+export const metadata:Metadata = {
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -31,7 +40,7 @@ export default function RootLayout({
     <html lang= "vi">
       <body className="container">
         <Link href="/">
-          <LogoPartServer/>
+          <LogoPart/>
         </Link>
         { children }
       </body>

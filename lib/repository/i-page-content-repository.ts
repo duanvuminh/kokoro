@@ -3,7 +3,6 @@ export interface IPageContentRepository {
     getJsonLd(): any
     getMetadata(): any
 
-    summaryTitle(): string
     summaryContent(): (props: any) => JSX.Element
 
     showDetail():(props: any) => JSX.Element

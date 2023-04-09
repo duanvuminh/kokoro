@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { container } from 'tsyringe';
 import { SubjectClient, SubjectStatiPathClient } from 'lib/repository'
-import { SummaryPartClient } from 'lib/part/index-client';
 
 const pageClient:SubjectClient = container.resolve(SubjectClient)
 let pagePathClient:SubjectStatiPathClient = container.resolve(SubjectStatiPathClient)

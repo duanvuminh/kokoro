@@ -1,4 +1,3 @@
-import { PostParameterModel } from "lib/model";
 import { paths } from "mdx/mdx-subject";
 import { BaseKanjiStaticPathRepository } from "lib/repository";
 

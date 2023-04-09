@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { container } from 'tsyringe';
 import { PostClient, PostStaticPathClient } from 'lib/repository'
-import { SummaryPartClient } from 'lib/part/index-client';
+import { SummaryPart } from '@/lib/part';
 
 const pageClient:PostClient = container.resolve(PostClient)
 let pagePathClient:PostStaticPathClient = container.resolve(PostStaticPathClient)
@@ -26,13 +26,14 @@ export default function Page({
     const jsonLd = pageClient.client.getJsonLd()
     const Content = pageClient.client.showDetail()
     const Summary = pageClient.client.summaryContent()
-    const title = pageClient.client.summaryTitle()
     return (
         <>
             <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(jsonLd)}}/>
-            <SummaryPartClient name={id} title={title}>
-                <Summary/>
-            </SummaryPartClient>
+            <SummaryPart name={id}>
+                <div>
+                    <Summary/>
+                </div>
+            </SummaryPart>
             <Content/>
             <Link href="/">← Back to home</Link>
         </>
