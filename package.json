@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "chmod +x ./gen.sh; npm run gen; next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen": "./gen.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
