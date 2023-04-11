@@ -54,4 +54,4 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
         return this._summary =  this.SummaryList[id]
       }
     }
-  }
+}

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { container } from 'tsyringe';
 import { PostClient, PostStaticPathClient } from 'lib/repository'
-import { SummaryPart } from '@/lib/part';
+import { SummaryPart } from 'lib/part';
 
 const pageClient:PostClient = container.resolve(PostClient)
 let pagePathClient:PostStaticPathClient = container.resolve(PostStaticPathClient)
