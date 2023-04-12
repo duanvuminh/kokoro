@@ -29,7 +29,7 @@ export default function Page({
     return (
         <>
             <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(jsonLd)}}/>
-            <SummaryPart name={id}>
+            <SummaryPart pageId={id}>
                 <div>
                     <Summary/>
                 </div>
