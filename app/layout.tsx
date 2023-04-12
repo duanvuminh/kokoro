@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang= "vi">
       <body className="container">
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <LogoPart/>
         </Link>
         { children }

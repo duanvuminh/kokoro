@@ -28,7 +28,7 @@ export default function Page({
         <>
             <script type= "application/ld+json" dangerouslySetInnerHTML = {{__html: JSON.stringify(jsonLd)}}/>
             <Content/>
-            <Link href="/">← Back to home</Link>
+            <Link href="/" prefetch={false}>← Back to home</Link>
         </>
     )
 }

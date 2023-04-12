@@ -35,7 +35,7 @@ export default function Page({
                 </div>
             </SummaryPart>
             <Content/>
-            <Link href="/">← Back to home</Link>
+            <Link href="/" prefetch={false}>← Back to home</Link>
         </>
     )
 }
