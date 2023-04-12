@@ -5,7 +5,7 @@ import { PostClient, PostStaticPathClient } from 'lib/repository'
 import { SummaryPart } from 'lib/part';
 
 const pageClient:PostClient = container.resolve(PostClient)
-let pagePathClient:PostStaticPathClient = container.resolve(PostStaticPathClient)
+const pagePathClient:PostStaticPathClient = container.resolve(PostStaticPathClient)
 
 export const generateStaticParams = async () => {
     return pagePathClient.client.getAllPath()

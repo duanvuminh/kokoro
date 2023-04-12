@@ -36,8 +36,6 @@ post
 
 ## Name file 
 
-Component
-    MyComponent
-Class
-    type-{index}-myrole-class
+my-folder
+    type-{index}-what_will_do-my-folder
     
