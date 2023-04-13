@@ -44,7 +44,7 @@ echo 'export {paths}' >>  index.ts
 
 cd ../../
 
-cd public
+cd public/images
 rm index.ts
 for f in *.*; 
 do echo import $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 
@@ -59,4 +59,4 @@ do
 done;
 echo  ' }' >> index.ts
 
-cd ..
+cd ../../

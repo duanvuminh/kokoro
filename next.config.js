@@ -9,5 +9,11 @@ const nextConfig = {
   },
 }
 
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
+
 const withMDX = require('@next/mdx')()
-module.exports = withMDX(nextConfig)
+
+module.exports = withPWA(withMDX(nextConfig))
+

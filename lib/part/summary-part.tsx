@@ -7,7 +7,7 @@ export function SummaryPart({pageId, children}:{pageId: string, children: any}):
     const path = `${SvgPath}0${id}.svg`
     return(
       <details>
-        <summary>Click xem tóm tắt{pageId}</summary>
+        <summary>Click xem tóm tắt {pageId}</summary>
         <FlexwrapPart>
           <Image src={path} alt={id} width='200' height='200'/>
           {children}
