@@ -1,27 +1,10 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import 'reflect-metadata'
-import { container } from "tsyringe"
 import './globals.css'
 import { LogoPart } from 'lib/part'
-import { KanjiPostStaticPathRepository, KanjiPostRepository, KanjiSubjectStaticPathRepository, KanjiSubjectRepository } from 'lib/repository'
-import { IJPostStaticPathClient, IJPostClient, IJSubjectStatiPathClient, IJSubjectClient } from 'lib/type'
+import { registerDI } from 'lib/di'
 
-container.register(IJPostClient, {
-  useClass: KanjiPostRepository
-});
-
-container.register(IJPostStaticPathClient, {
-  useClass: KanjiPostStaticPathRepository
-});
-
-container.register(IJSubjectClient, {
-  useClass: KanjiSubjectRepository
-});
-
-container.register(IJSubjectStatiPathClient, {
-  useClass: KanjiSubjectStaticPathRepository
-});
+registerDI()
 
 export const metadata:Metadata = {
   viewport: {

@@ -3,7 +3,11 @@ import { inject, injectable } from 'tsyringe'
 import { IJPostClient } from 'lib/type'
 import type{ IPageContentRepository } from 'lib/repository'
 
+export interface IPostRepository extends IPageContentRepository{
+  summaryContent(): (props: any) => JSX.Element
+}
+
 @injectable()
 export class PostClient {
-  constructor(@inject(IJPostClient) public readonly client: IPageContentRepository) {}
+  constructor(@inject(IJPostClient) public readonly client: IPostRepository) {}
 }

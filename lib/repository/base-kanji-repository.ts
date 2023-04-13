@@ -1,10 +1,8 @@
 import { Default } from "mdx/mdx-random-page";
-import { Blank } from "lib/part";
 import { IPageContentRepository } from "lib/repository";
 
 export abstract class BaseKanjiRepository implements IPageContentRepository {
     init(postId: string): void {
-      this._setSummary(postId)
       this._setPost(postId)
     }
 
@@ -13,10 +11,6 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
     }
     getJsonLd() {
       return this._post?.jsonLd??{};
-    }
-    
-    summaryContent(): (props: any) => JSX.Element{
-      return this._summary?.default?? Blank
     }
   
     showDetail(){
@@ -27,17 +21,12 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
     }
 
     abstract PageContentList: any
-    abstract SummaryList: any
 
     private _post: any
-    private _summary: any
+
   
     private _setPost(postId: string){
       this._post = this._getPost(postId)
-    }
-  
-    private _setSummary(postId: string){
-      this._summary = this._getSummary(postId)
     }
   
     private _getPost(postId: string){
@@ -46,12 +35,5 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
         return this.PageContentList[id]
       }
       return Default
-    }
-  
-    private _getSummary(postId: string){
-      const id = postId as keyof typeof this.SummaryList
-      if (this.SummaryList !== undefined && this.SummaryList[id] !== undefined) {
-        return this._summary =  this.SummaryList[id]
-      }
     }
 }
