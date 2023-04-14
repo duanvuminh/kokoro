@@ -16,12 +16,14 @@ export const metadata:Metadata = {
     userScalable: true
   },
   manifest:"/manifest.json",
-  icons:[
-    { rel: "icon", url: "/icons/icon_16x16.png" },
-    { rel: "icon", url: "/icons/icon_32x32.png" },
-    { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" },
-    { rel: "apple-touch-startup-image", url: "/icons/icon_192x192.png" }
-  ],
+  icons:{
+    icon:[
+      { rel: "icon", url: "/icons/icon_16x16.png" },
+      { rel: "icon", url: "/icons/icon_32x32.png" },
+      { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" },
+      { rel: "apple-touch-startup-image", url: "/icons/icon_192x192.png" }
+    ]
+  },
   themeColor:"#FFFFFF"
 };
 
