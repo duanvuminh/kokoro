@@ -7,6 +7,7 @@
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
+    "prefer_related_applications": true,
     "icons": [
       {
         "src": "images/icon_72x72.png",
@@ -46,7 +47,8 @@
       {
         "src": "images/icon_512x512.png",
         "sizes": "512x512",
-        "type": "image/png"
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ],
     "splash_pages": null

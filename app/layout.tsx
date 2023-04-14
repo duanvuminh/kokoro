@@ -12,15 +12,16 @@ export const metadata:Metadata = {
     width: 'device-width',
     initialScale: 1,
     minimumScale: 1,
-    maximumScale: 1,
-    userScalable: false
+    maximumScale: 5,
+    userScalable: true
   },
   manifest:"/manifest.json",
   icons:[
     { rel: "icon", url: "/icons/icon_16x16.png" },
     { rel: "icon", url: "/icons/icon_32x32.png" },
     { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" }
-  ]
+  ],
+  themeColor:"#FFFFFF"
 };
 
 export default function RootLayout({
