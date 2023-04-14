@@ -6,6 +6,7 @@ import { registerDI } from 'lib/di'
 
 registerDI()
 
+//https://beta.nextjs.org/docs/api-reference/metadata#other
 export const metadata:Metadata = {
   title:"Học kanji cùng kyo",
   viewport: {
@@ -16,15 +17,32 @@ export const metadata:Metadata = {
     userScalable: true
   },
   manifest:"/manifest.json",
-  icons:{
-    icon:[
-      { rel: "icon", url: "/icons/icon_16x16.png" },
-      { rel: "icon", url: "/icons/icon_32x32.png" },
-      { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" },
-      { rel: "apple-touch-startup-image", url: "/icons/icon_192x192.png" }
-    ]
+  //https://rob-ferguson.me/pwa-tips-and-tricks/
+  icons: {
+    icon: [
+      { url: '/icons/favicon-32x32.png',type: 'image/png' },
+      { url: '/icons/favicon-16x16.png',type: 'image/png' }
+    ],
+    shortcut:'/icons/favicon.ico',
+    apple: [
+      { url: '/icons/apple-touch-icon.png',sizes:"180x180",type: 'image/png' }
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/icons/safari-pinned-tab.svg',
+      },
+      {
+        rel: 'apple-touch-startup-image',
+        url: '/images/icon_192x192.png',
+      },
+    ],
   },
-  themeColor:"#FFFFFF"
+  themeColor:"#ffffff",
+  other: {
+    'msapplication-TileColor': '#ffc40d',
+    'msapplication-config': '/icons/browserconfig.xml',
+  },
 };
 
 export default function RootLayout({
