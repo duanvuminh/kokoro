@@ -16,6 +16,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 CI/CD see .github/workflows
 
+## Issue
+-pwa
+-non iso character in Link href
+-prefetch make lighthouse score -1
+
 ## View struct
 
 home
