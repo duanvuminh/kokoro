@@ -19,7 +19,8 @@ export const metadata:Metadata = {
   icons:[
     { rel: "icon", url: "/icons/icon_16x16.png" },
     { rel: "icon", url: "/icons/icon_32x32.png" },
-    { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" }
+    { rel: "apple-touch-icon", url: "/icons/icon_192x192.png" },
+    { rel: "apple-touch-startup-image", url: "/icons/icon_192x192.png" }
   ],
   themeColor:"#FFFFFF"
 };
