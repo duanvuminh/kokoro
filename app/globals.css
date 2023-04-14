@@ -5,11 +5,9 @@ body {
   line-height: 1.6;
 }
 a {
-    text-decoration: none;
-    display: inline-block;
-    min-width: 48px;
-    min-height: 48px;
-    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem;
 }
 
 .container {
