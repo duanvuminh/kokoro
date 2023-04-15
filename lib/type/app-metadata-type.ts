@@ -29,5 +29,6 @@ export const appMetadata: Metadata = {
   other: {
     'msapplication-TileColor': '#ffc40d',
     'msapplication-config': '/icons/browserconfig.xml',
+    'apple-mobile-web-app-capable': 'yes',
   },
 }
