@@ -3,4 +3,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
+  "[mdx]": {
+    "editor.wordWrap": "on",
+  }
 }
