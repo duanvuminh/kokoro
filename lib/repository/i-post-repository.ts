@@ -1,10 +1,10 @@
-import 'reflect-metadata'
-import { inject, injectable } from 'tsyringe'
-import { IJPostClient } from 'lib/type'
-import type{ IPageContentRepository } from 'lib/repository'
+import "reflect-metadata";
+import { inject, injectable } from "tsyringe";
+import { IJPostClient } from "lib/type";
+import type { IPageContentRepository } from "lib/repository";
 
-export interface IPostRepository extends IPageContentRepository{
-  summaryContent(): (props: any) => JSX.Element
+export interface IPostRepository extends IPageContentRepository {
+  summaryContent(): (props: any) => JSX.Element;
 }
 
 @injectable()

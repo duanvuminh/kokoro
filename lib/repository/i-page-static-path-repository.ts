@@ -1,5 +1,5 @@
-import { PostParameterModel } from "lib/model"
+import { PostParameterModel } from "lib/model";
 
 export interface IPageStaticPathRepository {
-    getAllPath():Array<PostParameterModel>
+  getAllPath(): Array<PostParameterModel>;
 }

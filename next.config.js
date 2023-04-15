@@ -5,15 +5,14 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ['kanjivg.tagaini.net'],
+    domains: ["kanjivg.tagaini.net"],
   },
-}
+};
 
-const withPWA = require('@ducanh2912/next-pwa').default({
-  dest: 'public'
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: "public",
 });
 
-const withMDX = require('@next/mdx')()
+const withMDX = require("@next/mdx")();
 
-module.exports = withPWA(withMDX(nextConfig))
-
+module.exports = withPWA(withMDX(nextConfig));

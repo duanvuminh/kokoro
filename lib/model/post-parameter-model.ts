@@ -1,3 +1,3 @@
-export class PostParameterModel{
-    constructor(public id:string){}
+export class PostParameterModel {
+  constructor(public id: string) {}
 }
