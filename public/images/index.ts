@@ -8,6 +8,7 @@ import photo_4 from "./photo_4.webp"
 import photo_5 from "./photo_5.jpg"
 import photo_7 from "./photo_7.jpg"
 import photo_8 from "./photo_8.jpg"
+import photo_9 from "./photo_9.jpg"
 import shoukei from "./shoukei.png"
 import ue from "./ue.png"
 export { 
@@ -21,6 +22,7 @@ photo_4,
 photo_5,
 photo_7,
 photo_8,
+photo_9,
 shoukei,
 ue,
  }

@@ -6,6 +6,7 @@ export * as 江 from "./江.mdx"
 export * as 結 from "./結.mdx"
 export * as 藤 from "./藤.mdx"
 export * as 衛 from "./衛.mdx"
+export * as 視 from "./視.mdx"
 export * as 郎 from "./郎.mdx"
 const paths: string[] = [
 "保",
@@ -16,6 +17,7 @@ const paths: string[] = [
 "結",
 "藤",
 "衛",
+"視",
 "郎",
 ]
 export {paths}

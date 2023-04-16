@@ -16,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className="container">
-        <Link href="/" prefetch={false}>
-          <LogoPart />
-        </Link>
-        {children}
+        <header>
+          <Link href="/" prefetch={false}>
+            <LogoPart />
+          </Link>
+        </header>
+        <section>{children}</section>
       </body>
     </html>
   );
