@@ -1,4 +1,5 @@
 import photo from "./photo.webp"
+import photo_1 from "./photo_1.jpeg"
 import photo_19 from "./photo_19.jpg"
 import photo_2 from "./photo_2.jpg"
 import photo_26 from "./photo_26.jpg"
@@ -10,6 +11,7 @@ import shoukei from "./shoukei.png"
 import ue from "./ue.png"
 export { 
 photo,
+photo_1,
 photo_19,
 photo_2,
 photo_26,

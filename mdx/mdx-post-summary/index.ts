@@ -1,3 +1,4 @@
+export * as 保 from "./保.mdx"
 export * as 日 from "./日.mdx"
 export * as 氏 from "./氏.mdx"
 export * as 江 from "./江.mdx"
