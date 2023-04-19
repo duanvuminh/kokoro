@@ -4,3 +4,5 @@ export * from "./summary-part";
 export * from "./flexwrap-part";
 export * from "./bottom-back-part";
 export * from "./json-ld-part";
+export * from "./header-part";
+export * from "./link-button-part";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SvgPath } from "lib/type";
-import { FlexwrapPart } from "lib/part";
+import { FlexwrapPart } from "@/component/part";
 
 export function SummaryPart({
   pageId,

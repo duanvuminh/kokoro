@@ -1,4 +1,4 @@
-import { JsonLd } from "@/lib/part";
+import { JsonLd } from "@/component/part";
 import { Home } from "mdx/mdx-random-page";
 import type { Metadata } from "next";
 

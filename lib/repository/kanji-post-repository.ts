@@ -2,7 +2,7 @@ import { BaseKanjiRepository } from "./base-kanji-repository";
 import * as KanjiList from "mdx/mdx-post-content";
 import * as SummaryList from "mdx/mdx-post-summary";
 import { IPostRepository } from "lib/repository";
-import { Blank } from "lib/part";
+import { Blank } from "@/component/part";
 
 export class KanjiPostRepository
   extends BaseKanjiRepository

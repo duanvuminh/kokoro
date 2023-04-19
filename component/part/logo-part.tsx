@@ -1,10 +1,12 @@
 import { SiteName } from "lib/type";
-import styles from "./logo-part.module.css";
+import Link from "next/link";
 
 export function LogoPart() {
   return (
     <p>
-      <span className={styles["site-name"]}>{SiteName}</span>
+      <Link href="/">
+        <span className="text-rose-600 text-4xl">{SiteName}</span>
+      </Link>
       <sub>も頑張れ！</sub>
     </p>
   );

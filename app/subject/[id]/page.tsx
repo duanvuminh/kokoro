@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { container } from "tsyringe";
 import { SubjectClient, SubjectStatiPathClient } from "lib/repository";
-import { BottomBackPart, JsonLd } from "lib/part";
+import { BottomBackPart, JsonLd } from "@/component/part";
 
 const pageClient: SubjectClient = container.resolve(SubjectClient);
 let pagePathClient: SubjectStatiPathClient = container.resolve(
