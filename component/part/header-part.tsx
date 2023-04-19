@@ -8,7 +8,7 @@ export function HeaderPart(): JSX.Element {
       <div className="flex items-center">
         <LogoPart />
       </div>
-      <div className="flex items-center">
+      <div className="flex items-center mr-3">
         <ClosekPart />
       </div>
     </nav>
