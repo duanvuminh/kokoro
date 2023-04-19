@@ -9,7 +9,7 @@ export function LinkButtonPart({
   children: ReactNode;
 }) {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch={false}>
       <button
         type="button"
         className="font-medium text-sm px-5 py-2.5 text-center"
