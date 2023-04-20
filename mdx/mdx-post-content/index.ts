@@ -1,4 +1,6 @@
+export * as copy from "./copy.mdx"
 export * as 保 from "./保.mdx"
+export * as 姿 from "./姿.mdx"
 export * as 日 from "./日.mdx"
 export * as 松 from "./松.mdx"
 export * as 氏 from "./氏.mdx"
@@ -9,7 +11,9 @@ export * as 衛 from "./衛.mdx"
 export * as 視 from "./視.mdx"
 export * as 郎 from "./郎.mdx"
 const paths: string[] = [
+"copy",
 "保",
+"姿",
 "日",
 "松",
 "氏",
