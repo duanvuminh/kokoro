@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { SvgPath } from "lib/type";
-import { FlexwrapPart } from "@/component/part";
 
 export function SummaryPart({
   pageId,
@@ -14,10 +13,10 @@ export function SummaryPart({
   return (
     <details>
       <summary>Click xem tóm tắt {pageId}</summary>
-      <FlexwrapPart>
-        <Image src={path} alt={id} width="200" height="200" />
+      <div className="flex">
+        <Image src={path} alt={id} width="100" height="100" />
         {children}
-      </FlexwrapPart>
+      </div>
     </details>
   );
 }
