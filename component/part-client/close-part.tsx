@@ -1,18 +1,18 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Blank } from "component/part";
-import { useClose } from "./context/couter-contex";
+import { useClose } from "./context/close-contex";
 
-export function ClosekPart(): JSX.Element {
+export function ClosePart(): JSX.Element {
   const router = useRouter();
-  const [count] = useClose();
+  const [close] = useClose();
   
   const onClick = (event: { target: any }) => {
     router.back();
   };
   
-  return count ? (
-    <button onClick={onClick} aria-label="go previous page">
+  return close ? (
+    <button onClick={onClick} aria-label="go previous page" className="visible md:invisible">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -27,11 +27,11 @@ export function ClosekPart(): JSX.Element {
 }
 
 export function EnableNavBackPart(): JSX.Element {
-  let [count, setCount] = useClose();
+  const [, setClose] = useClose();
   useEffect(() => {
-    setCount(true);
+    setClose(true);
     return () => {
-      setCount(false);
+      setClose(false);
     };
   },[]);
   return <Blank/>;

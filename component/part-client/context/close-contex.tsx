@@ -11,9 +11,9 @@ export function CloseProvider({
 }: {
   children: JSX.Element;
 }): JSX.Element {
-  const [count, setClose] = React.useState(false);
+  const [close, setClose] = React.useState(false);
   return (
-    <CloseContext.Provider value={[count, setClose]}>
+    <CloseContext.Provider value={[close, setClose]}>
       {children}
     </CloseContext.Provider>
   );

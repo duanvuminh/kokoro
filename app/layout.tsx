@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import "./globals.css";
 import { HeaderPart, LogoPart } from "component/part";
 import { registerDI } from "lib/di";

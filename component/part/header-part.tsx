@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { LogoPart } from "component/part";
-import { ClosekPart } from "component/part-client";
+import { ClosePart } from "component/part-client";
 
 export function HeaderPart(): JSX.Element {
   return (
@@ -9,7 +8,7 @@ export function HeaderPart(): JSX.Element {
         <LogoPart />
       </div>
       <div className="flex items-center mr-3">
-        <ClosekPart />
+        <ClosePart />
       </div>
     </nav>
   );
