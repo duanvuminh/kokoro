@@ -15,9 +15,7 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
       <body className="container mx-auto">
         <CloseProvider>
           <>
-            <header className="mb-2.5">
-              <HeaderPart />
-            </header>
+            <HeaderPart />
             <section className="p-2 prose">{children}</section>
           </>
         </CloseProvider>

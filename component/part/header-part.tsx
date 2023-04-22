@@ -3,7 +3,7 @@ import { ClosePart } from "component/part-client";
 
 export function HeaderPart(): JSX.Element {
   return (
-    <nav className="flex justify-between items-center mx-auto">
+    <nav className=" flex justify-between items-center mx-auto bg-white sticky top-0">
       <div className="flex items-center">
         <LogoPart />
       </div>

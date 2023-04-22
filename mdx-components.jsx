@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { LinkButtonPart } from "component/part";
+import { ButtonTextPart } from "component/part";
 
 export function useMDXComponents(components) {
-  return { Link: LinkButtonPart, Image, ...components };
+  return { Link: ButtonTextPart, Image, ...components };
 }

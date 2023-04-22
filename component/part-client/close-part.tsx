@@ -4,11 +4,11 @@ import { Blank } from "component/part";
 import { useClose } from "./context/close-contex";
 
 export function ClosePart(): JSX.Element {
-  const router = useRouter();
+  const { back } = useRouter();
   const [close] = useClose();
   
   const onClick = (event: { target: any }) => {
-    router.back();
+    back();
   };
   
   return close ? (
@@ -30,9 +30,7 @@ export function EnableNavBackPart(): JSX.Element {
   const [, setClose] = useClose();
   useEffect(() => {
     setClose(true);
-    return () => {
-      setClose(false);
-    };
-  },[]);
+    return () => setClose(false);
+  });
   return <Blank/>;
 }
