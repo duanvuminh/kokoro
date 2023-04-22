@@ -1,3 +1,4 @@
+import miya from "./miya.jpg"
 import photo from "./photo.webp"
 import photo_1 from "./photo_1.jpeg"
 import photo_19 from "./photo_19.jpg"
@@ -14,6 +15,7 @@ import photo_9 from "./photo_9.jpg"
 import shoukei from "./shoukei.png"
 import ue from "./ue.png"
 export { 
+miya,
 photo,
 photo_1,
 photo_19,
