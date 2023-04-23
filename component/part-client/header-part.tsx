@@ -13,7 +13,7 @@ const navigation = [
   { name: "stroke", href: "/subject/stroke", current: true },
 ];
 
-function classNames(...classes) {
+function classNames(...classes:string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
