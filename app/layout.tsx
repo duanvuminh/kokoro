@@ -12,7 +12,7 @@ export const metadata = appMetadata;
 export default function RootLayout({ children }: { children: JSX.Element }) {
   return (
     <html lang="vi">
-      <body className="container mx-auto">
+      <body className="container mx-auto pb-4">
         <CloseProvider>
           <>
             <HeaderPart />
