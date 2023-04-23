@@ -1,6 +1,6 @@
 import React from "react";
 import "./globals.css";
-import { HeaderPart, LogoPart } from "component/part";
+import { HeaderPart } from "component/part-client";
 import { registerDI } from "lib/di";
 import { appMetadata } from "lib/type";
 import { CloseProvider } from "component/part-client";
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
         <CloseProvider>
           <>
             <HeaderPart />
-            <section className="p-2 prose">{children}</section>
+            <section className="p-2">{children}</section>
           </>
         </CloseProvider>
       </body>

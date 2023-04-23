@@ -2,7 +2,7 @@ import { BaseKanjiRepository } from "./base-kanji-repository";
 import * as KanjiList from "mdx/mdx-post-content";
 import * as SummaryList from "mdx/mdx-post-summary";
 import { IPostRepository } from "lib/repository";
-import { Blank } from "@/component/part";
+import { Blank, MdxWrap } from "component/part";
 
 export class KanjiPostRepository
   extends BaseKanjiRepository
@@ -13,7 +13,7 @@ export class KanjiPostRepository
     this._setSummary(postId);
   }
   summaryContent(): (props: any) => JSX.Element {
-    return this._summary?.default ?? Blank;
+    return ()=>MdxWrap({children: this._summary?.default()?? Blank()});
   }
   PageContentList: any = KanjiList;
   SummaryList: any = SummaryList;

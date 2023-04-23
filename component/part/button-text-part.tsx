@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ReactNode } from "react";
-import { Button } from "component/part-client";
 
 export function ButtonTextPart({
   href,
@@ -11,7 +10,7 @@ export function ButtonTextPart({
 }): JSX.Element {
   return (
     <Link href={href} prefetch={false}>
-      <Button variant="text">{children}</Button>
+      <button className="btn-text">{children}</button>
     </Link>
   );
 }

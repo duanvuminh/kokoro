@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { container } from "tsyringe";
 import { SubjectClient, SubjectStatiPathClient } from "lib/repository";
-import { BottomBackPart, JsonLd } from "@/component/part";
+import {JsonLd } from "@/component/part";
 
 const pageClient: SubjectClient = container.resolve(SubjectClient);
 let pagePathClient: SubjectStatiPathClient = container.resolve(
@@ -30,7 +30,6 @@ export default function Page({ params }: { params: { id: string } }) {
     <>
       <JsonLd jsonLd={jsonLd} />
       <Content />
-      <BottomBackPart />
     </>
   );
 }

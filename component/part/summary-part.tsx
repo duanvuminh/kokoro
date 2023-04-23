@@ -15,7 +15,7 @@ export function SummaryPart({
       <summary>Click xem tóm tắt {pageId}</summary>
       <div className="flex">
         <Image src={path} alt={id} width="350" height="350" />
-        {children}
+        <div>{children}</div>
       </div>
     </details>
   );

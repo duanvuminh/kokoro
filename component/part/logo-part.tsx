@@ -5,7 +5,7 @@ export function LogoPart() {
   return (
     <p>
       <Link href="/" prefetch={false}>
-        <span className="text-rose-600 text-4xl">{SiteName}</span>
+        <span className="leaading-none text-rose-600 text-4xl">{SiteName}</span>
       </Link>
       <sub>も頑張れ！</sub>
     </p>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { container } from "tsyringe";
 import { PostClient, PostStaticPathClient } from "lib/repository";
-import { SummaryPart, BottomBackPart, JsonLd } from "component/part";
+import { SummaryPart, JsonLd } from "component/part";
 import { EnableNavBackPart } from "component/part-client";
 
 const pageClient: PostClient = container.resolve(PostClient);
@@ -27,12 +27,9 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
       <EnableNavBackPart />
       <JsonLd jsonLd={jsonLd} />
       <SummaryPart pageId={pageId}>
-        <div>
           <Summary />
-        </div>
       </SummaryPart>
       <Content />
-      <BottomBackPart />
     </>
   );
 }

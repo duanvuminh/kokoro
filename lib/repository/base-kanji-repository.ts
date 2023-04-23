@@ -1,5 +1,6 @@
 import { Default } from "mdx/mdx-random-page";
 import { IPageContentRepository } from "lib/repository";
+import { MdxWrap } from "component/part";
 
 export abstract class BaseKanjiRepository implements IPageContentRepository {
   init(postId: string): void {
@@ -13,8 +14,8 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
     return this._post?.jsonLd ?? {};
   }
 
-  showDetail() {
-    return this._post.default;
+  showDetail(): (props: any) => JSX.Element {
+    return () => MdxWrap({children:this._post.default()});
   }
   showPlugin(): (props: any) => JSX.Element {
     return Default.default;
