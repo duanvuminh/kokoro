@@ -29,7 +29,7 @@ export function HeaderPart(): JSX.Element {
                 )}
               </Disclosure.Button>
             </div>
-            <div className="flex md:flex-1 items-center justify-between">
+            <div className="flex md:flex-1 items-top justify-between">
               <LogoPart />
               <div className="hidden sm:ml-6 sm:block">
                 <Items />
@@ -51,7 +51,7 @@ export function HeaderPart(): JSX.Element {
 
 function Items(): JSX.Element {
   return (
-    <div className="flex flex-wrap mt-1 px-2 pb-3 pt-2">
+    <div className="flex flex-wrap px-2">
       {navigation.map((item) => (
         <Link href={item.href}>
           <Disclosure.Button key={item.name} className="btn-text">
