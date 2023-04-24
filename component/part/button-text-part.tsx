@@ -9,7 +9,7 @@ export function ButtonTextPart({
   children: ReactNode;
 }): JSX.Element {
   return (
-    <Link href={href} prefetch={false}>
+    <Link href={href}>
       <button className="btn-text">{children}</button>
     </Link>
   );

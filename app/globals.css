@@ -9,6 +9,6 @@
 
 @layer components {
   .btn-text {
-    @apply py-3 px-6 text-blue-500 hover:bg-blue-500/10 active:bg-blue-500/30 rounded;
+    @apply py-3 px-5 text-gray-500 hover:text-gray-900 ;
   }
 }

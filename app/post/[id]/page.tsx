@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { container } from "tsyringe";
 import { PostClient, PostStaticPathClient } from "lib/repository";
-import { SummaryPart, JsonLd } from "component/part";
+import { JsonLd } from "component/part";
 import { EnableNavBackPart } from "component/part-client";
+import { Fragment } from "react";
 
 const pageClient: PostClient = container.resolve(PostClient);
 const pagePathClient: PostStaticPathClient =
@@ -12,7 +13,11 @@ export const generateStaticParams = async () => {
   return pagePathClient.client.getAllPath();
 };
 
-export async function generateMetadata({ params: { id } }: { params: { id: string } }): Promise<Metadata>  {
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
   return pageClient.client.getMetadata();
 }
 
@@ -21,15 +26,11 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
   pageClient.client.init(pageId);
   const jsonLd = pageClient.client.getJsonLd();
   const Content = pageClient.client.showDetail();
-  const Summary = pageClient.client.summaryContent();
   return (
-    <>
+    <Fragment>
       <EnableNavBackPart />
       <JsonLd jsonLd={jsonLd} />
-      <SummaryPart pageId={pageId}>
-          <Summary />
-      </SummaryPart>
       <Content />
-    </>
+    </Fragment>
   );
 }

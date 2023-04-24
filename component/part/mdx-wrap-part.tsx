@@ -1,4 +1,4 @@
-export function MdxWrap({
+export function MdxWrapPart({
   children,
 }: {
   children: JSX.Element;
