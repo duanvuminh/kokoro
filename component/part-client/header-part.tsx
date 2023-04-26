@@ -28,8 +28,8 @@ export function HeaderPart(): JSX.Element {
                 )}
               </Disclosure.Button>
             </div>
-            <div className="flex md:flex-1 items-top justify-between">
-              <LogoPart />
+            <LogoPart />
+            <div>
               <div className="hidden sm:ml-6 sm:block">
                 <Items />
               </div>
