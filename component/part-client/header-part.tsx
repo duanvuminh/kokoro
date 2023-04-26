@@ -1,7 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { LogoPart } from "component/part";
-import { ClosePart } from "component/part-client";
 import Link from "next/link";
 
 const navigation = [
@@ -35,9 +34,6 @@ export function HeaderPart(): JSX.Element {
                 <Items />
               </div>
             </div>
-            <div>
-              <ClosePart />
-            </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
@@ -53,8 +49,8 @@ function Items(): JSX.Element {
   return (
     <div className="flex flex-wrap px-2">
       {navigation.map((item) => (
-        <Link href={item.href}>
-          <Disclosure.Button key={item.name} className="btn-text">
+        <Link href={item.href} key={item.name}>
+          <Disclosure.Button className="btn-text">
             {item.name}
           </Disclosure.Button>
         </Link>

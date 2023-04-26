@@ -1,4 +1,4 @@
-export function JsonLd({ jsonLd }: { jsonLd: {} }): JSX.Element {
+export function JsonLdPart({ jsonLd }: { jsonLd: {} }): JSX.Element {
   return (
     <script
       type="application/ld+json"

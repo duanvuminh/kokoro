@@ -1,8 +1,11 @@
 import { BaseKanjiRepository } from "./base-kanji-repository";
 import * as KanjiList from "mdx/mdx-post-content";
 import * as SummaryList from "mdx/mdx-post-summary";
-import { Blank, MdxWrapPart, PostContentPart } from "component/part";
+import { MdxWrapPart, PostContentPart } from "component/part";
+import { Fragment } from "react";
+import { injectable } from "inversify";
 
+@injectable()
 export class KanjiPostRepository
   extends BaseKanjiRepository
 {
@@ -28,7 +31,7 @@ export class KanjiPostRepository
 
   public override showDetail() {
     const summary = (props: any) =>
-      MdxWrapPart({ children: this._summary?.default() ?? Blank() });
+      MdxWrapPart({ children: this._summary?.default() ?? Fragment });
     return () =>
       PostContentPart({
         postId: this._postId,

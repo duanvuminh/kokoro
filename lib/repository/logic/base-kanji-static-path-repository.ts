@@ -1,6 +1,8 @@
+import { injectable } from "inversify";
 import { PostParameterModel } from "lib/model";
 import { IPageStaticPathRepository } from "lib/repository";
 
+@injectable()
 export abstract class BaseKanjiStaticPathRepository
   implements IPageStaticPathRepository
 {

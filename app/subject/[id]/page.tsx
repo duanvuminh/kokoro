@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { container } from "tsyringe";
-import { SubjectClient, SubjectStatiPathClient } from "lib/repository";
-import { JsonLd } from "@/component/part";
 import { Fragment } from "react";
+import { JsonLdPart } from "component/part";
+import { myContainer } from "inversify.config";
+import { TYPES } from "lib/type";
+import {
+  ISubjectRepository,
+  ISubjectStaticPathRepository,
+} from "lib/repository";
 
-const pageClient: SubjectClient = container.resolve(SubjectClient);
-let pagePathClient: SubjectStatiPathClient = container.resolve(
-  SubjectStatiPathClient
+const pageClient = myContainer.get<ISubjectRepository>(
+  TYPES.ISubjectRepository
+);
+let pagePathClient = myContainer.get<ISubjectStaticPathRepository>(
+  TYPES.ISubjectStaticPathRepository
 );
 
 export const generateStaticParams = async () => {
-  return pagePathClient.client.getAllPath();
+  return pagePathClient.getAllPath();
 };
 
 export async function generateMetadata({
@@ -18,17 +24,17 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }): Promise<Metadata> {
-  return pageClient.client.getMetadata();
+  return pageClient.getMetadata();
 }
 
 export default function Page({ params }: { params: { id: string } }) {
   const id = decodeURIComponent(params.id);
-  pageClient.client.init(id);
-  const jsonLd = pageClient.client.getJsonLd();
-  const Content = pageClient.client.showDetail();
+  pageClient.init(id);
+  const jsonLd = pageClient.getJsonLd();
+  const Content = pageClient.showDetail();
   return (
     <Fragment>
-      <JsonLd jsonLd={jsonLd} />
+      <JsonLdPart jsonLd={jsonLd} />
       <Content />
     </Fragment>
   );

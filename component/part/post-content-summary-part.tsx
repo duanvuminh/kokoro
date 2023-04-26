@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SvgPath } from "lib/type";
 
-export function SummaryPart({
+export function PostContentSummaryPart({
   postId,
   children,
 }: {
