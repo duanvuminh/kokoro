@@ -13,14 +13,6 @@ echo 'export {paths}' >>  index.ts
 
 cd ../../
 
-cd mdx/mdx-post-summary
-rm index.ts
-for f in *.mdx; 
-do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 
-done;
-
-cd ../../
-
 cd mdx/mdx-random-page
 rm index.ts
 for f in *.mdx; 
