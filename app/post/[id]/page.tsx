@@ -1,32 +1,33 @@
-import type { Metadata } from "next";
-import { myContainer } from "inversify.config";
-import { Fragment } from "react";
 import { JsonLdPart } from "component/part";
+import { myContainer } from "inversify.config";
 import { IPostRepository, IPostStaticPathRepository } from "lib/repository";
 import { TYPES } from "lib/type";
+import type { Metadata } from "next";
+import { Fragment } from "react";
 
-const page = myContainer.get<IPostRepository>(TYPES.IPostRepository);
-const pagePath = myContainer.get<IPostStaticPathRepository>(
+const postRepo = myContainer.get<IPostRepository>(TYPES.IPostRepository);
+const staticPathRepo = myContainer.get<IPostStaticPathRepository>(
   TYPES.IPostStaticPathRepository
 );
 
-export const generateStaticParams = async () => {
-  return pagePath.getAllPath();
+export const generateStaticParams =  () => {
+  return staticPathRepo.getAllPath();
 };
 
-export async function generateMetadata({
+export const generateMetadata = ({
   params: { id },
 }: {
   params: { id: string };
-}): Promise<Metadata> {
-  return page.getMetadata();
+}):Metadata => {
+  const metadata =  postRepo.getMetadata();
+  return metadata;
 }
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
   const pageId = decodeURIComponent(id);
-  page.init(pageId);
-  const jsonLd = page.getJsonLd();
-  const Content = page.showDetail();
+  postRepo.init(pageId);
+  const jsonLd = postRepo.getJsonLd();
+  const Content = postRepo.showDetail();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />

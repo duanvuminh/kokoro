@@ -1,6 +1,5 @@
-import "reflect-metadata";
 import { Container } from "inversify";
-import { TYPES } from "./lib/type";
+import "reflect-metadata";
 import {
   IPostRepository,
   IPostStaticPathRepository,
@@ -11,6 +10,7 @@ import {
   KanjiSubjectRepository,
   KanjiSubjectStaticPathRepository,
 } from "./lib/repository";
+import { TYPES } from "./lib/type";
 
 const myContainer = new Container();
 myContainer
