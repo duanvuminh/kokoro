@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other
-export const appMetadata: Metadata = {
+export const appMetadataType: Metadata = {
   title: "Học kanji cùng kyo",
   manifest: "/manifest.json",
   //https://rob-ferguson.me/pwa-tips-and-tricks/

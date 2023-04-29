@@ -1,4 +1,4 @@
-import { SvgPath } from "lib/type";
+import { SvgPath, summaryTitle } from "lib/type";
 import Image from "next/image";
 
 export function PostContentSummaryPart({
@@ -10,7 +10,7 @@ export function PostContentSummaryPart({
   const path = `${SvgPath}0${id}.svg`;
   return (
     <details>
-      <summary>Cách viết {postId}</summary>
+      <summary>{summaryTitle} {postId}</summary>
       <div className="flex justify-center">
         <Image src={path} alt={id} width="250" height="250" />
       </div>

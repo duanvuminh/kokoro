@@ -17,7 +17,7 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
   }
 
   showDetail(): (props: any) => JSX.Element {
-    return () => MdxWrapPart({children:this._post.default()});
+    return () => MdxWrapPart({ children: this._post.default() });
   }
   showPlugin(): (props: any) => JSX.Element {
     return Default.default;

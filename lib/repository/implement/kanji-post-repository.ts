@@ -5,10 +5,8 @@ import { Fragment } from "react";
 import { injectable } from "inversify";
 
 @injectable()
-export class KanjiPostRepository
-  extends BaseKanjiRepository
-{
-  override PageContentList =  KanjiList;
+export class KanjiPostRepository extends BaseKanjiRepository {
+  override PageContentList = KanjiList;
   private _postId = "";
 
   public override init(postId: string): void {

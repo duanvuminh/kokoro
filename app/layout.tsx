@@ -1,8 +1,8 @@
 import { HeaderPart } from "component/part-client";
-import { appMetadata } from "lib/type";
+import { appMetadataType } from "lib/type";
 import "./globals.css";
 
-export const metadata = appMetadata;
+export const metadata = appMetadataType;
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
   return (
