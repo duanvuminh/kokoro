@@ -1,3 +1,4 @@
 "use client";
 
-export * from "./header-part";
+export * from "./context/search-context";
+export * from "./header-part-client";

@@ -24,10 +24,12 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
   }
 
   abstract PageContentList: any;
+  public postId : string | undefined;
 
   private _post: any;
 
   private _setPost(postId: string) {
+    this.postId = postId;
     this._post = this._getPost(postId);
   }
 

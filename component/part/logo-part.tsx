@@ -5,9 +5,9 @@ export function LogoPart() {
   return (
     <p>
       <Link href="/">
-        <span className="leaading-none text-rose-600 text-4xl">{SiteName}</span>
+        <button className="leaading-none px-3 text-rose-600 text-4xl">{SiteName}</button>
       </Link>
-      <sub>も頑張れ！</sub>
+      <small>も頑張れ！</small>
     </p>
   );
 }
