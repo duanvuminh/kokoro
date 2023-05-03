@@ -2,7 +2,7 @@ import { useSearch } from "component/part-client";
 import { useRouter } from "next/navigation";
 import { useEffect, Fragment } from "react";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import {ButtonTextPart} from "component/part"
+import { ButtonTextPart } from "component/part";
 
 export function HeaderPartClient() {
   const { toggleSearchPage } = useSearch();
@@ -23,11 +23,11 @@ export function MenuIconPartClient(): JSX.Element {
   };
 
   return isSearchPage ? (
-    <button className="btn-text" onClick={onClick}>
+    <button className="btn-text" onClick={onClick} aria-label="quay lại">
       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
     </button>
   ) : (
-    <ButtonTextPart href="/search">
+    <ButtonTextPart href="/search" ariaLabel="tìm kiếm">
       <MagnifyingGlassIcon className="block h-6 w-6" aria-hidden="true" />
     </ButtonTextPart>
   );

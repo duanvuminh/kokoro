@@ -1,4 +1,4 @@
-import { SvgPath, summaryTitle } from "lib/type";
+import { svgPath, summaryTitle } from "lib/type";
 import Image from "next/image";
 
 export function PostContentSummaryPart({
@@ -7,10 +7,12 @@ export function PostContentSummaryPart({
   postId: string;
 }): JSX.Element {
   const id = postId.charCodeAt(0).toString(16);
-  const path = `${SvgPath}0${id}.svg`;
+  const path = `${svgPath}0${id}.svg`;
   return (
     <details>
-      <summary>{summaryTitle} {postId}</summary>
+      <summary>
+        {summaryTitle} {postId}
+      </summary>
       <div className="flex justify-center">
         <Image src={path} alt={id} width="250" height="250" />
       </div>
