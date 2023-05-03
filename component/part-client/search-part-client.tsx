@@ -1,9 +1,9 @@
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { searchNoData, searchPlaceHolder } from "lib/type";
-import { useState } from "react";
-import Turnstone from "turnstone";
 import { vmSearchPartClient } from "component/part-client";
 
+
+const Turnstone = require("turnstone");
 // Tailwind classes for Turnstone elements
 const styles = {
   input:
