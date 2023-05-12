@@ -4,7 +4,7 @@ import { appMetadataType } from "lib/type";
 import { Fragment } from "react";
 import "./globals.css";
 
-export const metadata = appMetadataType;
+export const metadata = appMetadataType();
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
   return (
