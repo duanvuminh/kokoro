@@ -1,10 +1,11 @@
+import { appURL, siteTitle } from "lib/type";
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other
 export const appMetadataType: Metadata = {
-  title: "Học kanji cùng kyo",
+  title: siteTitle,
   manifest: "/manifest.json",
-  metadataBase: new URL('https://kyomo.vercel.app/'),
+  metadataBase: new URL(appURL),
   //https://rob-ferguson.me/pwa-tips-and-tricks/
   icons: {
     icon: [
