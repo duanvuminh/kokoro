@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const appMetadataType: Metadata = {
   title: "Học kanji cùng kyo",
   manifest: "/manifest.json",
+  metadataBase: new URL('https://kyomo.vercel.app/'),
   //https://rob-ferguson.me/pwa-tips-and-tricks/
   icons: {
     icon: [
