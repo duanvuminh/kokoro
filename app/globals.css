@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Opinion -> Size  -> Shape -> Color -> Purpose */
 .prose {
   max-width: 100%;
 }

@@ -1,6 +1,6 @@
-import { paths } from "mdx/mdx-subject";
-import { BaseKanjiStaticPathRepository } from "lib/repository";
 import { injectable } from "inversify";
+import { BaseKanjiStaticPathRepository } from "lib/repository";
+import { paths } from "mdx/mdx-subject";
 
 @injectable()
 export class KanjiSubjectStaticPathRepository extends BaseKanjiStaticPathRepository {

@@ -1,6 +1,9 @@
 import { JsonLdPart } from "component/part";
 import { myContainer } from "inversify.config";
-import { IPostRepository, IPostStaticPathRepository } from "lib/repository";
+import type {
+  IPostRepository,
+  IPostStaticPathRepository,
+} from "lib/repository";
 import { TYPES } from "lib/type";
 import type { Metadata } from "next";
 import { Fragment } from "react";
@@ -10,7 +13,7 @@ const staticPathRepo = myContainer.get<IPostStaticPathRepository>(
   TYPES.IPostStaticPathRepository
 );
 
-export const generateStaticParams =  () => {
+export const generateStaticParams = () => {
   return staticPathRepo.getAllPath();
 };
 
@@ -18,10 +21,10 @@ export const generateMetadata = ({
   params: { id },
 }: {
   params: { id: string };
-}):Metadata => {
-  const metadata =  postRepo.getMetadata();
+}): Metadata => {
+  const metadata = postRepo.getMetadata();
   return metadata;
-}
+};
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
   const pageId = decodeURIComponent(id);

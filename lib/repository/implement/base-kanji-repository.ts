@@ -1,7 +1,7 @@
-import { Default } from "mdx/mdx-random-page";
-import { IPageContentRepository } from "lib/repository";
 import { MdxWrapPart } from "component/part";
 import { injectable } from "inversify";
+import type { IPageContentRepository } from "lib/repository";
+import { Default } from "mdx/mdx-random-page";
 
 @injectable()
 export abstract class BaseKanjiRepository implements IPageContentRepository {
@@ -24,7 +24,7 @@ export abstract class BaseKanjiRepository implements IPageContentRepository {
   }
 
   abstract PageContentList: any;
-  public postId : string | undefined;
+  public postId: string | undefined;
 
   private _post: any;
 

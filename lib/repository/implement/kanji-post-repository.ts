@@ -1,7 +1,7 @@
-import { BaseKanjiRepository } from "./base-kanji-repository";
-import * as KanjiList from "mdx/mdx-post-content";
 import { PostContentPart } from "component/part";
 import { injectable } from "inversify";
+import * as KanjiList from "mdx/mdx-post-content";
+import { BaseKanjiRepository } from "./base-kanji-repository";
 
 @injectable()
 export class KanjiPostRepository extends BaseKanjiRepository {

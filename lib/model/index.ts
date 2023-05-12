@@ -1,1 +1,1 @@
-export * from './post-parameter-model'
+export * from './post-parameter-model';

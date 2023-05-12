@@ -1,6 +1,6 @@
 import { JsonLdPart } from "component/part";
 import { myContainer } from "inversify.config";
-import {
+import type {
   ISubjectRepository,
   ISubjectStaticPathRepository,
 } from "lib/repository";
