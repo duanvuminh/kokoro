@@ -1,24 +1,47 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ISearh, kanji } from "lib/type";
+import { ISearh, kanji, mean, translate } from "lib/type";
 import { paths } from "mdx/mdx-post-content";
 
 // The maximum number of items we want to show in the list
-const maxItems = 10;
+const maxItems = 2;
 
 // Set up listbox contents. We are fetching cities and airports from two different
 // API endpoints. 10 from each but ideally we only want to show 8 cities and 2 airports.
 const listbox = [
   {
-    id: "1",
+    id: "kanji",
     name: kanji,
-    ratio: 8,
+    ratio: 1,
     displayField: "id",
     data: (query: string) => {
       if (paths.find((item) => item == query))
         return [{ id: query, path: "post" }];
+      return [];
     },
-    searchType: "startswith",
+    searchType: "contains",
+  },
+  {
+    id: "mean",
+    name: mean,
+    ratio: 1,
+    displayField: "id",
+    data: (query: string) => {
+      if (query.length >= 5) return [];
+      return [{ id: query, path: "mean" }];
+    },
+    searchType: "contains",
+  },
+  {
+    id: "translate",
+    name: translate,
+    ratio: 1,
+    displayField: "id",
+    data: (query: string) => {
+      if (query.length < 5) return [];
+      return [{ id: query, path: "translate" }];
+    },
+    searchType: "contains",
   },
 ];
 
