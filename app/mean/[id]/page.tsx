@@ -27,7 +27,6 @@ export default async function Page({
 }) {
   const pageId = decodeURIComponent(id);
   const content = await meanRepo.getMean(pageId);
-  console.log(content);
   return (
     <div className="prose">
       <h2>{pageId}</h2>

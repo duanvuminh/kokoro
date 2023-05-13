@@ -27,7 +27,6 @@ export default async function Page({
 }) {
   const pageId = decodeURIComponent(id);
   const content = await translateRepo.getTranslate(pageId);
-  console.log(content);
   return (
     <div className="prose">
       <p>{pageId}</p>
