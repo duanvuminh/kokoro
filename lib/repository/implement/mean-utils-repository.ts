@@ -32,7 +32,7 @@ export class MeanUtilsRepository implements IMeanUtilsRepository {
       messages: [
         {
           role: "user",
-          content: `ví dụ với ${query}`,
+          content: `ví dụ trong tiếng nhật với ${query}`,
         },
       ],
       temperature: 1,
