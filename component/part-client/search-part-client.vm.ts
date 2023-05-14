@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { ISearh, kanji, mean, translate } from "lib/type";
+import { kanji, mean, translate } from "lib/type";
 import { paths } from "mdx/mdx-post-content";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 // The maximum number of items we want to show in the list
 const maxItems = 2;
