@@ -1,4 +1,4 @@
-import { JsonLdPart } from "component/part";
+import { MeanUtilsPart } from "component/part-client";
 import { myContainer } from "inversify.config";
 import type {
   IMeanRepository,
@@ -31,6 +31,7 @@ export default async function Page({
     <div className="prose">
       <h2>{pageId}</h2>
       <p>{content}</p>
+      <MeanUtilsPart pageId={pageId}/>
     </div>
   );
 }

@@ -27,7 +27,7 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) => {
-      if (query.length >= 5) return [];
+      if (query.length >= 5 || query.length == 1) return [];
       return [{ id: query, path: "mean" }];
     },
     searchType: "contains",

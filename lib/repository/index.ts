@@ -1,4 +1,5 @@
 export * from "./i-mean-repository";
+export * from "./i-mean-utils-repository";
 export * from "./i-post-repository";
 export * from "./i-post-static-path-repository";
 export * from "./i-subject-repository";
@@ -13,5 +14,6 @@ export * from "./implement/kanji-post-static-path-repository";
 export * from "./implement/kanji-subject-repository";
 export * from "./implement/kanji-subject-static-path-repository";
 export * from "./implement/mean-repository";
+export * from "./implement/mean-utils-repository";
 export * from "./implement/translate-repository";
 

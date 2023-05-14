@@ -10,7 +10,7 @@ export class MeanRepository implements IMeanRepository {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          role: "assistant",
+          role: "user",
           content: `${query} ひらがな tiếng nhật nghĩa là gì`,
         },
       ],

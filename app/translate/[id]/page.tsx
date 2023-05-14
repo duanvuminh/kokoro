@@ -1,4 +1,3 @@
-import { JsonLdPart } from "component/part";
 import { myContainer } from "inversify.config";
 import type {
   ITranslateRepository,

@@ -10,7 +10,7 @@ export class TranslateRepository implements ITranslateRepository {
       model: "gpt-3.5-turbo",
       messages: [
         {
-          role: "assistant",
+          role: "user",
           content: `${query} dịch cho tôi`,
         },
       ],

@@ -2,6 +2,7 @@ import { Container } from "inversify";
 import "reflect-metadata";
 import {
   IMeanRepository,
+  IMeanUtilsRepository,
   IPostRepository,
   IPostStaticPathRepository,
   ISubjectRepository,
@@ -12,12 +13,14 @@ import {
   KanjiSubjectRepository,
   KanjiSubjectStaticPathRepository,
   MeanRepository,
+  MeanUtilsRepository,
   TranslateRepository,
 } from "./lib/repository";
 import { TYPES } from "./lib/type";
 
 const myContainer = new Container();
 myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MeanRepository);
+myContainer.bind<IMeanUtilsRepository>(TYPES.IMeanUtilsRepository).to(MeanUtilsRepository);
 myContainer
   .bind<IPostRepository>(TYPES.IPostRepository)
   .to(KanjiPostRepository);
