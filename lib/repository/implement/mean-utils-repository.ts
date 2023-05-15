@@ -10,6 +10,10 @@ export class MeanUtilsRepository implements IMeanUtilsRepository {
       model: "gpt-3.5-turbo",
       messages: [
         {
+          role: "system",
+          content: "japanese, vietnamese",
+        },
+        {
           role: "user",
           content: `${query}`,
         },
@@ -30,6 +34,18 @@ export class MeanUtilsRepository implements IMeanUtilsRepository {
     return postData(url, {
       model: "gpt-3.5-turbo",
       messages: [
+        {
+          role: "system",
+          content: "japanese, vietnamese",
+        },
+        {
+          role: "user",
+          content: "ví dụ trong tiếng nhật với 日記",
+        },
+        {
+          role: "assistant",
+          content: "1.毎日日記を書く - tôi viết nhật kí mỗi ngày 2. 日記を書くのは大好きです - tôi thích viết nhật kí",
+        },
         {
           role: "user",
           content: `ví dụ trong tiếng nhật với ${query}`,
