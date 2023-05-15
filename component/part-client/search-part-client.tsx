@@ -39,7 +39,7 @@ export function SearchPartClient() {
         <MagnifyingGlassIcon className="w-5 h-5" />
       </span>
       <Turnstone
-        autoFocus={false}
+        autoFocus={true}
         cancelButton={true}
         clearButton={true}
         debounceWait={250}
