@@ -7,14 +7,12 @@ import {
   IPostStaticPathRepository,
   ISubjectRepository,
   ISubjectStaticPathRepository,
-  ITranslateRepository,
   KanjiPostRepository,
   KanjiPostStaticPathRepository,
   KanjiSubjectRepository,
   KanjiSubjectStaticPathRepository,
   MeanRepository,
   MeanUtilsRepository,
-  TranslateRepository,
 } from "./lib/repository";
 import { TYPES } from "./lib/type";
 
@@ -33,8 +31,5 @@ myContainer
 myContainer
   .bind<ISubjectStaticPathRepository>(TYPES.ISubjectStaticPathRepository)
   .to(KanjiSubjectStaticPathRepository);
-myContainer
-  .bind<ITranslateRepository>(TYPES.ITranslateRepository)
-  .to(TranslateRepository);
 
 export { myContainer };
