@@ -42,7 +42,7 @@ export function SearchPartClient() {
         autoFocus={true}
         cancelButton={true}
         clearButton={true}
-        debounceWait={250}
+        debounceWait={0}
         id="autocomplete"
         listbox={vmSearchPartClient.listbox}
         listboxIsImmutable={true}
