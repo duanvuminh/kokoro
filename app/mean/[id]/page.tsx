@@ -31,7 +31,11 @@ export default function Page({
     <div className="prose">
       <h2>{pageId}</h2>
       <Suspense fallback={<Loading/>}>
-        <MeanUtilsPart pageId={pageId} />
+        {
+          //@ts-expect-error
+          (<MeanUtilsPart pageId={pageId} />)
+        }
+        
       </Suspense>
       <MeanUtilsPartClient pageId={pageId} />
     </div>

@@ -6,7 +6,7 @@ export async function MeanUtilsPart({
   pageId,
 }: {
   pageId: string;
-}): JSX.Element {
+}):Promise<JSX.Element> {
   const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
   const content = await meanRepo.getMean(pageId);
   return <p>{content}</p>;
