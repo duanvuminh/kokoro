@@ -1,7 +1,7 @@
 import { kanji, mean, translate } from "lib/type";
 import { paths } from "mdx/mdx-post-content";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // The maximum number of items we want to show in the list
 const maxItems = 2;
@@ -27,22 +27,11 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) => {
-      if (query.length >= 10 || query.length == 1) return [];
+      if (query.length == 1) return [];
       return [{ id: query, path: "mean" }];
     },
     searchType: "contains",
-  },
-  {
-    id: "translate",
-    name: translate,
-    ratio: 1,
-    displayField: "id",
-    data: (query: string) => {
-      if (query.length < 10) return [];
-      return [{ id: query, path: "translate" }];
-    },
-    searchType: "contains",
-  },
+  }
 ];
 
 export function state() {
@@ -52,7 +41,7 @@ export function state() {
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = hasFocus
-    ? "fixed block w-full h-full top-0 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
+    ? "fixed block w-full h-full top-15 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
     : "relative";
 
   const iconDisplayStyle = hasFocus
@@ -61,9 +50,9 @@ export function state() {
 
   const onBlur = () => setHasFocus(false);
   const onFocus = () => setHasFocus(true);
-  let onSelect = async (selectedItem: any) => {
+  let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
-    await router.push(`${selectedItem.path}/${selectedItem.id}`);
+    router.push(`${selectedItem.path}/${selectedItem.id}`);
   };
   return {
     onBlur,

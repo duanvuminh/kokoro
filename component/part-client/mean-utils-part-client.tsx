@@ -5,7 +5,7 @@ interface ResponseData {
   result: string;
 }
 
-export function MeanUtilsPart({ pageId }: { pageId: string }): JSX.Element {
+export function MeanUtilsPartClient({ pageId }: { pageId: string }): JSX.Element {
   const [state, setState] = useState({
     isLoading: false,
     displayText: "",

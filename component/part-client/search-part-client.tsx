@@ -8,7 +8,7 @@ const styles = {
   input:
     "w-full h-12 border border-oldsilver-300 py-2 pl-10 pr-7 text-xl outline-none rounded-full",
   inputFocus:
-    "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-10 pr-7 text-xl outline-none sm:rounded-full sm:border",
+    "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border",
   query: "text-oldsilver-800 placeholder-oldsilver-400",
   typeahead: "text-crystal-500 border-white",
   cancelButton: `absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 text-crystal-600 inline-flex sm:hidden`,
@@ -40,7 +40,6 @@ export function SearchPartClient() {
       </span>
       <Turnstone
         autoFocus={false}
-        cancelButton={true}
         clearButton={true}
         debounceWait={0}
         id="autocomplete"
@@ -54,7 +53,6 @@ export function SearchPartClient() {
         onSelect={state.onSelect}
         placeholder={searchPlaceHolder}
         styles={styles}
-        Cancel={Cancel}
         Clear={Clear}
       />
     </div>

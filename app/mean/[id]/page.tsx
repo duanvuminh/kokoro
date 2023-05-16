@@ -1,10 +1,11 @@
-import { MeanUtilsPart } from "component/part-client";
+import Loading from "app/loading";
+import { MeanUtilsPartClient } from "component/part-client";
+import { MeanUtilsPart } from "component/part";
 import { myContainer } from "inversify.config";
-import type {
-  IMeanRepository,
-} from "lib/repository";
+import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/type";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
@@ -20,18 +21,19 @@ export const generateMetadata = ({
   };
 };
 
-export default async function Page({
+export default function Page({
   params: { id },
 }: {
   params: { id: string };
 }) {
   const pageId = decodeURIComponent(id);
-  const content = await meanRepo.getMean(pageId);
   return (
     <div className="prose">
       <h2>{pageId}</h2>
-      <p>{content}</p>
-      <MeanUtilsPart pageId={pageId}/>
+      <Suspense fallback={<Loading/>}>
+        <MeanUtilsPart pageId={pageId} />
+      </Suspense>
+      <MeanUtilsPartClient pageId={pageId} />
     </div>
   );
 }
