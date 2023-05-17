@@ -1,11 +1,11 @@
-import Loading from "app/loading";
-import { MeanUtilsPartClient } from "component/part-client";
 import { MeanUtilsPart } from "component/part";
+import { MeanUtilsPartClient } from "component/part-client";
 import { myContainer } from "inversify.config";
 import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/type";
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Loading from "./loading";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
