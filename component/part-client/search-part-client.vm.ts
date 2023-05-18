@@ -52,6 +52,7 @@ export function state() {
   const onFocus = () => setHasFocus(true);
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
+    router.prefetch(`${selectedItem.path}/${selectedItem.id}`);
     router.push(`${selectedItem.path}/${selectedItem.id}`);
   };
   return {

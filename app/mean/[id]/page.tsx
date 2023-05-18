@@ -9,17 +9,17 @@ import Loading from "app/loading";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
-// export const generateMetadata = ({
-//   params: { id },
-// }: {
-//   params: { id: string };
-// }): Metadata => {
-//   const pageId = decodeURIComponent(id);
-//   return {
-//     title: `${pageId} ${translate}`,
-//     description: translate,
-//   };
-// };
+export const generateMetadata = ({
+  params: { id },
+}: {
+  params: { id: string };
+}): Metadata => {
+  const pageId = decodeURIComponent(id);
+  return {
+    title: `${pageId} ${translate}`,
+    description: translate,
+  };
+};
 
 export default function Page({
   params: { id },
