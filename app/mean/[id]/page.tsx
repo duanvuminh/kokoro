@@ -5,7 +5,7 @@ import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/type";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "app/loading";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
@@ -35,7 +35,6 @@ export default function Page({
           //@ts-expect-error
           (<MeanUtilsPart pageId={pageId} />)
         }
-        
       </Suspense>
       <MeanUtilsPartClient pageId={pageId} />
     </div>
