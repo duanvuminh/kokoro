@@ -5,7 +5,7 @@ import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/type";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Loading from "app/mean/loading";
+import Loading from "app/loading";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
