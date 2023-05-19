@@ -8,7 +8,7 @@ export async function postData(url = "", data = {}) {
   };
   const response = await fetch(url, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
-    cache: "no-store", // *default, no-cache, reload, force-cache, only-if-cached
+    cache: "force-cache", // *default, no-cache, reload, force-cache, only-if-cached
     headers: header,
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
