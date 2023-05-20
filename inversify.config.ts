@@ -1,5 +1,4 @@
 import { Container } from "inversify";
-import "reflect-metadata";
 import {
   IMeanRepository,
   IMeanUtilsRepository,
@@ -13,8 +12,9 @@ import {
   KanjiSubjectStaticPathRepository,
   MeanRepository,
   MeanUtilsRepository,
-} from "./lib/repository";
-import { TYPES } from "./lib/type";
+} from "lib/repository";
+import { TYPES } from "lib/type";
+import "reflect-metadata";
 
 const myContainer = new Container();
 myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MeanRepository);
