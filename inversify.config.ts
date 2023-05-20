@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Container } from "inversify";
 import {
   IMeanRepository,
@@ -14,7 +15,6 @@ import {
   MeanUtilsRepository,
 } from "lib/repository";
 import { TYPES } from "lib/type";
-import "reflect-metadata";
 
 const myContainer = new Container();
 myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MeanRepository);
