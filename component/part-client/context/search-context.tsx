@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 interface ISearchContext {
@@ -22,7 +22,9 @@ export function SearchProvider({
     setSearch(value);
   };
   const router = useRouter();
-  router.prefetch("/search");
+  useEffect(()=>{
+    router.prefetch("/search");
+  },[]);
   return (
     <SearchContext.Provider
       value={{
