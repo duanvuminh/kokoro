@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 
 interface ISearchContext {
   isSearchPage: boolean;
@@ -20,6 +21,8 @@ export function SearchProvider({
   const toggleSearchPage = (value: boolean) => {
     setSearch(value);
   };
+  const router = useRouter();
+  router.prefetch("/search");
   return (
     <SearchContext.Provider
       value={{
