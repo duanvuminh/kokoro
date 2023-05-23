@@ -40,11 +40,6 @@ export function state() {
     hasFocus: false,
     value: { id: "", path: "mean" },
   });
-  useEffect(() => {
-    if (state.value.id != "") {
-      router.push(`${state.value.path}/${state.value.id}`);
-    }
-  }, [state]);
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
@@ -59,9 +54,19 @@ export function state() {
   const onFocus = () => setState({ ...state, hasFocus: true });
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
-    if(state.value.id != selectedItem.id)
-    setState({ ...state, value: selectedItem });
+    if (state.value.id != selectedItem.id) {
+      console.log(1111111)
+      setState({ ...state, value: selectedItem });
+    }
   };
+
+  useEffect(() => {
+    if (state.value.id != "") {
+      console.log(22222222)
+      router.push(`${state.value.path}/${state.value.id}`);
+    }
+  }, [state]);
+
   return {
     onBlur,
     onFocus,
