@@ -59,7 +59,6 @@ export function state() {
   const onFocus = () => setState({ ...state, hasFocus: true });
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
-    console.log(1111111);
     if(state.value.id != selectedItem.id)
     setState({ ...state, value: selectedItem });
   };
