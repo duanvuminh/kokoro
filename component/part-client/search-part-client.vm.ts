@@ -43,7 +43,7 @@ export function state() {
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
-    ? "fixed block w-full h-full top-15 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
+    ? "fixed block w-full h-full top-10 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
     : "relative";
 
   const iconDisplayStyle = state.hasFocus
@@ -55,17 +55,15 @@ export function state() {
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
     if (state.value.id != selectedItem.id) {
-      console.log(1111111)
       setState({ ...state, value: selectedItem });
     }
   };
 
   useEffect(() => {
     if (state.value.id != "") {
-      console.log(22222222)
       router.push(`${state.value.path}/${state.value.id}`);
     }
-  }, [state]);
+  }, [state.value]);
 
   return {
     onBlur,

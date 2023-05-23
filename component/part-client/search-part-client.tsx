@@ -11,7 +11,6 @@ const styles = {
     "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border sm:pl-10",
   query: "text-oldsilver-800 placeholder-oldsilver-400",
   typeahead: "text-crystal-500 border-white",
-  cancelButton: `absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 text-crystal-600 inline-flex sm:hidden`,
   clearButton:
     "absolute inset-y-0 right-0 w-8 inline-flex items-center justify-center text-crystal-500 hover:text-hotpink-300",
   listbox:
@@ -25,7 +24,6 @@ const styles = {
   noItems: "cursor-default text-center my-20",
 };
 
-const Cancel = () => <XMarkIcon className="w-5 h-5" />;
 
 const Clear = () => <XMarkIcon className="w-5 h-5" />;
 
