@@ -1,10 +1,10 @@
 import { JsonLdPart } from "component/part";
 import { myContainer } from "inversify.config";
+import { TYPES } from "lib/const";
 import type {
   IPostRepository,
   IPostStaticPathRepository,
 } from "lib/repository";
-import { TYPES } from "@/lib/const";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
