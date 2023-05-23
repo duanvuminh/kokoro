@@ -31,28 +31,32 @@ const listbox = [
       return [{ id: query, path: "mean" }];
     },
     searchType: "contains",
-  }
+  },
 ];
 
 export function state() {
   const router = useRouter();
-  const [hasFocus, setHasFocus] = useState(false);
+  const [state, setState] = useState({ hasFocus: false, value: "" });
   let value = {};
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
-  const containerStyles = hasFocus
+  const containerStyles = state.hasFocus
     ? "fixed block w-full h-full top-15 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
     : "relative";
 
-  const iconDisplayStyle = hasFocus
+  const iconDisplayStyle = state.hasFocus
     ? "hidden text-crystal-600"
     : "inline-flex text-oldsilver-400";
 
-  const onBlur = () => setHasFocus(false);
-  const onFocus = () => setHasFocus(true);
+  const onBlur = () => setState({ ...state, hasFocus: false });
+  const onFocus = () => setState({ ...state, hasFocus: true });
   let onSelect = (selectedItem: any) => {
+    console.log(1111111);
     if (selectedItem == undefined) return;
-    router.push(`${selectedItem.path}/${selectedItem.id}`);
+    if (selectedItem.id != state.value) {
+      setState({ ...state, value: selectedItem.id });
+      if (selectedItem) router.push(`${selectedItem.path}/${selectedItem.id}`);
+    }
   };
   return {
     onBlur,
