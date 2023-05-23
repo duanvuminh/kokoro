@@ -1,6 +1,6 @@
 import { kanji, mean } from "lib/const";
 import { paths } from "mdx/mdx-post-content";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 // The maximum number of items we want to show in the list
@@ -51,7 +51,6 @@ export function state() {
   const onBlur = () => setState({ ...state, hasFocus: false });
   const onFocus = () => setState({ ...state, hasFocus: true });
   let onSelect = (selectedItem: any) => {
-    console.log(1111111);
     if (selectedItem == undefined) return;
     if (selectedItem.id != state.value) {
       setState({ ...state, value: selectedItem.id });
