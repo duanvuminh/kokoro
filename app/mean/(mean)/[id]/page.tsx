@@ -1,4 +1,4 @@
-import Loading from "app/loading";
+import Loading from "app/mean/loading";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
 import { myContainer } from "inversify.config";
