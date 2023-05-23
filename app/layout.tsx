@@ -1,10 +1,10 @@
 import { HeaderPart } from "component/part";
 import { SearchProvider } from "component/part-client";
-import { appMetadataType } from "lib/type";
+import { appMetadataConst } from "lib/const";
 import { Fragment } from "react";
 import "./globals.css";
 
-export const metadata = appMetadataType();
+export const metadata = appMetadataConst();
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
   return (

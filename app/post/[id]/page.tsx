@@ -4,7 +4,7 @@ import type {
   IPostRepository,
   IPostStaticPathRepository,
 } from "lib/repository";
-import { TYPES } from "lib/type";
+import { TYPES } from "@/lib/const";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 

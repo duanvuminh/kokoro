@@ -1,4 +1,4 @@
-import { kanji, mean, translate } from "lib/type";
+import { kanji, mean } from "lib/const";
 import { paths } from "mdx/mdx-post-content";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

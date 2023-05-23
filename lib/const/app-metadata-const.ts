@@ -1,8 +1,8 @@
-import { appURL, siteTitle } from "lib/type";
+import { appURL, siteTitle } from "@/lib/const";
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other
-export function appMetadataType(): Metadata {
+export function appMetadataConst(): Metadata {
   return {
     title: siteTitle,
     manifest: "/manifest.json",

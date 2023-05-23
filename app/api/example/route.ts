@@ -1,7 +1,7 @@
-import { TYPES } from "lib/type";
 import { myContainer } from "inversify.config";
+import { TYPES } from "lib/const";
 import { IMeanUtilsRepository } from "lib/repository";
-import { type NextRequest,NextResponse } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
 
  
 export async function POST(request: NextRequest) {

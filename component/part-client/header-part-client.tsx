@@ -21,9 +21,6 @@ export function MenuIconPartClient(): JSX.Element {
   const onClick = (event: { target: any }) => {
     router.back();
   };
-  useEffect(()=>{
-    router.prefetch("/search");
-  },[]);
   return isSearchPage ? (
     <button className="btn-text" onClick={onClick} aria-label="quay lại">
       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />

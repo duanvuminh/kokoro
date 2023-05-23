@@ -1,4 +1,4 @@
-import { TYPES, example, otherQuestion } from "lib/type";
+import { example, otherQuestion } from "lib/const";
 import { Fragment, useState } from "react";
 
 interface ResponseData {
@@ -60,6 +60,7 @@ export function MeanUtilsPartClient({ pageId }: { pageId: string }): JSX.Element
         {example}
       </button>
       <input
+        name="question-box"
         placeholder={otherQuestion}
         className="pl-1 pr-1"
         onKeyDown={handleKeyDown}
