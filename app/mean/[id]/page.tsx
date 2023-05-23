@@ -31,7 +31,7 @@ export default function Page({
   return (
     <div className="prose">
       <h2>{pageId}</h2>
-      <Link href={`mean/${pageId}とは`}>Test Loading</Link>
+      <Link href={`mean/${pageId}とは`} prefetch={false}>Test Loading</Link>
       <Suspense fallback={<Loading/>}>
         {
           //@ts-expect-error
