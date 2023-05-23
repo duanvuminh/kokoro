@@ -1,7 +1,7 @@
 import { kanji, mean } from "lib/const";
 import { paths } from "mdx/mdx-post-content";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // The maximum number of items we want to show in the list
 const maxItems = 2;
@@ -36,8 +36,15 @@ const listbox = [
 
 export function state() {
   const router = useRouter();
-  const [state, setState] = useState({ hasFocus: false, value: "" });
-  let value = {};
+  const [state, setState] = useState({
+    hasFocus: false,
+    value: { id: "", path: "mean" },
+  });
+  useEffect(() => {
+    if (state.value.id != "") {
+      router.push(`${state.value.path}/${state.value.id}`);
+    }
+  }, [state]);
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
@@ -52,10 +59,9 @@ export function state() {
   const onFocus = () => setState({ ...state, hasFocus: true });
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
-    if (selectedItem.id != state.value) {
-      setState({ ...state, value: selectedItem.id });
-      router.push(`${selectedItem.path}/${selectedItem.id}`);
-    }
+    console.log(1111111);
+    if(state.value.id != selectedItem.id)
+    setState({ ...state, value: selectedItem });
   };
   return {
     onBlur,
