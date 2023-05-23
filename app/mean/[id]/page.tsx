@@ -6,6 +6,7 @@ import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/const";
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Link from "next/link";
 
 const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
 
@@ -30,6 +31,7 @@ export default function Page({
   return (
     <div className="prose">
       <h2>{pageId}</h2>
+      <Link href={`mean/${pageId}とは`}>Test Loading</Link>
       <Suspense fallback={<Loading/>}>
         {
           //@ts-expect-error
