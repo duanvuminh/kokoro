@@ -1,6 +1,6 @@
 import { kanji, mean } from "lib/const";
 import { paths } from "mdx/mdx-post-content";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 // The maximum number of items we want to show in the list
@@ -54,7 +54,7 @@ export function state() {
     if (selectedItem == undefined) return;
     if (selectedItem.id != state.value) {
       setState({ ...state, value: selectedItem.id });
-      if (selectedItem) router.push(`${selectedItem.path}/${selectedItem.id}`);
+      router.push(`${selectedItem.path}/${selectedItem.id}`);
     }
   };
   return {
