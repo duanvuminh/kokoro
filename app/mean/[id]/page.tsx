@@ -21,7 +21,7 @@ export const generateMetadata = ({
   };
 };
 
-export default function Page({
+export default async function Page({
   params: { id },
 }: {
   params: { id: string };
