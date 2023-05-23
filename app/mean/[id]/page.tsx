@@ -21,14 +21,12 @@ export const generateMetadata = ({
   };
 };
 
-export default async function Page({
+export default function Page({
   params: { id },
 }: {
   params: { id: string };
 }) {
   const pageId = decodeURIComponent(id);
-  const delay = (ms:any) => new Promise(res => setTimeout(res, ms));
-  await delay(5000);
   return (
     <div className="prose">
       <h2>{pageId}</h2>
