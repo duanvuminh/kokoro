@@ -6,6 +6,7 @@ import { paths } from "mdx/mdx-post-content";
 import { paths as paths1 } from "mdx/mdx-subject";
 import type { Metadata } from "next";
 import { Fragment } from "react";
+import { TYPES } from "lib/const";
 
 export const generateStaticParams = () => {
   const allPathsKanji = getAllPath("kanji", paths);
@@ -19,7 +20,7 @@ export const generateMetadata = ({
   params: { postType: string; id: string };
 }): Metadata => {
   const pageId = decodeURIComponent(id);
-  let postFactory = myContainer.get<IPostFactory>("IPostFactory");
+  let postFactory = myContainer.get<IPostFactory>(TYPES.IPostFactory);
   let post = postFactory.Create(postType, pageId);
 
   const metadata = post.getMetadata();
@@ -33,7 +34,7 @@ export default function Page({
 }) {
   const pageId = decodeURIComponent(id);
 
-  let postFactory = myContainer.get<IPostFactory>("IPostFactory");
+  let postFactory = myContainer.get<IPostFactory>(TYPES.IPostFactory);
   let post = postFactory.Create(postType, pageId);
 
   const jsonLd = post.getJsonLd();
