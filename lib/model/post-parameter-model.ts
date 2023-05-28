@@ -1,3 +1,3 @@
 export class PostParameterModel {
-  constructor(public id: string) {}
+  constructor(public postType: string, public id: string) {}
 }

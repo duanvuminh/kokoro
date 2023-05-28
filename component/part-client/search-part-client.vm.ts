@@ -58,6 +58,9 @@ export function state() {
       setState({ ...state, value: selectedItem });
     }
   };
+  useEffect(() => {
+    router.prefetch(`mean/完了`);
+  }, []);
 
   useEffect(() => {
     if (state.value.id != "") {

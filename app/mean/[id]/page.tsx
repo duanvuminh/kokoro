@@ -1,9 +1,9 @@
-import Loading from "app/mean/loading";
+import Loading from "app/loading";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
 import { myContainer } from "inversify.config";
-import type { IMeanRepository } from "lib/repository";
 import { TYPES, translate } from "lib/const";
+import type { IMeanRepository } from "lib/repository";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
