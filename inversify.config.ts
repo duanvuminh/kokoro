@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
 import {
@@ -9,7 +10,6 @@ import {
   MeanRepository,
   MeanUtilsRepository,
 } from "lib/repository";
-import "reflect-metadata";
 import { IPostFactory, PostFactoryImplement } from "./lib/model";
 
 const myContainer = new Container();
