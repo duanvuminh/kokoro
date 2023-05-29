@@ -3,7 +3,7 @@ const TYPES = {
     IMeanUtilsRepository: Symbol.for("IMeanUtilsRepository"),
     IPostModel: Symbol.for("IPostModel"),
     IPostModelFactory: Symbol.for("Factory<IPostModel>"),
-    IPostFactory: Symbol.for("IPostFactory"),
+    IPostFactoryModel: Symbol.for("IPostFactoryModel"),
 };
 
 export { TYPES };

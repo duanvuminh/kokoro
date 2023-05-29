@@ -10,7 +10,7 @@ import {
   MeanRepository,
   MeanUtilsRepository,
 } from "lib/repository";
-import { IPostFactory, PostFactoryImplement } from "./lib/model";
+import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
 const myContainer = new Container();
 myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MeanRepository);
@@ -37,6 +37,6 @@ myContainer
       return post;
     };
   });
-myContainer.bind<IPostFactory>(TYPES.IPostFactory).to(PostFactoryImplement);
+myContainer.bind<IPostFactoryModel>(TYPES.IPostFactoryModel).to(PostFactoryImplementModel);
 
 export { myContainer };

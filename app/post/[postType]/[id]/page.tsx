@@ -1,6 +1,6 @@
 import { myContainer } from "inversify.config";
 import { JsonLdPart } from "component/part";
-import { IPostFactory, PostParameterModel } from "lib/model";
+import { IPostFactoryModel, PostParameterModel } from "lib/model";
 import type { } from "lib/repository";
 import { paths } from "mdx/mdx-post-content";
 import { paths as paths1 } from "mdx/mdx-subject";
@@ -20,7 +20,7 @@ export const generateMetadata = ({
   params: { postType: string; id: string };
 }): Metadata => {
   const pageId = decodeURIComponent(id);
-  let postFactory = myContainer.get<IPostFactory>(TYPES.IPostFactory);
+  let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, pageId);
 
   const metadata = post.getMetadata();
@@ -34,7 +34,7 @@ export default function Page({
 }) {
   const pageId = decodeURIComponent(id);
 
-  let postFactory = myContainer.get<IPostFactory>(TYPES.IPostFactory);
+  let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, pageId);
 
   const jsonLd = post.getJsonLd();

@@ -1,10 +1,8 @@
-import { injectable } from "inversify";
-import { PostParameterModel } from "lib/model";
+import { Metadata } from "next";
 
 export interface IPostModel {
   postId: string;
   getJsonLd(): {};
-  getMetadata(): {};
+  getMetadata(): Metadata;
   showDetail(): (props: any) => JSX.Element;
-  showPlugin(): (props: any) => JSX.Element;
 }

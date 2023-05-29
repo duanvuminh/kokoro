@@ -1,8 +1,8 @@
 import { injectable } from "inversify";
-import { BaseKanjiRepository } from "lib/model";
+import { BasePostModel } from "lib/model";
 import * as SubjectList from "mdx/mdx-subject";
 
 @injectable()
-export class KanjiSubjectRepository extends BaseKanjiRepository {
+export class KanjiSubjectRepository extends BasePostModel {
   PageContentList: any = SubjectList;
 }

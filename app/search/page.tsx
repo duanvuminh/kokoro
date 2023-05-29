@@ -1,15 +1,14 @@
 import { HeaderPartClient, SearchPartClient } from "component/part-client";
 import { Search } from "mdx/mdx-random-page";
-import { Fragment } from "react";
 
 export default function Page() {
   return (
-    <Fragment>
+    <div>
       <HeaderPartClient />
       <SearchPartClient />
-      <div className="prose">
+      <div className="prose block">
         <Search.default />
       </div>
-    </Fragment>
+    </div>
   );
 }
