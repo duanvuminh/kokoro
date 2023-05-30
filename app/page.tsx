@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <JsonLdPart jsonLd={Home.jsonLd} />
-      <div className="prose">
+      <div className="prose max-w-4xl">
         <Home.default />
       </div>
     </>

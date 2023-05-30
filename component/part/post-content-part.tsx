@@ -7,9 +7,9 @@ export function PostContentPart({
   Content: (props: any) => JSX.Element;
 }): JSX.Element {
   return (
-    <>
+    <div>
       <PostContentSummaryPart postId={postId} />
       <Content />
-    </>
+    </div>
   );
 }

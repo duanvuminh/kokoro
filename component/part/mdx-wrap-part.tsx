@@ -3,5 +3,5 @@ export function MdxWrapPart({
 }: {
   children: JSX.Element;
 }): JSX.Element {
-  return <div className="prose">{children}</div>;
+  return <div className="prose max-w-4xl">{children}</div>;
 }

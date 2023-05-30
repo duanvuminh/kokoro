@@ -24,7 +24,7 @@ export default function Page({
 }) {
   const pageId = decodeURIComponent(id);
   return (
-    <div className="prose">
+    <div className="prose max-w-4xl">
       <h2>{pageId}</h2>
       <Suspense fallback={<Loading/>}>
         {
