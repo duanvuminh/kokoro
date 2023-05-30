@@ -1,4 +1,5 @@
 import { PostContentSummaryPart } from "component/part";
+import { Fragment } from "react";
 export function PostContentPart({
   postId,
   Content,
@@ -7,9 +8,9 @@ export function PostContentPart({
   Content: (props: any) => JSX.Element;
 }): JSX.Element {
   return (
-    <div>
+    <Fragment>
       <PostContentSummaryPart postId={postId} />
       <Content />
-    </div>
+    </Fragment>
   );
 }

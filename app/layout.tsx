@@ -13,7 +13,9 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
         <SearchProvider>
           <Fragment>
             <HeaderPart />
-            <section className="p-2 flex justify-center">{children}</section>
+            <section className="max-w-4xl p-2 sm:p-0 mx-auto">
+              {children}
+            </section>
           </Fragment>
         </SearchProvider>
       </body>
