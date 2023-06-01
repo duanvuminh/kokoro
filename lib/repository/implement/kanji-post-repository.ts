@@ -1,7 +1,8 @@
+import { hantuListConst } from "@/lib/const";
 import { PostContentPart } from "component/part";
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
-import * as KanjiList from "mdx/mdx-post-content";
+import * as KanjiList from "@/mdx/mdx-kanji";
 
 @injectable()
 export class KanjiPostRepository extends BasePostModel {
@@ -36,7 +37,7 @@ export class KanjiPostRepository extends BasePostModel {
         name: this.postId,
         description: `hán tự ${this.postId}, cách nhớ ${this.postId}`,
       },
-      educationalLevel: `n1`,
+      educationalLevel: hantuListConst[this.postId],
     };
   }
 }

@@ -1,5 +1,5 @@
 import { kanji, mean } from "lib/const";
-import { paths } from "mdx/mdx-post-content";
+import { paths } from "@/mdx/mdx-kanji";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 

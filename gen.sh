@@ -1,4 +1,4 @@
-cd mdx/mdx-post-content
+cd mdx/mdx-kanji
 rm index.ts
 for f in *.mdx; 
 do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 
@@ -21,7 +21,7 @@ done;
 
 cd ../../
 
-cd mdx/mdx-subject
+cd mdx/mdx-kanji-list
 rm index.ts
 for f in *.mdx; 
 do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 

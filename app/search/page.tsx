@@ -4,12 +4,12 @@ import { Fragment } from "react";
 
 export default function Page() {
   return (
-      <div className="max-w-2xl mx-auto sm:mt-10">
+      <Fragment>
         <HeaderPartClient />
         <SearchPartClient />
         <div className="prose">
           <Search.default />
         </div>
-      </div>
+      </Fragment>
   );
 }

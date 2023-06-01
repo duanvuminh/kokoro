@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
         <SearchProvider>
           <Fragment>
             <HeaderPart />
-            <section className="max-w-4xl p-2 sm:p-0 mx-auto">
+            <section className="max-w-2xl p-2 sm:p-0 sm:mt-10 mx-auto">
               {children}
             </section>
           </Fragment>

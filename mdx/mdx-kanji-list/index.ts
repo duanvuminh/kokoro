@@ -4,7 +4,7 @@ export * as N2 from "./N2.mdx"
 export * as N3 from "./N3.mdx"
 export * as N4 from "./N4.mdx"
 export * as N5 from "./N5.mdx"
-export * as stroke from "./stroke.mdx"
+export * as Stroke from "./Stroke.mdx"
 const paths: string[] = [
 "N1_1",
 "N1_2",
@@ -12,6 +12,6 @@ const paths: string[] = [
 "N3",
 "N4",
 "N5",
-"stroke",
+"Stroke",
 ]
 export {paths}
