@@ -40,15 +40,6 @@ export function state() {
     hasFocus: false,
     value: { id: "", path: "mean" },
   });
-  // Style the container so on mobile devices the search box and results
-  // take up the whole screen
-  const containerStyles = state.hasFocus
-    ? "fixed block w-full h-full top-10 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
-    : "relative";
-
-  const iconDisplayStyle = state.hasFocus
-    ? "hidden text-crystal-600"
-    : "inline-flex text-oldsilver-400";
 
   const onBlur = () => setState({ ...state, hasFocus: false });
   const onFocus = () => setState({ ...state, hasFocus: true });
@@ -72,13 +63,14 @@ export function state() {
     onBlur,
     onFocus,
     onSelect,
-    containerStyles,
-    iconDisplayStyle,
+    state
   };
 }
 
-export const vmSearchPartClient = {
-  maxItems,
-  listbox,
-  state,
-};
+export function SearchPartClientHook() {
+  return {
+    maxItems,
+    listbox,
+    ...state(),
+  };
+}

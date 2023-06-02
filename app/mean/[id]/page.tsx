@@ -3,6 +3,7 @@ import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
 import { translate } from "lib/const";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 
 export const generateMetadata = ({
@@ -23,14 +24,16 @@ export default function Page({
   params: { id: string };
 }) {
   const pageId = decodeURIComponent(id);
+  const chars = [...pageId];
   return (
     <div className="prose">
-      <h2>{pageId}</h2>
-      <Suspense fallback={<Loading/>}>
+      <h2>
         {
-          //@ts-expect-error
-          (<MeanUtilsPart pageId={pageId} />)
+          chars.map((c,i) => <Link href={`post/kanji/${c}`} key={i}>{c}</Link>)
         }
+      </h2>
+      <Suspense fallback={<Loading/>}>
+        <MeanUtilsPart pageId={pageId} />
       </Suspense>
       <MeanUtilsPartClient pageId={pageId} />
     </div>

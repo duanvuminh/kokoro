@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { vmSearchPartClient } from "component/part-client";
+import { SearchPartClientHook } from "component/part-client";
 import { searchNoData, searchPlaceHolder } from "lib/const";
 
 const Turnstone = require("turnstone");
@@ -24,15 +24,32 @@ const styles = {
   noItems: "cursor-default text-center my-20",
 };
 
-
 const Clear = () => <XMarkIcon className="w-5 h-5" />;
 
 export function SearchPartClient() {
-  const state = vmSearchPartClient.state();
+  const {
+    listbox,
+    maxItems,
+    state,
+    onBlur,
+    onFocus,
+    onSelect,
+  } = SearchPartClientHook();
+
+    // Style the container so on mobile devices the search box and results
+  // take up the whole screen
+  const containerStyles = state.hasFocus
+    ? "fixed block w-full h-full top-10 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
+    : "relative";
+
+  const iconDisplayStyle = state.hasFocus
+    ? "hidden text-crystal-600"
+    : "inline-flex text-oldsilver-400";
+
   return (
-    <div className={state.containerStyles}>
+    <div className={containerStyles}>
       <span
-        className={`absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 sm:inline-flex ${state.iconDisplayStyle}`}
+        className={`absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 sm:inline-flex ${iconDisplayStyle}`}
       >
         <MagnifyingGlassIcon className="w-5 h-5" />
       </span>
@@ -41,14 +58,14 @@ export function SearchPartClient() {
         clearButton={true}
         debounceWait={0}
         id="autocomplete"
-        listbox={vmSearchPartClient.listbox}
+        listbox={listbox}
         listboxIsImmutable={true}
         matchText={true}
-        maxItems={vmSearchPartClient.maxItems}
+        maxItems={maxItems}
         noItemsMessage={searchNoData}
-        onBlur={state.onBlur}
-        onFocus={state.onFocus}
-        onSelect={state.onSelect}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onSelect={onSelect}
         placeholder={searchPlaceHolder}
         styles={styles}
         Clear={Clear}

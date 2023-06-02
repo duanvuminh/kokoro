@@ -1,58 +1,13 @@
+import { MeanUtilsPartClientHook } from "component/part-client";
 import { example, otherQuestion } from "lib/const";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
-interface ResponseData {
-  result: string;
-}
-
-export function MeanUtilsPartClient({ pageId }: { pageId: string }): JSX.Element {
-  const [state, setState] = useState({
-    isLoading: false,
-    displayText: "",
-  });
-  const onClick = () => {
-    setState({
-      isLoading: true,
-      displayText: "",
-    });
-    fetch("/api/example", {
-      method: "POST",
-      body: JSON.stringify({ pageId: pageId }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setState({
-          isLoading: false,
-          displayText: data.result,
-        });
-      });
-  };
-  const handleKeyDown = async (
-    event: React.KeyboardEvent<HTMLInputElement>
-  ) => {
-    if (event.key === "Enter") {
-      setState({
-        isLoading: true,
-        displayText: "",
-      });
-      // 👇 Get input value
-      fetch("/api/question", {
-        method: "POST",
-        body: JSON.stringify({ pageId: event.currentTarget.value }),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setState({
-            isLoading: false,
-            displayText: data.result,
-          });
-        });
-    }
-  };
+export function MeanUtilsPartClient({
+  pageId,
+}: {
+  pageId: string;
+}): JSX.Element {
+  const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(pageId);
 
   return (
     <Fragment>
