@@ -50,10 +50,6 @@ export function state() {
     }
   };
   useEffect(() => {
-    router.prefetch(`mean/完了`);
-  }, []);
-
-  useEffect(() => {
     if (state.value.id != "") {
       router.push(`${state.value.path}/${state.value.id}`);
     }
