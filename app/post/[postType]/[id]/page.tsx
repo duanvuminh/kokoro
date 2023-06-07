@@ -1,17 +1,17 @@
-import { myContainer } from "inversify.config";
 import { JsonLdPart } from "component/part";
+import { myContainer } from "inversify.config";
+import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostParameterModel } from "lib/model";
 import type { } from "lib/repository";
-import { paths } from "@/mdx/mdx-kanji";
-import { paths as paths1 } from "@/mdx/mdx-kanji-list";
+import { paths } from "mdx/mdx-kanji";
+import { paths as paths1 } from "mdx/mdx-kanji-list";
 import type { Metadata } from "next";
 import { Fragment } from "react";
-import { TYPES } from "lib/const";
 
 export const generateStaticParams = () => {
   const allPathsKanji = getAllPath("kanji", paths);
   const allPathsSubject = getAllPath("subject", paths1);
-  return [...allPathsKanji,...allPathsSubject];
+  return [...allPathsKanji, ...allPathsSubject];
 };
 
 export const generateMetadata = ({

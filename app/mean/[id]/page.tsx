@@ -18,21 +18,19 @@ export const generateMetadata = ({
   };
 };
 
-export default function Page({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default function Page({ params: { id } }: { params: { id: string } }) {
   const pageId = decodeURIComponent(id);
   const chars = [...pageId];
   return (
     <div className="prose">
       <h2>
-        {
-          chars.map((c,i) => <Link href={`post/kanji/${c}`} key={i}>{c}</Link>)
-        }
+        {chars.map((c, i) => (
+          <Link href={`post/kanji/${c}`} key={i}>
+            {c}
+          </Link>
+        ))}
       </h2>
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <MeanUtilsPart pageId={pageId} />
       </Suspense>
       <MeanUtilsPartClient pageId={pageId} />
