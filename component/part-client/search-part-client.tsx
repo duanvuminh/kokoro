@@ -39,8 +39,8 @@ export function SearchPartClient() {
     // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
-    ? "fixed block w-full h-full top-10 left-0 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
-    : "relative";
+    ? "fixed block w-full h-full top-10 left-0 mb-2 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
+    : "relative mb-2";
 
   const iconDisplayStyle = state.hasFocus
     ? "hidden text-crystal-600"

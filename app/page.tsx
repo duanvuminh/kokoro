@@ -1,16 +1,17 @@
-import { JsonLdPart } from "component/part";
-import { Home } from "mdx/mdx-random-page";
-import type { Metadata } from "next";
+import { SearchPartClient, TongleMenuPartClient } from "component/part-client";
+import { generateMetadataHomePage } from "lib/util";
+import { Search } from "mdx/mdx-random-page";
 import { Fragment } from "react";
 
-export const metadata: Metadata = Home.metadata;
+export const metadata = generateMetadataHomePage;
 
 export default function Page() {
   return (
     <Fragment>
-      <JsonLdPart jsonLd={Home.jsonLd} />
+      <TongleMenuPartClient />
+      <SearchPartClient />
       <div className="prose">
-        <Home.default />
+        <Search.default />
       </div>
     </Fragment>
   );

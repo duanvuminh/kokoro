@@ -1,3 +1,16 @@
+export const generateMetadataHomePage =  {
+  title: "Học tiếng nhật cùng kyo",
+  keywords: ["JLPT, hán tự, ngữ pháp, từ vựng, nghe, đọc" ],
+  description: "Học tiếng nhật mỗi ngày",
+  openGraph: {
+    title: "Học tiếng nhật cùng kyo",
+    description: "Học tiếng nhật mỗi ngày",
+    url: "https://kyomo.vercel.app/",
+    siteName: "Kokoro",
+    type: "website",
+  },
+};
+
 export function generateMetadataForKanjiList(id: string) {
   const contextText = id.length > 2 ? id : id[0];
   return {

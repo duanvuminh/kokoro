@@ -1,1 +1,1 @@
- export * from './kanji-list'
+ export * from './metadata-generate'
