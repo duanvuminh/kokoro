@@ -6,7 +6,7 @@ interface ISearchContext {
 }
 
 const defaultState = {
-  isSearchPage: false,
+  isSearchPage: true,
 };
 
 const SearchContext = React.createContext<ISearchContext>(defaultState);
