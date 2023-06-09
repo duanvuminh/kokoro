@@ -1,7 +1,7 @@
 import Loading from "app/loading";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
-import { translate } from "lib/const";
+import { hantuListConst, translate } from "lib/const";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -21,6 +21,7 @@ export const generateMetadata = ({
 export default function Page({ params: { id } }: { params: { id: string } }) {
   const pageId = decodeURIComponent(id);
   const chars = [...pageId];
+  const hantu = chars.map((c, i) => hantuListConst[c]?.hantu).join(" ");
   return (
     <div className="prose">
       <h2>
@@ -30,6 +31,9 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
           </Link>
         ))}
       </h2>
+      <h3>
+        {hantu}
+      </h3>
       <Suspense fallback={<Loading />}>
         <MeanUtilsPart pageId={pageId} />
       </Suspense>

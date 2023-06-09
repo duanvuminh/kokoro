@@ -2,21 +2,21 @@ import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
 import {
+  ChatGptMeanUtilsRepository,
   IMeanRepository,
   IMeanUtilsRepository,
   IPostModel,
   KanjiPostRepository,
   KanjiSubjectRepository,
-  MeanRepository,
-  MeanUtilsRepository,
+  MazziMeanRepository,
 } from "lib/repository";
 import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
 const myContainer = new Container();
-myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MeanRepository);
+myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(MazziMeanRepository);
 myContainer
   .bind<IMeanUtilsRepository>(TYPES.IMeanUtilsRepository)
-  .to(MeanUtilsRepository);
+  .to(ChatGptMeanUtilsRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiSubjectRepository)

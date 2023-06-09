@@ -8,7 +8,6 @@ export async function POST(request: NextRequest) {
     TYPES.IMeanUtilsRepository
   );
   const jsonBody = await request.json();
-  console.log(jsonBody);
   if (jsonBody.pageId !== undefined) {
     const res = await meanUtilsRepo.getQuestion(jsonBody.pageId);
     return NextResponse.json({ result: res });

@@ -3,7 +3,7 @@ import { IMeanRepository } from "lib/repository";
 import { postData } from "lib/api";
 
 @injectable()
-export class MeanRepository implements IMeanRepository {
+export class ChatGptMeanRepository implements IMeanRepository {
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     return postData(url, {
