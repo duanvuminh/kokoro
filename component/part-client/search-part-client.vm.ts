@@ -15,7 +15,7 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) => {
-      if (hantuListConst[query] != null) return [{ id: query, path: "post/kanji" }];
+      if (hantuListConst[query] != null) return [{ id: query, path: "/post/kanji" }];
       return [];
     },
     searchType: "contains",
@@ -27,7 +27,7 @@ const listbox = [
     displayField: "id",
     data: (query: string) => {
       if (query.length == 1) return [];
-      return [{ id: query, path: "mean" }];
+      return [{ id: query, path: "/mean" }];
     },
     searchType: "contains",
   },

@@ -26,7 +26,7 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
     <div className="prose">
       <h2>
         {chars.map((c, i) => (
-          <Link href={`post/kanji/${c}`} key={i}>
+          <Link href={`/post/kanji/${c}`} key={i}>
             {c}
           </Link>
         ))}
