@@ -15,8 +15,8 @@ export function ButtonTextPart({
   const cusClassName = className || "";
   const cusAriaLabel = ariaLabel || "";
   return (
-    <Link href={href}>
-      <button className={`btn-text ${cusClassName}`} aria-label={cusAriaLabel}>
+    <Link href={href} className={cusClassName}>
+      <button className="btn-text" aria-label={cusAriaLabel}>
         {children}
       </button>
     </Link>
