@@ -1,5 +1,4 @@
-import { kanji, mean } from "lib/const";
-import { paths } from "@/mdx/mdx-kanji";
+import { hantuListConst, kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -8,6 +7,7 @@ const maxItems = 2;
 
 // Set up listbox contents. We are fetching cities and airports from two different
 // API endpoints. 10 from each but ideally we only want to show 8 cities and 2 airports.
+
 const listbox = [
   {
     id: "kanji",
@@ -15,8 +15,7 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) => {
-      if (paths.find((item) => item == query))
-        return [{ id: query, path: "post" }];
+      if (hantuListConst[query] != null) return [{ id: query, path: "post/kanji" }];
       return [];
     },
     searchType: "contains",
@@ -59,7 +58,7 @@ export function state() {
     onBlur,
     onFocus,
     onSelect,
-    state
+    state,
   };
 }
 
