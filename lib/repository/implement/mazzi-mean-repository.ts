@@ -13,7 +13,9 @@ export class MazziMeanRepository implements IMeanRepository {
       limit: 1,
       page: 1,
     }).then((data) => {
-      return `${query}(${data.data?.[0].phonetic}) ${data.data?.[0].short_mean}`;
+      return `${query}(${data.data?.[0].phonetic}) ${data.data?.[0].short_mean}`
+        .replace("()", "")
+        .replace(`(${query})`, "");
     });
   }
 }
