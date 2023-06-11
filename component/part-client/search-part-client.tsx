@@ -8,7 +8,7 @@ const styles = {
   input:
     "w-full h-12 border border-oldsilver-300 py-2 pl-10 pr-7 text-xl outline-none rounded-full",
   inputFocus:
-    "w-full h-12 border-x-0 border-t -0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border sm:pl-10",
+    "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border sm:pl-10",
   query: "text-oldsilver-800 placeholder-oldsilver-400",
   typeahead: "text-crystal-500 border-white",
   clearButton:
@@ -27,17 +27,10 @@ const styles = {
 const Clear = () => <XMarkIcon className="w-5 h-5" />;
 
 export function SearchPartClient() {
-  const {
-    listbox,
-    maxItems,
-    state,
-    isPending,
-    onBlur,
-    onFocus,
-    onSelect,
-  } = SearchPartClientHook();
+  const { listbox, maxItems, state, isPending, onBlur, onFocus, onSelect } =
+    SearchPartClientHook();
 
-    // Style the container so on mobile devices the search box and results
+  // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
     ? "fixed block w-full h-full top-10 left-0 mb-2 bg-white z-50 overflow-auto sm:h-auto sm:top-auto sm:left-auto sm:bg-transparent sm:z-auto sm:overflow-visible sm:relative"
@@ -52,13 +45,30 @@ export function SearchPartClient() {
       <span
         className={`absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 sm:inline-flex ${iconDisplayStyle}`}
       >
-        {
-          isPending?(
-            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24"/>
-          ):(
-            <MagnifyingGlassIcon className="w-5 h-5" />
-          )
-        }
+        {isPending ? (
+          <svg
+          className="animate-spin h-5 w-5 text-gray-800"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+            className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+            className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        ) : (
+          <MagnifyingGlassIcon className="w-5 h-5" />
+        )}
       </span>
       <Turnstone
         autoFocus={false}
