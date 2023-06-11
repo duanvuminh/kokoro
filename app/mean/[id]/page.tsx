@@ -34,7 +34,7 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
       <h3>
         {hantu}
       </h3>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />} key={pageId}>
         <MeanUtilsPart pageId={pageId} />
       </Suspense>
       <MeanUtilsPartClient pageId={pageId} />
