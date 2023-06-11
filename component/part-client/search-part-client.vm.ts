@@ -1,6 +1,6 @@
 import { hantuListConst, kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 
 // The maximum number of items we want to show in the list
 const maxItems = 2;
@@ -15,7 +15,8 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) => {
-      if (hantuListConst[query] != null) return [{ id: query, path: "post/kanji" }];
+      if (hantuListConst[query] != null)
+        return [{ id: query, path: "post/kanji" }];
       return [];
     },
     searchType: "contains",
@@ -34,6 +35,7 @@ const listbox = [
 ];
 
 export function state() {
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const [state, setState] = useState({
     hasFocus: false,
@@ -50,7 +52,9 @@ export function state() {
   };
   useEffect(() => {
     if (state.value.id != "") {
-      router.push(`/${state.value.path}/${state.value.id}`);
+      startTransition(() =>
+        router.push(`/${state.value.path}/${state.value.id}`)
+      );
     }
   }, [state.value]);
 
@@ -59,6 +63,7 @@ export function state() {
     onFocus,
     onSelect,
     state,
+    isPending
   };
 }
 

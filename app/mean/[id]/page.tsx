@@ -1,4 +1,4 @@
-import Loading from "app/mean/[id]/loading";
+import Loading from "app/loading";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
 import { hantuListConst, translate } from "lib/const";

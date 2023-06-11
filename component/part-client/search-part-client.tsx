@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ArrowPathIcon, MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SearchPartClientHook } from "component/part-client";
 import { searchNoData, searchPlaceHolder } from "lib/const";
 
@@ -8,7 +8,7 @@ const styles = {
   input:
     "w-full h-12 border border-oldsilver-300 py-2 pl-10 pr-7 text-xl outline-none rounded-full",
   inputFocus:
-    "w-full h-12 border-x-0 border-t-0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border sm:pl-10",
+    "w-full h-12 border-x-0 border-t -0 border-b border-crystal-500 py-2 pl-2 pr-7 text-xl outline-none sm:rounded-full sm:border sm:pl-10",
   query: "text-oldsilver-800 placeholder-oldsilver-400",
   typeahead: "text-crystal-500 border-white",
   clearButton:
@@ -31,6 +31,7 @@ export function SearchPartClient() {
     listbox,
     maxItems,
     state,
+    isPending,
     onBlur,
     onFocus,
     onSelect,
@@ -51,7 +52,13 @@ export function SearchPartClient() {
       <span
         className={`absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 sm:inline-flex ${iconDisplayStyle}`}
       >
-        <MagnifyingGlassIcon className="w-5 h-5" />
+        {
+          isPending?(
+            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24"/>
+          ):(
+            <MagnifyingGlassIcon className="w-5 h-5" />
+          )
+        }
       </span>
       <Turnstone
         autoFocus={false}
