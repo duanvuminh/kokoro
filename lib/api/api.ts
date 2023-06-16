@@ -1,16 +1,15 @@
 export async function postData(url = "", data = {}) {
-  // Default options are marked with *
+  const { ChatGPT } = process.env;
   const header = {
     "Content-Type": "application/json",
-    // 'Content-Type': 'application/x-www-form-urlencoded',
-    Accept: "application/json",
-    Authorization: "Bearer " + process.env.ChatGPT,
+    "Accept": "application/json",
+    "Authorization": `Bearer ${ChatGPT}`,
   };
   const response = await fetch(url, {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    cache: "force-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    method: "POST",
+    cache: "force-cache",
     headers: header,
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
+    body: JSON.stringify(data),
   });
-  return response.json(); // parses JSON response into native JavaScript objects
+  return response.json();
 }

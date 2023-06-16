@@ -34,7 +34,7 @@ const listbox = [
   },
 ];
 
-export function state() {
+function _state() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const [state, setState] = useState({
@@ -71,6 +71,6 @@ export function SearchPartClientHook() {
   return {
     maxItems,
     listbox,
-    ...state(),
+    ..._state(),
   };
 }

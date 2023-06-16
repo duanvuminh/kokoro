@@ -1,4 +1,4 @@
-import { siteName } from "@/lib/const";
+import { siteName } from "lib/const";
 import Link from "next/link";
 
 export function LogoPart() {
