@@ -21,7 +21,7 @@ done;
 
 cd ../../
 
-cd mdx/mdx-kanji-list
+cd mdx/mdx-subject
 rm index.ts
 for f in *.mdx; 
 do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 

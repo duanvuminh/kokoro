@@ -9,6 +9,7 @@ import {
   IPostModel,
   KanjiPostRepository,
   KanjiSubjectRepository,
+  WordPostRepository,
 } from "lib/repository";
 import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
@@ -25,6 +26,10 @@ myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiPostRepository)
   .whenTargetNamed("kanji");
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(WordPostRepository)
+  .whenTargetNamed("word");
 myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)
   .toFactory((context) => {

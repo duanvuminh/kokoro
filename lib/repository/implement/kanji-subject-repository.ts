@@ -4,7 +4,7 @@ import {
   generateJsonLDForKanjiList,
   generateMetadataForKanjiList,
 } from "lib/util";
-import * as SubjectList from "mdx/mdx-kanji-list";
+import * as SubjectList from "mdx/mdx-subject";
 
 @injectable()
 export class KanjiSubjectRepository extends BasePostModel {

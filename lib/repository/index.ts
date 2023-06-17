@@ -6,4 +6,5 @@ export * from "./implement/chatgpt-mean-utils-repository";
 export * from "./implement/kanji-post-repository";
 export * from "./implement/kanji-subject-repository";
 export * from "./implement/mazzi-mean-repository";
+export * from "./implement/word-post-repository";
 

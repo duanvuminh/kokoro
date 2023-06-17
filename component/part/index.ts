@@ -7,4 +7,5 @@ export * from "./mean-utils-part";
 export * from "./menu-icon-part-emty";
 export * from "./post-content-part";
 export * from "./post-content-summary-part";
+export * from "./word-part";
 

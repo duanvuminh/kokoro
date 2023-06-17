@@ -4,7 +4,7 @@ import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostParameterModel } from "lib/model";
 import type { } from "lib/repository";
 import { paths } from "mdx/mdx-kanji";
-import { paths as paths1 } from "mdx/mdx-kanji-list";
+import { paths as paths1 } from "mdx/mdx-subject";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
