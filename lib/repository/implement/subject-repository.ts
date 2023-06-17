@@ -7,7 +7,7 @@ import {
 import * as SubjectList from "mdx/mdx-subject";
 
 @injectable()
-export class KanjiSubjectRepository extends BasePostModel {
+export class SubjectRepository extends BasePostModel {
   PageContentList: any = SubjectList;
   public override getMetadata() {
     return generateMetadataForKanjiList(this.postId);

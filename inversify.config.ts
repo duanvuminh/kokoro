@@ -8,8 +8,7 @@ import {
   IMeanUtilsRepository,
   IPostModel,
   KanjiPostRepository,
-  KanjiSubjectRepository,
-  WordPostRepository,
+  SubjectRepository,
 } from "lib/repository";
 import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
@@ -20,16 +19,12 @@ myContainer
   .to(ChatGptMeanUtilsRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
-  .to(KanjiSubjectRepository)
+  .to(SubjectRepository)
   .whenTargetNamed("subject");
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiPostRepository)
   .whenTargetNamed("kanji");
-myContainer
-  .bind<IPostModel>(TYPES.IPostModel)
-  .to(WordPostRepository)
-  .whenTargetNamed("word");
 myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)
   .toFactory((context) => {
