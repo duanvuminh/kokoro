@@ -58,7 +58,7 @@ export function SearchPartClient() {
               cy="12"
               r="10"
               stroke="currentColor"
-              stroke-width="4"
+              strokeWidth="2"
             ></circle>
             <path
             className="opacity-75"
@@ -87,6 +87,7 @@ export function SearchPartClient() {
         styles={styles}
         Clear={Clear}
       />
+      <div id="autocomplete-listbox"></div>
     </div>
   );
 }
