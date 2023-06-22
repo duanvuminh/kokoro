@@ -4,11 +4,7 @@ import { Fragment } from "react";
 type Props = {
   pageId: string;
   postType: string;
-  children:
-    | string
-    | JSX.Element
-    | ((props: any) => JSX.Element)
-    | React.ReactNode;
+  children: any
 };
 
 export function DayInMonthPartClient({
