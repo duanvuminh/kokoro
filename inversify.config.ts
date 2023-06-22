@@ -7,9 +7,10 @@ import {
   IMeanRepository,
   IMeanUtilsRepository,
   IPostModel,
-  KanjiPostRepository,
-  SubjectRepository,
+  KanjiRepository,
+  WordListRepository,
 } from "lib/repository";
+import { KanjiListRepository } from "lib/repository/implement/kanji-list-repository";
 import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
 const myContainer = new Container();
@@ -19,11 +20,15 @@ myContainer
   .to(ChatGptMeanUtilsRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
-  .to(SubjectRepository)
-  .whenTargetNamed("subject");
+  .to(WordListRepository)
+  .whenTargetNamed("word-list");
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
-  .to(KanjiPostRepository)
+  .to(KanjiListRepository)
+  .whenTargetNamed("kanji-list");
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(KanjiRepository)
   .whenTargetNamed("kanji");
 myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)

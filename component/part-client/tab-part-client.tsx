@@ -1,7 +1,7 @@
 import { ButtonTextPart } from "component/part";
-import { kanji, nguPhap, tuVung, N1, N2, N3, N4, N5 } from "lib/const";
-import { Fragment } from "react";
 import { TabPartClientHook } from "component/part-client";
+import { N1, N2, N3, N4, N5, kanji, tuVung } from "lib/const";
+import { Fragment } from "react";
 
 interface Level {
   id: number;
@@ -38,7 +38,9 @@ export function TabPartClient() {
       name: N5,
     },
   ];
-
+  const date = new Date();
+  const day = date.getDate();
+  const dayStr = ("0" + day).slice(-2);
   const listItems = levelList.map((selectLevel) => (
     <li className="mr-2" key={selectLevel.id}>
       <button
@@ -54,13 +56,17 @@ export function TabPartClient() {
       <div className="text-sm font-medium text-center text-gray-500">
         <ul className="flex flex-wrap -mb-px">{listItems}</ul>
       </div>
-      <ButtonTextPart href={`/post/subject/${levelList[level].name}_0`}>
+      <ButtonTextPart
+        href={`/post/kanji-list/${levelList[level].name}_day_${dayStr}`}
+      >
         {kanji}
       </ButtonTextPart>
-      <ButtonTextPart href={`/post/subject/${levelList[level].name}_1`}>
+      <ButtonTextPart
+        href={`/post/word-list/${levelList[level].name}_day_${dayStr}`}
+      >
         {tuVung}
       </ButtonTextPart>
-      <ButtonTextPart href="/post/subject/Stroke">stroke</ButtonTextPart>
+      <ButtonTextPart href="/post/kanji-list/Stroke">stroke</ButtonTextPart>
     </Fragment>
   );
 }

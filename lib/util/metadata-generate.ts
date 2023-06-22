@@ -12,7 +12,7 @@ export const generateMetadataHomePage =  {
 };
 
 export function generateMetadataForKanjiList(id: string) {
-  const contextText = id.length > 2 ? id : id[0];
+  const contextText = id.substring(0,2);
   return {
     title: `Danh sách ${contextText} hán tự`,
     keywords: [`Danh sách ${contextText} hán tự, JLPT hán tự ${id[0]} list`],
@@ -28,8 +28,7 @@ export function generateMetadataForKanjiList(id: string) {
 }
 
 export function generateJsonLDForKanjiList(id: string) {
-  const contextText = id.length > 2 ? id : id[0];
-  const contextLevel = id.length > 2 ? "all" : id[0];
+  const contextText = id.substring(0,2);
   return {
     "@context": "https://schema.org",
     "@type": "TextDigitalDocument",
@@ -37,6 +36,35 @@ export function generateJsonLDForKanjiList(id: string) {
       name: `Danh sách ${contextText}`,
       description: `Danh sách hán tự ${contextText}`,
     },
-    educationalLevel: contextLevel,
+    educationalLevel: contextText,
+  };
+}
+
+export function generateMetadataForWordList(id: string) {
+  const contextText = id.substring(0,2);
+  return {
+    title: `Danh sách ${contextText} từ vựng`,
+    keywords: [`Danh sách ${contextText} từ vựng, JLPT từ vựng ${id[0]} list`],
+    description: `Danh sách ${contextText} từ vựng`,
+    openGraph: {
+      title: `Danh sách ${contextText} từ vựng`,
+      description: `Danh sách ${contextText} từ vựng`,
+      url: `https://kyomo.vercel.app/post/subject/${id}`,
+      siteName: "Kokoro",
+      type: "website",
+    },
+  };
+}
+
+export function generateJsonLDForWordList(id: string) {
+  const contextText = id.substring(0,2);
+  return {
+    "@context": "https://schema.org",
+    "@type": "TextDigitalDocument",
+    about: {
+      name: `Danh sách ${contextText}`,
+      description: `Danh sách từ vựng ${contextText}`,
+    },
+    educationalLevel: contextText,
   };
 }

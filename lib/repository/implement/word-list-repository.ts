@@ -1,14 +1,19 @@
+import { DayInMonthPartClient } from "component/part-client";
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
 import {
   generateJsonLDForKanjiList,
   generateMetadataForKanjiList,
 } from "lib/util";
-import * as SubjectList from "mdx/mdx-subject";
+import * as SubjectList from "mdx/mdx-word-list";
+import { SubjectRepositoryPart } from "component/part";
 
 @injectable()
-export class SubjectRepository extends BasePostModel {
+export class WordListRepository extends BasePostModel {
   PageContentList: any = SubjectList;
+  public override showDetail(): (props: any) => JSX.Element {
+    return SubjectRepositoryPart;
+  }
   public override getMetadata() {
     return generateMetadataForKanjiList(this.postId);
   }

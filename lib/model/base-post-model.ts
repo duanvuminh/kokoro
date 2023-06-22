@@ -5,6 +5,10 @@ import { Default } from "mdx/mdx-random-page";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
+  getMdx(): (props: any) => JSX.Element {
+    const _post = this._getPost(this.postId);
+    return () => MdxWrapPart({ children: _post.default() });
+  }
   postId!: string;
 
   abstract PageContentList: any;
@@ -13,15 +17,14 @@ export abstract class BasePostModel implements IPostModel {
     const _post = this._getPost(this.postId);
     return _post?.metadata;
   }
-  
+
   getJsonLd() {
     const _post = this._getPost(this.postId);
     return _post?.jsonLd ?? {};
   }
 
   showDetail(): (props: any) => JSX.Element {
-    const _post = this._getPost(this.postId);
-    return () => MdxWrapPart({ children: _post.default() });
+    return this.getMdx();
   }
 
   private _getPost(postId: string) {
