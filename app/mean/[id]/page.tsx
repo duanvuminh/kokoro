@@ -1,7 +1,7 @@
 import Loading from "app/loading";
-import { MeanUtilsPart } from "component/part";
-import { MeanUtilsPartClient } from "component/part-client";
-import { hantuListConst, translate } from "lib/const";
+import { MeanUtilsPart } from "app/lib/component/part";
+import { MeanUtilsPartClient } from "app/lib/component/part-client";
+import { hantuListConst, translate } from "app/lib/const";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";

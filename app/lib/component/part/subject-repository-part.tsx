@@ -1,7 +1,7 @@
 import { myContainer } from "inversify.config";
-import { DayInMonthPartClient } from "component/part-client";
-import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "lib/model";
+import { DayInMonthPartClient } from "app/lib/component/part-client";
+import { TYPES } from "app/lib/const";
+import { IPostFactoryModel } from "app/lib/model";
 import { Fragment } from "react";
 
 type Props = {

@@ -1,5 +1,5 @@
-import { LogoPart, MenuIconEmptyPart } from "component/part";
-import { MenuIconPartClient } from "component/part-client";
+import { LogoPart, MenuIconEmptyPart } from "app/lib/component/part";
+import { MenuIconPartClient } from "app/lib/component/part-client";
 
 export function HeaderPart(): JSX.Element {
   return (

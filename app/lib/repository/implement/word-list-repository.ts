@@ -1,12 +1,12 @@
-import { DayInMonthPartClient } from "component/part-client";
+import { DayInMonthPartClient } from "app/lib/component/part-client";
 import { injectable } from "inversify";
-import { BasePostModel } from "lib/model";
+import { BasePostModel } from "app/lib/model";
 import {
   generateJsonLDForKanjiList,
   generateMetadataForKanjiList,
-} from "lib/util";
-import * as SubjectList from "mdx/mdx-word-list";
-import { SubjectRepositoryPart } from "component/part";
+} from "app/lib/util";
+import * as SubjectList from "app/lib/mdx/mdx-word-list";
+import { SubjectRepositoryPart } from "app/lib/component/part";
 
 @injectable()
 export class WordListRepository extends BasePostModel {

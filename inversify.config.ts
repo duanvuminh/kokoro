@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
-import { TYPES } from "lib/const";
+import { TYPES } from "app/lib/const";
 import {
   ChatGptMeanRepository,
   ChatGptMeanUtilsRepository,
@@ -9,9 +9,9 @@ import {
   IPostModel,
   KanjiRepository,
   WordListRepository,
-} from "lib/repository";
-import { KanjiListRepository } from "lib/repository/implement/kanji-list-repository";
-import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
+} from "app/lib/repository";
+import { KanjiListRepository } from "app/lib/repository/implement/kanji-list-repository";
+import { IPostFactoryModel, PostFactoryImplementModel } from "./app/lib/model";
 
 const myContainer = new Container();
 myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(ChatGptMeanRepository);

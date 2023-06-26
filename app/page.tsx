@@ -1,6 +1,6 @@
-import { TabPartClient } from "component/part-client";
-import { SearchPartClient, TongleMenuPartClient } from "component/part-client";
-import { generateMetadataHomePage } from "lib/util";
+import { TabPartClient } from "app/lib/component/part-client";
+import { SearchPartClient, TongleMenuPartClient } from "app/lib/component/part-client";
+import { generateMetadataHomePage } from "app/lib/util";
 import { Fragment } from "react";
 
 export const metadata = generateMetadataHomePage;

@@ -1,10 +1,10 @@
-import { JsonLdPart } from "component/part";
+import { JsonLdPart } from "app/lib/component/part";
 import { myContainer } from "inversify.config";
-import { TYPES } from "lib/const";
-import { IPostFactoryModel, PostParameterModel } from "lib/model";
-import { paths } from "mdx/mdx-kanji";
-import { paths as paths2 } from "mdx/mdx-kanji-list";
-import { paths as paths1 } from "mdx/mdx-word-list";
+import { TYPES } from "app/lib/const";
+import { IPostFactoryModel, PostParameterModel } from "app/lib/model";
+import { paths } from "app/lib/mdx/mdx-kanji";
+import { paths as paths2 } from "app/lib/mdx/mdx-kanji-list";
+import { paths as paths1 } from "app/lib/mdx/mdx-word-list";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 

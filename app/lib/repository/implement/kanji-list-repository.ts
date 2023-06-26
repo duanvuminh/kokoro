@@ -1,11 +1,11 @@
-import { SubjectRepositoryPart } from "component/part";
+import { SubjectRepositoryPart } from "app/lib/component/part";
 import { injectable } from "inversify";
-import { BasePostModel } from "lib/model";
+import { BasePostModel } from "app/lib/model";
 import {
   generateJsonLDForKanjiList,
   generateMetadataForKanjiList,
-} from "lib/util";
-import * as SubjectList from "mdx/mdx-kanji-list";
+} from "app/lib/util";
+import * as SubjectList from "app/lib/mdx/mdx-kanji-list";
 
 @injectable()
 export class KanjiListRepository extends BasePostModel {

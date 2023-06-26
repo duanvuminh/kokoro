@@ -1,6 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ButtonTextPart, MenuIconEmptyPart } from "component/part";
-import { useSearch } from "component/part-client";
+import { ButtonTextPart, MenuIconEmptyPart } from "app/lib/component/part";
+import { useSearch } from "app/lib/component/part-client";
 import { useRouter } from "next/navigation";
 import { Fragment, useEffect } from "react";
 

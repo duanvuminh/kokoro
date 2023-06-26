@@ -1,6 +1,6 @@
-import { ButtonTextPart } from "component/part";
-import { TabPartClientHook } from "component/part-client";
-import { N1, N2, N3, N4, N5, kanji, tuVung } from "lib/const";
+import { ButtonTextPart } from "app/lib/component/part";
+import { TabPartClientHook } from "app/lib/component/part-client";
+import { N1, N2, N3, N4, N5, kanji, tuVung } from "app/lib/const";
 import { Fragment } from "react";
 
 interface Level {
