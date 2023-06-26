@@ -1,6 +1,6 @@
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { SearchPartClientHook } from "app/lib/component/part-client";
-import { searchNoData, searchPlaceHolder } from "app/lib/const";
+import { SearchPartClientHook } from "component/part-client";
+import { searchNoData, searchPlaceHolder } from "lib/const";
 
 const Turnstone = require("turnstone");
 // Tailwind classes for Turnstone elements

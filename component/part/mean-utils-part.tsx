@@ -1,6 +1,6 @@
 import { myContainer } from "inversify.config";
-import { IMeanRepository } from "app/lib/repository";
-import { TYPES } from "app/lib/const";
+import { IMeanRepository } from "lib/repository";
+import { TYPES } from "lib/const";
 
 export async function MeanUtilsPart({
   pageId,

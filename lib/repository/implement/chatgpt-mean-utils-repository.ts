@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
-import { postData } from "app/lib/api";
-import { IMeanUtilsRepository } from "app/lib/repository";
+import { postData } from "lib/api";
+import { IMeanUtilsRepository } from "lib/repository";
 
 @injectable()
 export class ChatGptMeanUtilsRepository implements IMeanUtilsRepository {

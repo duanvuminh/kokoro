@@ -1,4 +1,4 @@
-import { PostContentSummaryPart } from "app/lib/component/part";
+import { PostContentSummaryPart } from "component/part";
 import { Fragment } from "react";
 export function PostContentPart({
   postId,

@@ -1,5 +1,5 @@
-import { MeanUtilsPartClientHook } from "app/lib/component/part-client";
-import { example, otherQuestion } from "app/lib/const";
+import { MeanUtilsPartClientHook } from "component/part-client";
+import { example, otherQuestion } from "lib/const";
 import { Fragment } from "react";
 
 export function MeanUtilsPartClient({

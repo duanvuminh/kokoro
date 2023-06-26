@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
-import { IMeanRepository } from "app/lib/repository";
-import { postData } from "app/lib/api";
+import { IMeanRepository } from "lib/repository";
+import { postData } from "lib/api";
 
 @injectable()
 export class MazziMeanRepository implements IMeanRepository {

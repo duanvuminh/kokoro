@@ -1,4 +1,4 @@
-import { appURL, siteTitle } from "app/lib/const";
+import { appURL, siteTitle } from "lib/const";
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other

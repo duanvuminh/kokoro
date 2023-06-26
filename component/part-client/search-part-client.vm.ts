@@ -1,4 +1,4 @@
-import { hantuListConst, kanji, mean } from "app/lib/const";
+import { hantuListConst, kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 
