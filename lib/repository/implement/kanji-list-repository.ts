@@ -10,7 +10,7 @@ import * as SubjectList from "mdx/mdx-kanji-list";
 @injectable()
 export class KanjiListRepository extends BasePostModel {
   PageContentList: any = SubjectList;
-  public override showDetail(): (props: any) => JSX.Element {
+  public override showDetail() {
     return SubjectRepositoryPart;
   }
   public override getMetadata() {

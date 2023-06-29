@@ -11,7 +11,7 @@ import { SubjectRepositoryPart } from "component/part";
 @injectable()
 export class WordListRepository extends BasePostModel {
   PageContentList: any = SubjectList;
-  public override showDetail(): (props: any) => JSX.Element {
+  public override showDetail() {
     return SubjectRepositoryPart;
   }
   public override getMetadata() {

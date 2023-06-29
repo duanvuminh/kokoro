@@ -5,7 +5,7 @@ export function PostContentPart({
   Content,
 }: {
   postId: string;
-  Content: (props: any) => JSX.Element;
+  Content: (props: any) => JSX.Element|Promise<JSX.Element>;
 }): JSX.Element {
   return (
     <Fragment>

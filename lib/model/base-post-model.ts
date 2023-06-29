@@ -5,7 +5,7 @@ import { Default } from "mdx/mdx-random-page";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
-  getMdx(): (props: any) => JSX.Element {
+  getMdx(): (props: any) => JSX.Element | Promise<JSX.Element> {
     const _post = this._getPost(this.postId);
     return () => MdxWrapPart({ children: _post.default() });
   }
@@ -23,7 +23,7 @@ export abstract class BasePostModel implements IPostModel {
     return _post?.jsonLd ?? {};
   }
 
-  showDetail(): (props: any) => JSX.Element {
+  showDetail(): (props: any) => JSX.Element | Promise<JSX.Element> {
     return this.getMdx();
   }
 

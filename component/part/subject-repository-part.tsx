@@ -1,3 +1,4 @@
+"use server"
 import { myContainer } from "inversify.config";
 import { DayInMonthPartClient } from "component/part-client";
 import { TYPES } from "lib/const";
@@ -14,11 +15,11 @@ type Props = {
     | React.ReactNode;
 };
 
-export function SubjectRepositoryPart({
+export async function SubjectRepositoryPart({
   pageId,
   postType,
   children,
-}: Props): JSX.Element {
+}: Props): Promise<JSX.Element> {
   if (pageId == undefined || postType == undefined) return <Fragment />;
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, pageId);
