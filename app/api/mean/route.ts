@@ -1,17 +1,14 @@
 import { myContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IMeanUtilsRepository } from "lib/repository";
+import { IMeanRepository } from "lib/repository";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const meanUtilsRepo = myContainer.get<IMeanUtilsRepository>(
-    TYPES.IMeanUtilsRepository
-  );
+  const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
   let res = "";
   const jsonBody = await request.json();
   if (jsonBody.pageId !== undefined) {
-    res = await meanUtilsRepo.getExample(jsonBody.pageId);
-    return NextResponse.json({ result: res });
+    res = await meanRepo.getMean(jsonBody.pageId);
   }
   if (res == "") {
     NextResponse.json({ error: "Internal Server Error" }, { status: 500 });

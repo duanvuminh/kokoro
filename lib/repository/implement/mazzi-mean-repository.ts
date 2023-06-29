@@ -1,12 +1,12 @@
 import { injectable } from "inversify";
 import { IMeanRepository } from "lib/repository";
-import { postData } from "lib/api";
+import { _postData } from "lib/api";
 
 @injectable()
 export class MazziMeanRepository implements IMeanRepository {
   async getMean(query: string): Promise<string> {
     const url: string = "https://mazii.net/api/search";
-    return postData(url, {
+    return _postData(url, {
       query: query,
       dict: "javi",
       type: "word",

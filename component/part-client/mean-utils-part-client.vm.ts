@@ -1,3 +1,4 @@
+import { postData } from "lib/api";
 import { useState } from "react";
 
 export function MeanUtilsPartClientHook(pageId: string) {
@@ -10,19 +11,14 @@ export function MeanUtilsPartClientHook(pageId: string) {
       isLoading: true,
       displayText: "",
     });
-    fetch("/api/example", {
-      method: "POST",
-      body: JSON.stringify({ pageId: pageId }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setState({
-          isLoading: false,
-          displayText: data.result,
-        });
+    postData("/api/example", {
+      pageId: pageId,
+    }).then((data) => {
+      setState({
+        isLoading: false,
+        displayText: data.result,
       });
+    });
   };
   const handleKeyDown = async (
     event: React.KeyboardEvent<HTMLInputElement>
@@ -33,19 +29,14 @@ export function MeanUtilsPartClientHook(pageId: string) {
         displayText: "",
       });
       // 👇 Get input value
-      fetch("/api/question", {
-        method: "POST",
-        body: JSON.stringify({ pageId: event.currentTarget.value }),
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setState({
-            isLoading: false,
-            displayText: data.result,
-          });
+      postData("/api/question", {
+        pageId: event.currentTarget.value,
+      }).then((data) => {
+        setState({
+          isLoading: false,
+          displayText: data.result,
         });
+      });
     }
   };
   return {
