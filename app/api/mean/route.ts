@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     res = await meanRepo.getMean(jsonBody.pageId);
   }
   if (res == "") {
-    NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
   return NextResponse.json({ result: res });
 }
