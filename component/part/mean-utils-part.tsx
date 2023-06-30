@@ -5,6 +5,11 @@ export async function MeanUtilsPart({
 }: {
   pageId: string;
 }): Promise<JSX.Element> {
+  const content = await getData(pageId);
+  return <p>{content}</p>;
+}
+
+async function getData(pageId: string) {
   let host = "http://localhost:3000";
   if (process.env.VERCEL_URL != undefined) {
     host = `https://${process.env.VERCEL_URL}`;
@@ -12,5 +17,5 @@ export async function MeanUtilsPart({
   const content = await postData(`${host}/api/mean`, {
     pageId: pageId,
   });
-  return <p>{content?.result}</p>;
+  return content.result;
 }
