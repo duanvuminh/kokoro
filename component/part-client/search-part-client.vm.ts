@@ -2,11 +2,7 @@ import { hantuListConst, kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 
-// The maximum number of items we want to show in the list
 const maxItems = 2;
-
-// Set up listbox contents. We are fetching cities and airports from two different
-// API endpoints. 10 from each but ideally we only want to show 8 cities and 2 airports.
 
 const listbox = [
   {

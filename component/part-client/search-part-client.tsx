@@ -87,7 +87,6 @@ export function SearchPartClient() {
         styles={styles}
         Clear={Clear}
       />
-      <div id="autocomplete-listbox"></div>
     </div>
   );
 }
