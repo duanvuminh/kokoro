@@ -1604,7 +1604,7 @@ export const hantuListConst:HantuType = {
 '遂':{'hantu':'TOẠI','level':'N1'},
 '酢':{'hantu':'TẠC','level':'N1'},
 '診':{'hantu':'CHẨN','level':'N1'},
-'葬':{'hantu':'TÁNG','level':'N1'},
+'葬':{'hantu':'TANG','level':'N1'},
 '属':{'hantu':'THUỘC','level':'N1'},
 '惰':{'hantu':'NỌA','level':'N1'},
 '揃':{'hantu':'TIỄN','level':'N1'},
