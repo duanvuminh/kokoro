@@ -1,6 +1,6 @@
 import { hantuListConst, kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 
 const maxItems = 2;
 
@@ -31,7 +31,6 @@ const listbox = [
 ];
 
 function _state() {
-  const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const [state, setState] = useState({
     hasFocus: false,
@@ -48,9 +47,7 @@ function _state() {
   };
   useEffect(() => {
     if (state.value.id != "") {
-      startTransition(() =>
-        router.push(`/${state.value.path}/${state.value.id}`)
-      );
+      router.push(`/${state.value.path}/${state.value.id}`);
     }
   }, [state.value]);
 
@@ -58,8 +55,7 @@ function _state() {
     onBlur,
     onFocus,
     onSelect,
-    state,
-    isPending
+    state
   };
 }
 
