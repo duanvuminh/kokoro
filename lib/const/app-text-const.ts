@@ -11,7 +11,6 @@ export const nguPhap: string = "Ngữ pháp";
 export const otherQuestion: string = "Câu hỏi khác";
 export const searchNoData: string = "Không có kết quả";
 export const searchPlaceHolder: string = "Tìm kiếm trên kyo";
-export const serverError: string = "Server is busy!";
 export const siteName: string = "kyo";
 export const siteTitle: string = "Học tiếng nhật cùng kyo";
 export const summaryTitle: string = "Cách viết";
