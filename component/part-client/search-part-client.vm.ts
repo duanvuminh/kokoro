@@ -24,7 +24,7 @@ const listbox = [
     displayField: "id",
     data: (query: string) => {
       if (query.length == 1) return [];
-      return [{ id: query, path: "mean" }];
+      return [{ id: query, path: "post/mean" }];
     },
     searchType: "contains",
   },
@@ -34,7 +34,7 @@ function _state() {
   const router = useRouter();
   const [state, setState] = useState({
     hasFocus: false,
-    value: { id: "", path: "mean" },
+    value: { id: "", path: "post/mean" },
   });
 
   const onBlur = () => setState({ ...state, hasFocus: false });

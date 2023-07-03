@@ -8,6 +8,7 @@ import {
   IMeanUtilsRepository,
   IPostModel,
   KanjiRepository,
+  MeanRepository,
   SinglePageRepository,
   WordListRepository,
 } from "lib/repository";
@@ -15,7 +16,9 @@ import { KanjiListRepository } from "lib/repository/implement/kanji-list-reposit
 import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
 
 const myContainer = new Container();
-myContainer.bind<IMeanRepository>(TYPES.IMeanRepository).to(ChatGptMeanRepository);
+myContainer
+  .bind<IMeanRepository>(TYPES.IMeanRepository)
+  .to(ChatGptMeanRepository);
 myContainer
   .bind<IMeanUtilsRepository>(TYPES.IMeanUtilsRepository)
   .to(ChatGptMeanUtilsRepository);
@@ -36,6 +39,10 @@ myContainer
   .to(SinglePageRepository)
   .whenTargetNamed("single-page");
 myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(MeanRepository)
+  .whenTargetNamed("mean");
+myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)
   .toFactory((context) => {
     return (targetName: string, postId: string) => {
@@ -47,6 +54,8 @@ myContainer
       return post;
     };
   });
-myContainer.bind<IPostFactoryModel>(TYPES.IPostFactoryModel).to(PostFactoryImplementModel);
+myContainer
+  .bind<IPostFactoryModel>(TYPES.IPostFactoryModel)
+  .to(PostFactoryImplementModel);
 
 export { myContainer };

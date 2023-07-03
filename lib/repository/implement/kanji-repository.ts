@@ -24,7 +24,7 @@ export class KanjiRepository extends BasePostModel {
         title: `Hán tự ${this.postId}`,
         description: `Cách nhớ ${this.postId}`,
         url: `https://kyomo.vercel.app/post/kanji/${this.postId}`,
-        siteName: `Kyo`,
+        siteName: `kyomo`,
         type: `website`,
       },
     };
