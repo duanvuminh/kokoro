@@ -6,6 +6,7 @@ import { paths as kaniPath } from "mdx/mdx-kanji";
 import { paths as kaniListPath } from "mdx/mdx-kanji-list";
 import { paths as wordListPath } from "mdx/mdx-word-list";
 import { paths as singlePagePath } from "mdx/mdx-single-page";
+import { paths as meanPath } from "mdx/mdx-mean";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
@@ -14,11 +15,13 @@ export const generateStaticParams = () => {
   const allwordListPath = getAllPath("word-list", wordListPath);
   const allkaniListPath = getAllPath("kanji-list", kaniListPath);
   const allSinglePagePath = getAllPath("kanji-list", singlePagePath);
+  const allMeanPath = getAllPath("kanji-list", meanPath);
   return [
     ...allkaniPath,
     ...allwordListPath,
     ...allkaniListPath,
     ...allSinglePagePath,
+    ...meanPath
   ];
 };
 
