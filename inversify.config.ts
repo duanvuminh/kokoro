@@ -8,6 +8,7 @@ import {
   IMeanUtilsRepository,
   IPostModel,
   KanjiRepository,
+  SinglePageRepository,
   WordListRepository,
 } from "lib/repository";
 import { KanjiListRepository } from "lib/repository/implement/kanji-list-repository";
@@ -30,6 +31,10 @@ myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiRepository)
   .whenTargetNamed("kanji");
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(SinglePageRepository)
+  .whenTargetNamed("single-page");
 myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)
   .toFactory((context) => {

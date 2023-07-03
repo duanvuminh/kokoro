@@ -2,17 +2,24 @@ import { JsonLdPart } from "component/part";
 import { myContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostParameterModel } from "lib/model";
-import { paths } from "mdx/mdx-kanji";
-import { paths as paths2 } from "mdx/mdx-kanji-list";
-import { paths as paths1 } from "mdx/mdx-word-list";
+import { paths as kaniPath } from "mdx/mdx-kanji";
+import { paths as kaniListPath } from "mdx/mdx-kanji-list";
+import { paths as wordListPath } from "mdx/mdx-word-list";
+import { paths as singlePagePath } from "mdx/mdx-single-page";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
 export const generateStaticParams = () => {
-  const allPathsKanji = getAllPath("kanji", paths);
-  const allPathsWordList = getAllPath("word-list", paths1);
-  const allPathsKanjiList = getAllPath("kanji-list", paths2);
-  return [...allPathsKanji, ...allPathsWordList, ...allPathsKanjiList];
+  const allkaniPath = getAllPath("kanji", kaniPath);
+  const allwordListPath = getAllPath("word-list", wordListPath);
+  const allkaniListPath = getAllPath("kanji-list", kaniListPath);
+  const allSinglePagePath = getAllPath("kanji-list", singlePagePath);
+  return [
+    ...allkaniPath,
+    ...allwordListPath,
+    ...allkaniListPath,
+    ...allSinglePagePath,
+  ];
 };
 
 export const generateMetadata = ({
