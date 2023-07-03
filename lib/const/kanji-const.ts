@@ -617,7 +617,7 @@ export const hantuListConst:HantuType = {
 '貿':{'hantu':'MẬU','level':'N3'},
 '無':{'hantu':'VÔ','level':'N3'},
 '報':{'hantu':'BÁO','level':'N3'},
-'満':{'hantu':'満','level':'N3'},
+'満':{'hantu':'MÃN','level':'N3'},
 '量':{'hantu':'LƯỢNG','level':'N3'},
 '遊':{'hantu':'DU','level':'N3'},
 '落':{'hantu':'LẠC','level':'N3'},
