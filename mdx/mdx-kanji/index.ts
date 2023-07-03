@@ -1,4 +1,3 @@
-export * as copy from "./copy.mdx"
 export * as 保 from "./保.mdx"
 export * as 姿 from "./姿.mdx"
 export * as 宮 from "./宮.mdx"
@@ -13,7 +12,6 @@ export * as 衛 from "./衛.mdx"
 export * as 視 from "./視.mdx"
 export * as 郎 from "./郎.mdx"
 const paths: string[] = [
-"copy",
 "保",
 "姿",
 "宮",

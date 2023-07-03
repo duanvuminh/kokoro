@@ -66,7 +66,7 @@ export function TabPartClient() {
       >
         {tuVung}
       </ButtonTextPart>
-      <ButtonTextPart href="/post/kanji-list/Stroke">stroke</ButtonTextPart>
+      <ButtonTextPart href="/post/single-page/Stroke">stroke</ButtonTextPart>
     </Fragment>
   );
 }

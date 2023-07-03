@@ -13,11 +13,26 @@ echo 'export {paths}' >>  index.ts
 
 cd ../../
 
-cd mdx/mdx-random-page
+cd mdx/mdx-component
 rm index.ts
 for f in *.mdx; 
 do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 
 done;
+
+cd ../../
+
+cd mdx/mdx-single-page
+rm index.ts
+for f in *.mdx; 
+do echo export '*' as $(basename ${f%.*}) from '"./'$f'"' >> index.ts; 
+done;
+echo   'const paths: string[] = [' >> index.ts;                                            
+for f in *.mdx;
+do
+        echo '"'$(basename ${f%.*})'"'',' >> index.ts
+done;
+echo  ']' >> index.ts
+echo 'export {paths}' >>  index.ts
 
 cd ../../
 

@@ -1,7 +1,7 @@
 import { MdxWrapPart } from "component/part";
 import { injectable } from "inversify";
 import { IPostModel } from "lib/repository";
-import { Default } from "mdx/mdx-random-page";
+import { Default } from "mdx/mdx-component";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
