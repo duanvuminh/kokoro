@@ -29,7 +29,6 @@ const Clear = () => <XMarkIcon className="w-5 h-5" />;
 export function SearchPartClient() {
   const { listbox, maxItems, state, onBlur, onFocus, onSelect } =
     SearchPartClientHook();
-
   // Style the container so on mobile devices the search box and results
   // take up the whole screen
   const containerStyles = state.hasFocus
@@ -45,7 +44,7 @@ export function SearchPartClient() {
       <span
         className={`absolute w-10 h-12 inset-y-0 left-0 items-center justify-center z-10 sm:inline-flex ${iconDisplayStyle}`}
       >
-      <MagnifyingGlassIcon className="w-5 h-5" />
+        <MagnifyingGlassIcon className="w-5 h-5" />
       </span>
       <Turnstone
         autoFocus={false}

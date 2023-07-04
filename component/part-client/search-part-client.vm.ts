@@ -1,4 +1,5 @@
-import { hantuListConst, kanji, mean } from "lib/const";
+import { kyomoFetchPage } from "lib/api";
+import { kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -10,11 +11,10 @@ const listbox = [
     name: kanji,
     ratio: 1,
     displayField: "id",
-    data: (query: string) => {
-      if (hantuListConst[query] != null)
-        return [{ id: query, path: "post/kanji" }];
-      return [];
-    },
+    data: (query: string) =>
+      kyomoFetchPage(`/api/kanji/search?kanji=${query}`).then(
+        (search) => search.result
+      ),
     searchType: "contains",
   },
   {
@@ -30,19 +30,23 @@ const listbox = [
   },
 ];
 
-function _state() {
+export function SearchPartClientHook() {
   const router = useRouter();
   const [state, setState] = useState({
     hasFocus: false,
     value: { id: "", path: "post/mean" },
   });
 
-  const onBlur = () => setState({ ...state, hasFocus: false });
-  const onFocus = () => setState({ ...state, hasFocus: true });
+  const onBlur = () => {
+    return setState({ ...state, hasFocus: false });
+  };
+  const onFocus = () => {
+    return setState({ ...state, hasFocus: true });
+  };
   let onSelect = (selectedItem: any) => {
     if (selectedItem == undefined) return;
     if (state.value.id != selectedItem.id) {
-      setState({ ...state, value: selectedItem });
+      setState({ ...state, value: selectedItem, hasFocus: false });
     }
   };
   useEffect(() => {
@@ -52,17 +56,11 @@ function _state() {
   }, [state.value]);
 
   return {
+    maxItems,
+    listbox,
     onBlur,
     onFocus,
     onSelect,
-    state
-  };
-}
-
-export function SearchPartClientHook() {
-  return {
-    maxItems,
-    listbox,
-    ..._state(),
+    state,
   };
 }
