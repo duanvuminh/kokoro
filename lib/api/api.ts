@@ -1,3 +1,5 @@
+"use server";
+
 import { example } from "lib/const";
 
 export async function _postData(url = "", data = {}) {
