@@ -1,21 +1,15 @@
-import { postData } from "lib/api";
+import { kyomoFetchPage } from "lib/api";
 
 export async function MeanUtilsPart({
-  pageId,
+  postId,
 }: {
-  pageId: string;
+  postId: string;
 }): Promise<JSX.Element> {
-  const content = await getData(pageId);
+  const content = await getData(postId);
   return <p>{content}</p>;
 }
 
-async function getData(pageId: string) {
-  let host = "http://localhost:3000";
-  if (process.env.VERCEL_URL != undefined) {
-    host = `https://${process.env.VERCEL_URL}`;
-  }
-  const content = await postData(`${host}/api/mean`, {
-    pageId: pageId,
-  });
+async function getData(postId: string) {
+  const content = await kyomoFetchPage(`/api/mean?postId=${postId}`);
   return content.result;
 }

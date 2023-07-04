@@ -16,17 +16,14 @@ export async function _postData(url = "", data = {}) {
   return response.json();
 }
 
-export async function postData(url = "", data = {}) {
-  const { ChatGPT } = process.env;
-  const header = {
-    "Content-Type": "application/json",
-    "Accept": "application/json"
-  };
-  const response = await fetch(url, {
-    method: "POST",
-    cache: "force-cache",
-    headers: header,
-    body: JSON.stringify(data),
+export async function kyomoFetchPage(url = "") {
+  let host = "http://localhost:3000";
+  if (process.env.VERCEL_URL != undefined) {
+    host = `https://${process.env.VERCEL_URL}`;
+  }
+  const response = await fetch(`${host}${url}`, {
+    method: "GET",
+    cache: "force-cache"
   });
   return response.json();
 }

@@ -4,9 +4,9 @@ import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostParameterModel } from "lib/model";
 import { paths as kaniPath } from "mdx/mdx-kanji";
 import { paths as kaniListPath } from "mdx/mdx-kanji-list";
-import { paths as wordListPath } from "mdx/mdx-word-list";
-import { paths as singlePagePath } from "mdx/mdx-single-page";
 import { paths as meanPath } from "mdx/mdx-mean";
+import { paths as singlePagePath } from "mdx/mdx-single-page";
+import { paths as wordListPath } from "mdx/mdx-word-list";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
@@ -21,7 +21,7 @@ export const generateStaticParams = () => {
     ...allwordListPath,
     ...allkaniListPath,
     ...allSinglePagePath,
-    ...meanPath
+    ...meanPath,
   ];
 };
 
@@ -30,9 +30,9 @@ export const generateMetadata = ({
 }: {
   params: { postType: string; id: string };
 }): Metadata => {
-  const pageId = decodeURIComponent(id);
+  const postId = decodeURIComponent(id);
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, pageId);
+  let post = postFactory.Create(postType, postId);
 
   const metadata = post.getMetadata();
   return metadata;
@@ -43,17 +43,17 @@ export default function Page({
 }: {
   params: { postType: string; id: string };
 }) {
-  const pageId = decodeURIComponent(id);
+  const postId = decodeURIComponent(id);
 
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, pageId);
+  let post = postFactory.Create(postType, postId);
 
   const jsonLd = post.getJsonLd();
   const Content = post.showDetail();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />
-      <Content pageId={pageId} postType={postType} />
+      <Content postId={postId} postType={postType} />
     </Fragment>
   );
 }

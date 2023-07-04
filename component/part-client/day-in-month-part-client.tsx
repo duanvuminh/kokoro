@@ -2,13 +2,13 @@ import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 
 type Props = {
-  pageId: string;
+  postId: string;
   postType: string;
-  children: any
+  children: any;
 };
 
 export function DayInMonthPartClient({
-  pageId,
+  postId,
   postType,
   children,
 }: Props): JSX.Element {
@@ -46,14 +46,14 @@ export function DayInMonthPartClient({
     { index: 30, id: "day_30" },
     { index: 31, id: "day_31" },
   ];
-  const target = daysInMonth.find((day) => pageId.includes(day.id));
+  const target = daysInMonth.find((day) => postId.includes(day.id));
   const option = daysInMonth.map((day) => (
     <option value={day.id} key={day.index}>{`day ${day.index}`}</option>
   ));
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const targetPageId =
-      pageId.substring(0, pageId.length - 6) + event.target.value;
-    router.push(`/post/${postType}/${targetPageId}/`);
+    const targetpostId =
+      postId.substring(0, postId.length - 6) + event.target.value;
+    router.push(`/post/${postType}/${targetpostId}/`);
   };
   return (
     <Fragment>

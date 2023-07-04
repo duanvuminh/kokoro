@@ -3,11 +3,11 @@ import { example, otherQuestion } from "lib/const";
 import { Fragment } from "react";
 
 export function MeanUtilsPartClient({
-  pageId,
+  postId,
 }: {
-  pageId: string;
+  postId: string;
 }): JSX.Element {
-  const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(pageId);
+  const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(postId);
 
   return (
     <Fragment>

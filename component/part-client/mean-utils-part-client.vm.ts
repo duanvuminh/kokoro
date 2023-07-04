@@ -1,7 +1,7 @@
-import { postData } from "lib/api";
+import { kyomoFetchPage } from "lib/api";
 import { useState } from "react";
 
-export function MeanUtilsPartClientHook(pageId: string) {
+export function MeanUtilsPartClientHook(postId: string) {
   const [state, setState] = useState({
     isLoading: false,
     displayText: "",
@@ -11,9 +11,7 @@ export function MeanUtilsPartClientHook(pageId: string) {
       isLoading: true,
       displayText: "",
     });
-    postData("/api/example", {
-      pageId: pageId,
-    }).then((data) => {
+    kyomoFetchPage(`/api/example?postId=${postId}`).then((data) => {
       setState({
         isLoading: false,
         displayText: data.result,
@@ -29,9 +27,7 @@ export function MeanUtilsPartClientHook(pageId: string) {
         displayText: "",
       });
       // 👇 Get input value
-      postData("/api/question", {
-        pageId: event.currentTarget.value,
-      }).then((data) => {
+      kyomoFetchPage(`/api/question?postId=${postId}`).then((data) => {
         setState({
           isLoading: false,
           displayText: data.result,

@@ -1,4 +1,4 @@
-"use server"
+"use server";
 import { myContainer } from "inversify.config";
 import { DayInMonthPartClient } from "component/part-client";
 import { TYPES } from "lib/const";
@@ -6,7 +6,7 @@ import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
 
 type Props = {
-  pageId: string;
+  postId: string;
   postType: string;
   children:
     | string
@@ -16,16 +16,16 @@ type Props = {
 };
 
 export async function SubjectRepositoryPart({
-  pageId,
+  postId,
   postType,
   children,
 }: Props): Promise<JSX.Element> {
-  if (pageId == undefined || postType == undefined) return <Fragment />;
+  if (postId == undefined || postType == undefined) return <Fragment />;
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, pageId);
+  let post = postFactory.Create(postType, postId);
   const Content = post.getMdx();
   return (
-    <DayInMonthPartClient pageId={pageId} postType={postType}>
+    <DayInMonthPartClient postId={postId} postType={postType}>
       <Content />
     </DayInMonthPartClient>
   );

@@ -1,23 +1,22 @@
 "use server";
 import Loading from "app/loading";
-import { Fragment } from "react";
-import { Suspense } from "react";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
-import { hantuListConst, translate } from "lib/const";
+import { hantuListConst } from "lib/const";
 import Link from "next/link";
+import { Fragment, Suspense } from "react";
 
 type Props = {
-  pageId: string;
+  postId: string;
   postType: string;
 };
 
 export async function MeanRepositoryPart({
-  pageId,
+  postId,
   postType,
 }: Props): Promise<JSX.Element> {
-  if (pageId == undefined || postType == undefined) return <Fragment />;
-  const chars = [...pageId];
+  if (postId == undefined || postType == undefined) return <Fragment />;
+  const chars = [...postId];
   const hantu = chars.map((c, i) => hantuListConst[c]?.hantu).join(" ");
   return (
     <div className="prose">
@@ -29,10 +28,10 @@ export async function MeanRepositoryPart({
         ))}
       </h2>
       <h3>{hantu}</h3>
-      <Suspense fallback={<Loading />} key={pageId}>
-        <MeanUtilsPart pageId={pageId} />
+      <Suspense fallback={<Loading />} key={postId}>
+        <MeanUtilsPart postId={postId} />
       </Suspense>
-      <MeanUtilsPartClient pageId={pageId} />
+      <MeanUtilsPartClient postId={postId} />
     </div>
   );
 }
