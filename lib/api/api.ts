@@ -1,17 +1,15 @@
 "use server";
 
-import { example } from "lib/const";
-
 export async function _postData(url = "", data = {}) {
   const { ChatGPT } = process.env;
   const header = {
     "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Authorization": `Bearer ${ChatGPT}`,
+    Accept: "application/json",
+    Authorization: `Bearer ${ChatGPT}`,
   };
   const response = await fetch(url, {
     method: "POST",
-    cache: 'no-store',
+    cache: "no-store",
     headers: header,
     body: JSON.stringify(data),
   });
@@ -25,7 +23,10 @@ export async function kyomoFetchPage(url = "") {
   }
   const response = await fetch(`${host}${url}`, {
     method: "GET",
-    cache: "force-cache"
+    cache: "force-cache",
   });
+  if (response.status == 500) {
+    throw "server error";
+  }
   return response.json();
 }
