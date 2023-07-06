@@ -10,6 +10,8 @@ import { paths as wordListPath } from "mdx/mdx-word-list";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
+export const dynamicParams = true;
+
 export const generateStaticParams = () => {
   const allkaniPath = getAllPath("kanji", kaniPath);
   const allwordListPath = getAllPath("word-list", wordListPath);
