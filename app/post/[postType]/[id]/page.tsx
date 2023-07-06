@@ -15,13 +15,13 @@ export const generateStaticParams = () => {
   const allwordListPath = getAllPath("word-list", wordListPath);
   const allkaniListPath = getAllPath("kanji-list", kaniListPath);
   const allSinglePagePath = getAllPath("kanji-list", singlePagePath);
-  const allMeanPath = getAllPath("kanji-list", meanPath);
+  const allMeanPath = getAllPath("mean", meanPath);
   return [
     ...allkaniPath,
     ...allwordListPath,
     ...allkaniListPath,
     ...allSinglePagePath,
-    ...meanPath,
+    ...allMeanPath,
   ];
 };
 
