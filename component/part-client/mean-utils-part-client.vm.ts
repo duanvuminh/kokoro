@@ -26,7 +26,6 @@ export function MeanUtilsPartClientHook(postId: string) {
         isLoading: true,
         displayText: "",
       });
-      // 👇 Get input value
       kyomoFetchPage(`/api/question?postId=${postId}`).then((data) => {
         setState({
           isLoading: false,
