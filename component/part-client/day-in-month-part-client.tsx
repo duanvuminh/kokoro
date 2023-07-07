@@ -42,10 +42,10 @@ export function DayInMonthPartClient({
         {option}
       </select>
       <ButtonTextPart href={`/post/${postType}/${targetpostIdNext}/`}>
-        {`day ${target?.index ?? 1 + 1}`}
+        {`day ${(target?.index ?? 1) + 1}`}
       </ButtonTextPart>
       <ButtonTextPart href={`/post/${postType}/${targetpostIdPre}/`}>
-        {`day ${target?.index ?? 2 - 1}`}
+        {`day ${(target?.index ?? 2) - 1}`}
       </ButtonTextPart>
       {children}
     </Fragment>
