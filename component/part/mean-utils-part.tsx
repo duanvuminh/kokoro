@@ -1,4 +1,4 @@
-import { kyomoFetchPage } from "lib/api";
+import { kyomoGetPostData } from "lib/api";
 
 export async function MeanUtilsPart({
   postId,
@@ -10,6 +10,6 @@ export async function MeanUtilsPart({
 }
 
 async function getData(postId: string) {
-  const content = await kyomoFetchPage(`/api/mean?postId=${postId}`);
+  const content = await kyomoGetPostData(`/api/mean?postId=${postId}`);
   return content.result;
 }

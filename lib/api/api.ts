@@ -16,7 +16,7 @@ export async function _postData(url = "", data = {}) {
   return response.json();
 }
 
-export async function kyomoFetchPage(url = "") {
+export async function kyomoGetPostData(url = "") {
   let host = "http://localhost:3000";
   if (process.env.VERCEL_URL != undefined) {
     host = `https://${process.env.VERCEL_URL}`;

@@ -1,11 +1,28 @@
 import { injectable } from "inversify";
-import { IMeanRepository } from "lib/repository";
+import { IMeanRepository, client, index } from "lib/repository";
 import { _postData } from "lib/api";
 
 @injectable()
 export class ChatGptMeanRepository implements IMeanRepository {
+  getYomi(query: string): Promise<string> {
+    const url: string = "https://mazii.net/api/search";
+    return _postData(url, {
+      query: query,
+      dict: "javi",
+      type: "word",
+      limit: 1,
+      page: 1,
+    }).then((data) => {
+      return `${data?.data?.[0]?.phonetic ?? ""}`;
+    });
+  }
+
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
+    const angolia = await index.getObjects([query]);
+    if (angolia.results[0] != null) {
+      return angolia.results[0].mean;
+    }
     return _postData(url, {
       model: "gpt-3.5-turbo",
       messages: [
@@ -24,7 +41,7 @@ export class ChatGptMeanRepository implements IMeanRepository {
         {
           role: "user",
           content: `${query} trong tiếng nhật nghĩa là gì`,
-        }
+        },
       ],
       temperature: 1,
       top_p: 1,
@@ -33,8 +50,18 @@ export class ChatGptMeanRepository implements IMeanRepository {
       max_tokens: 250,
       presence_penalty: 0,
       frequency_penalty: 0,
-    }).then((data) => {
-      return data.choices?.[0].message.content ?? "";
+    }).then(async (data) => {
+      let result = (data.choices?.[0].message.content ?? "") as string;
+      if (!result.includes("(")) {
+        const yomi = await this.getYomi(query);
+        result = result != "" ? `(${yomi})${result}` : result;
+      }
+      if (result != "") {
+        console.log("duan");
+        const saveObject = { objectID: query, mean: result };
+        index.saveObjects([saveObject]);
+      }
+      return result;
     });
   }
 }

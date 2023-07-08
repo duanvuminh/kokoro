@@ -1,6 +1,7 @@
 import { injectable } from "inversify";
 import { IMeanRepository } from "lib/repository";
 import { _postData } from "lib/api";
+import { trimMean } from "lib/util";
 
 @injectable()
 export class MazziMeanRepository implements IMeanRepository {
@@ -13,9 +14,11 @@ export class MazziMeanRepository implements IMeanRepository {
       limit: 1,
       page: 1,
     }).then((data) => {
-      return `${query}(${data?.data?.[0]?.phonetic??''}) ${data?.data?.[0]?.short_mean??''}`
-        .replace("()", "")
-        .replace(`(${query})`, "");
+      return trimMean(
+        `${query}(${data?.data?.[0]?.phonetic ?? ""}) ${
+          data?.data?.[0]?.short_mean ?? ""
+        }`
+      );
     });
   }
 }

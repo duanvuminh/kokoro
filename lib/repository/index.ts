@@ -1,3 +1,4 @@
+export * from "./angolia-repository";
 export * from "./i-mean-repository";
 export * from "./i-mean-utils-repository";
 export * from "./i-post-model";

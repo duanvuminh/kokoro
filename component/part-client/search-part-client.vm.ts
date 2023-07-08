@@ -1,4 +1,4 @@
-import { kyomoFetchPage } from "lib/api";
+import { kyomoGetPostData } from "lib/api";
 import { kanji, mean } from "lib/const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) =>
-      kyomoFetchPage(`/api/kanji/search?kanji=${query}`).then(
+      kyomoGetPostData(`/api/kanji/search?kanji=${query}`).then(
         (search) => search.result
       ),
     searchType: "contains",
