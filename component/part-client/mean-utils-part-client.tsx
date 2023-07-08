@@ -8,7 +8,9 @@ export function MeanUtilsPartClient({
   postId: string;
 }): JSX.Element {
   const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(postId);
-
+  const listItems = state.displayText.map((text, index) => (
+    <p key={index}>{`${index + 1}.${text}`}</p>
+  ));
   return (
     <Fragment>
       <button className="btn-text" onClick={onClick}>
@@ -20,7 +22,7 @@ export function MeanUtilsPartClient({
         className="pl-1 pr-1"
         onKeyDown={handleKeyDown}
       />
-      {state.isLoading ? <div>Loading...</div> : <p>{state.displayText}</p>}
+      {state.isLoading ? <div>Loading...</div> : listItems}
     </Fragment>
   );
 }

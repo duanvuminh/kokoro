@@ -4,17 +4,17 @@ import { useState } from "react";
 export function MeanUtilsPartClientHook(postId: string) {
   const [state, setState] = useState({
     isLoading: false,
-    displayText: "",
+    displayText: [] as string[],
   });
   const onClick = () => {
     setState({
       isLoading: true,
-      displayText: "",
+      displayText: [],
     });
     kyomoGetPostDataClient(`/api/example?postId=${postId}`).then((data) => {
       setState({
         isLoading: false,
-        displayText: data.result,
+        displayText: data.result.split(/\d./g).filter((e: string) => e !== ""),
       });
     });
   };
@@ -24,12 +24,12 @@ export function MeanUtilsPartClientHook(postId: string) {
     if (event.key === "Enter") {
       setState({
         isLoading: true,
-        displayText: "",
+        displayText: [],
       });
       kyomoGetPostDataClient(`/api/question?postId=${postId}`).then((data) => {
         setState({
           isLoading: false,
-          displayText: data.result,
+          displayText: [data.result],
         });
       });
     }
