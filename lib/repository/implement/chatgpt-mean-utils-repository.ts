@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { _postData } from "lib/api";
+import { _postData } from "lib/api/api";
 import { IMeanUtilsRepository } from "lib/repository";
 
 @injectable()

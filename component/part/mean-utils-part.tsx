@@ -1,4 +1,4 @@
-import { kyomoGetPostData } from "lib/api";
+import { kyomoGetPostData } from "lib/api/api";
 
 export async function MeanUtilsPart({
   postId,

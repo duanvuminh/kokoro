@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { IMeanRepository, client, index } from "lib/repository";
-import { _postData } from "lib/api";
+import { _postData } from "lib/api/api";
 
 @injectable()
 export class ChatGptMeanRepository implements IMeanRepository {
@@ -57,7 +57,6 @@ export class ChatGptMeanRepository implements IMeanRepository {
         result = result != "" ? `(${yomi})${result}` : result;
       }
       if (result != "") {
-        console.log("duan");
         const saveObject = { objectID: query, mean: result };
         index.saveObjects([saveObject]);
       }
