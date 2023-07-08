@@ -4,7 +4,6 @@ import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostParameterModel } from "lib/model";
 import { paths as kaniPath } from "mdx/mdx-kanji";
 import { paths as kaniListPath } from "mdx/mdx-kanji-list";
-import { paths as meanPath } from "mdx/mdx-mean";
 import { paths as singlePagePath } from "mdx/mdx-single-page";
 import { paths as wordListPath } from "mdx/mdx-word-list";
 import type { Metadata } from "next";
@@ -15,13 +14,11 @@ export const generateStaticParams = () => {
   const allwordListPath = getAllPath("word-list", wordListPath);
   const allkaniListPath = getAllPath("kanji-list", kaniListPath);
   const allSinglePagePath = getAllPath("kanji-list", singlePagePath);
-  const allMeanPath = getAllPath("mean", meanPath);
   return [
     ...allkaniPath,
     ...allwordListPath,
     ...allkaniListPath,
-    ...allSinglePagePath,
-    ...allMeanPath,
+    ...allSinglePagePath
   ];
 };
 
