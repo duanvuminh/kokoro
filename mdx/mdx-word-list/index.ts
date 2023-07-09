@@ -29,7 +29,6 @@ export * as N1_day_28 from "./N1_day_28.mdx"
 export * as N1_day_29 from "./N1_day_29.mdx"
 export * as N1_day_30 from "./N1_day_30.mdx"
 export * as N1_day_31 from "./N1_day_31.mdx"
-export * as N2 from "./N2.mdx"
 export * as N2_day_01 from "./N2_day_01.mdx"
 export * as N2_day_02 from "./N2_day_02.mdx"
 export * as N2_day_03 from "./N2_day_03.mdx"
@@ -48,6 +47,7 @@ export * as N2_day_15 from "./N2_day_15.mdx"
 export * as N2_day_16 from "./N2_day_16.mdx"
 export * as N2_day_17 from "./N2_day_17.mdx"
 export * as N2_day_18 from "./N2_day_18.mdx"
+export * as N2_day_19 from "./N2_day_19.mdx"
 export * as N2_day_20 from "./N2_day_20.mdx"
 export * as N2_day_21 from "./N2_day_21.mdx"
 export * as N2_day_22 from "./N2_day_22.mdx"
@@ -60,9 +60,99 @@ export * as N2_day_28 from "./N2_day_28.mdx"
 export * as N2_day_29 from "./N2_day_29.mdx"
 export * as N2_day_30 from "./N2_day_30.mdx"
 export * as N2_day_31 from "./N2_day_31.mdx"
-export * as N3 from "./N3.mdx"
-export * as N4 from "./N4.mdx"
-export * as N5 from "./N5.mdx"
+export * as N3_day_01 from "./N3_day_01.mdx"
+export * as N3_day_02 from "./N3_day_02.mdx"
+export * as N3_day_03 from "./N3_day_03.mdx"
+export * as N3_day_04 from "./N3_day_04.mdx"
+export * as N3_day_05 from "./N3_day_05.mdx"
+export * as N3_day_06 from "./N3_day_06.mdx"
+export * as N3_day_07 from "./N3_day_07.mdx"
+export * as N3_day_08 from "./N3_day_08.mdx"
+export * as N3_day_09 from "./N3_day_09.mdx"
+export * as N3_day_10 from "./N3_day_10.mdx"
+export * as N3_day_11 from "./N3_day_11.mdx"
+export * as N3_day_12 from "./N3_day_12.mdx"
+export * as N3_day_13 from "./N3_day_13.mdx"
+export * as N3_day_14 from "./N3_day_14.mdx"
+export * as N3_day_15 from "./N3_day_15.mdx"
+export * as N3_day_16 from "./N3_day_16.mdx"
+export * as N3_day_17 from "./N3_day_17.mdx"
+export * as N3_day_18 from "./N3_day_18.mdx"
+export * as N3_day_19 from "./N3_day_19.mdx"
+export * as N3_day_20 from "./N3_day_20.mdx"
+export * as N3_day_21 from "./N3_day_21.mdx"
+export * as N3_day_22 from "./N3_day_22.mdx"
+export * as N3_day_23 from "./N3_day_23.mdx"
+export * as N3_day_24 from "./N3_day_24.mdx"
+export * as N3_day_25 from "./N3_day_25.mdx"
+export * as N3_day_26 from "./N3_day_26.mdx"
+export * as N3_day_27 from "./N3_day_27.mdx"
+export * as N3_day_28 from "./N3_day_28.mdx"
+export * as N3_day_29 from "./N3_day_29.mdx"
+export * as N3_day_30 from "./N3_day_30.mdx"
+export * as N3_day_31 from "./N3_day_31.mdx"
+export * as N4_day_01 from "./N4_day_01.mdx"
+export * as N4_day_02 from "./N4_day_02.mdx"
+export * as N4_day_03 from "./N4_day_03.mdx"
+export * as N4_day_04 from "./N4_day_04.mdx"
+export * as N4_day_05 from "./N4_day_05.mdx"
+export * as N4_day_06 from "./N4_day_06.mdx"
+export * as N4_day_07 from "./N4_day_07.mdx"
+export * as N4_day_08 from "./N4_day_08.mdx"
+export * as N4_day_09 from "./N4_day_09.mdx"
+export * as N4_day_10 from "./N4_day_10.mdx"
+export * as N4_day_11 from "./N4_day_11.mdx"
+export * as N4_day_12 from "./N4_day_12.mdx"
+export * as N4_day_13 from "./N4_day_13.mdx"
+export * as N4_day_14 from "./N4_day_14.mdx"
+export * as N4_day_15 from "./N4_day_15.mdx"
+export * as N4_day_16 from "./N4_day_16.mdx"
+export * as N4_day_17 from "./N4_day_17.mdx"
+export * as N4_day_18 from "./N4_day_18.mdx"
+export * as N4_day_19 from "./N4_day_19.mdx"
+export * as N4_day_20 from "./N4_day_20.mdx"
+export * as N4_day_21 from "./N4_day_21.mdx"
+export * as N4_day_22 from "./N4_day_22.mdx"
+export * as N4_day_23 from "./N4_day_23.mdx"
+export * as N4_day_24 from "./N4_day_24.mdx"
+export * as N4_day_25 from "./N4_day_25.mdx"
+export * as N4_day_26 from "./N4_day_26.mdx"
+export * as N4_day_27 from "./N4_day_27.mdx"
+export * as N4_day_28 from "./N4_day_28.mdx"
+export * as N4_day_29 from "./N4_day_29.mdx"
+export * as N4_day_30 from "./N4_day_30.mdx"
+export * as N4_day_31 from "./N4_day_31.mdx"
+export * as N5_day_01 from "./N5_day_01.mdx"
+export * as N5_day_02 from "./N5_day_02.mdx"
+export * as N5_day_03 from "./N5_day_03.mdx"
+export * as N5_day_04 from "./N5_day_04.mdx"
+export * as N5_day_05 from "./N5_day_05.mdx"
+export * as N5_day_06 from "./N5_day_06.mdx"
+export * as N5_day_07 from "./N5_day_07.mdx"
+export * as N5_day_08 from "./N5_day_08.mdx"
+export * as N5_day_09 from "./N5_day_09.mdx"
+export * as N5_day_10 from "./N5_day_10.mdx"
+export * as N5_day_11 from "./N5_day_11.mdx"
+export * as N5_day_12 from "./N5_day_12.mdx"
+export * as N5_day_13 from "./N5_day_13.mdx"
+export * as N5_day_14 from "./N5_day_14.mdx"
+export * as N5_day_15 from "./N5_day_15.mdx"
+export * as N5_day_16 from "./N5_day_16.mdx"
+export * as N5_day_17 from "./N5_day_17.mdx"
+export * as N5_day_18 from "./N5_day_18.mdx"
+export * as N5_day_19 from "./N5_day_19.mdx"
+export * as N5_day_20 from "./N5_day_20.mdx"
+export * as N5_day_21 from "./N5_day_21.mdx"
+export * as N5_day_22 from "./N5_day_22.mdx"
+export * as N5_day_23 from "./N5_day_23.mdx"
+export * as N5_day_24 from "./N5_day_24.mdx"
+export * as N5_day_25 from "./N5_day_25.mdx"
+export * as N5_day_26 from "./N5_day_26.mdx"
+export * as N5_day_30 from "./N5_day_30.mdx"
+export * as N5_day_31 from "./N5_day_31.mdx"
+export * as N５_day_27 from "./N５_day_27.mdx"
+export * as N５_day_28 from "./N５_day_28.mdx"
+export * as N５_day_29 from "./N５_day_29.mdx"
 const paths: string[] = [
 "N1_day_01",
 "N1_day_02",
@@ -95,7 +185,6 @@ const paths: string[] = [
 "N1_day_29",
 "N1_day_30",
 "N1_day_31",
-"N2",
 "N2_day_01",
 "N2_day_02",
 "N2_day_03",
@@ -114,6 +203,7 @@ const paths: string[] = [
 "N2_day_16",
 "N2_day_17",
 "N2_day_18",
+"N2_day_19",
 "N2_day_20",
 "N2_day_21",
 "N2_day_22",
@@ -126,8 +216,98 @@ const paths: string[] = [
 "N2_day_29",
 "N2_day_30",
 "N2_day_31",
-"N3",
-"N4",
-"N5",
+"N3_day_01",
+"N3_day_02",
+"N3_day_03",
+"N3_day_04",
+"N3_day_05",
+"N3_day_06",
+"N3_day_07",
+"N3_day_08",
+"N3_day_09",
+"N3_day_10",
+"N3_day_11",
+"N3_day_12",
+"N3_day_13",
+"N3_day_14",
+"N3_day_15",
+"N3_day_16",
+"N3_day_17",
+"N3_day_18",
+"N3_day_19",
+"N3_day_20",
+"N3_day_21",
+"N3_day_22",
+"N3_day_23",
+"N3_day_24",
+"N3_day_25",
+"N3_day_26",
+"N3_day_27",
+"N3_day_28",
+"N3_day_29",
+"N3_day_30",
+"N3_day_31",
+"N4_day_01",
+"N4_day_02",
+"N4_day_03",
+"N4_day_04",
+"N4_day_05",
+"N4_day_06",
+"N4_day_07",
+"N4_day_08",
+"N4_day_09",
+"N4_day_10",
+"N4_day_11",
+"N4_day_12",
+"N4_day_13",
+"N4_day_14",
+"N4_day_15",
+"N4_day_16",
+"N4_day_17",
+"N4_day_18",
+"N4_day_19",
+"N4_day_20",
+"N4_day_21",
+"N4_day_22",
+"N4_day_23",
+"N4_day_24",
+"N4_day_25",
+"N4_day_26",
+"N4_day_27",
+"N4_day_28",
+"N4_day_29",
+"N4_day_30",
+"N4_day_31",
+"N5_day_01",
+"N5_day_02",
+"N5_day_03",
+"N5_day_04",
+"N5_day_05",
+"N5_day_06",
+"N5_day_07",
+"N5_day_08",
+"N5_day_09",
+"N5_day_10",
+"N5_day_11",
+"N5_day_12",
+"N5_day_13",
+"N5_day_14",
+"N5_day_15",
+"N5_day_16",
+"N5_day_17",
+"N5_day_18",
+"N5_day_19",
+"N5_day_20",
+"N5_day_21",
+"N5_day_22",
+"N5_day_23",
+"N5_day_24",
+"N5_day_25",
+"N5_day_26",
+"N5_day_30",
+"N5_day_31",
+"N５_day_27",
+"N５_day_28",
+"N５_day_29",
 ]
 export {paths}
