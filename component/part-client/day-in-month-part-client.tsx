@@ -35,7 +35,7 @@ export function DayInMonthPartClient({
   const targetpostIdPre =
     postId.substring(0, postId.length - 6) +
     "day_" +
-    zeroPad((target?.index ?? 2) - 1, 2);
+    zeroPad((target?.index ?? 2) - 1 == 0 ? 31 : (target?.index ?? 2) - 1, 2);
   return (
     <Fragment>
       <select id="years" defaultValue={target?.id} onChange={onChange}>
@@ -45,7 +45,7 @@ export function DayInMonthPartClient({
         {`day ${((target?.index ?? 1) % 31) + 1}`}
       </ButtonTextPart>
       <ButtonTextPart href={`/post/${postType}/${targetpostIdPre}/`}>
-        {`day ${(target?.index ?? 2) - 1}`}
+        {`day ${(target?.index ?? 2) - 1 == 0 ? 31 : (target?.index ?? 2) - 1}`}
       </ButtonTextPart>
       {children}
     </Fragment>
