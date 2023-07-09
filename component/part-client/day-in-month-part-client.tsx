@@ -31,7 +31,7 @@ export function DayInMonthPartClient({
   const targetpostIdNext =
     postId.substring(0, postId.length - 6) +
     "day_" +
-    zeroPad((target?.index ?? 1) + 1, 2);
+    zeroPad(((target?.index ?? 1) % 31) + 1, 2);
   const targetpostIdPre =
     postId.substring(0, postId.length - 6) +
     "day_" +
@@ -42,7 +42,7 @@ export function DayInMonthPartClient({
         {option}
       </select>
       <ButtonTextPart href={`/post/${postType}/${targetpostIdNext}/`}>
-        {`day ${(target?.index ?? 1) + 1}`}
+        {`day ${((target?.index ?? 1) % 31) + 1}`}
       </ButtonTextPart>
       <ButtonTextPart href={`/post/${postType}/${targetpostIdPre}/`}>
         {`day ${(target?.index ?? 2) - 1}`}
