@@ -22,7 +22,7 @@ export class ChatGptMeanRepository implements IMeanRepository {
     const url: string = "https://api.openai.com/v1/chat/completions";
     const angolia = await index.getObjects([query]);
     if (angolia.results[0] != null) {
-      return angolia.results[0].mean;
+      return trimMean(angolia.results[0].mean);
     }
     return _postData(url, {
       model: "gpt-3.5-turbo",
