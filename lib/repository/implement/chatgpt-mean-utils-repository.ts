@@ -1,12 +1,13 @@
 import { injectable } from "inversify";
 import { _postData } from "lib/api/api";
-import { IMeanUtilsRepository } from "lib/repository";
+import { ChatGPT, IMeanUtilsRepository } from "lib/repository";
 
 @injectable()
 export class ChatGptMeanUtilsRepository implements IMeanUtilsRepository {
   getQuestion(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     return _postData(url, {
+      Authorization: ChatGPT,
       model: "gpt-3.5-turbo",
       messages: [
         {
@@ -32,6 +33,7 @@ export class ChatGptMeanUtilsRepository implements IMeanUtilsRepository {
   async getExample(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     return _postData(url, {
+      Authorization: ChatGPT,
       model: "gpt-3.5-turbo",
       messages: [
         {

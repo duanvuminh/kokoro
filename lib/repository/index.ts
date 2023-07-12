@@ -1,4 +1,6 @@
 export * from "./angolia-repository";
+export * from "./chat-gpt-repository";
+export * from "./firestore-repository";
 export * from "./i-mean-repository";
 export * from "./i-mean-utils-repository";
 export * from "./i-post-model";
@@ -9,4 +11,5 @@ export * from "./implement/mazzi-mean-repository";
 export * from "./implement/mean-repository";
 export * from "./implement/single-page-repository";
 export * from "./implement/word-list-repository";
+
 

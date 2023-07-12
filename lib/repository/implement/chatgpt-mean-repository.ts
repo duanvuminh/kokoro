@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { IMeanRepository, client, index } from "lib/repository";
+import { ChatGPT, IMeanRepository, client, index } from "lib/repository";
 import { _postData } from "lib/api/api";
 import { trimMean } from "lib/util";
 
@@ -25,6 +25,7 @@ export class ChatGptMeanRepository implements IMeanRepository {
       return trimMean(angolia.results[0].mean);
     }
     return _postData(url, {
+      Authorization: ChatGPT,
       model: "gpt-3.5-turbo",
       messages: [
         {

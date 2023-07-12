@@ -1,12 +1,12 @@
 "use server";
 
-export async function _postData(url = "", data = {}) {
-  const { ChatGPT } = process.env;
+export async function _postData(url = "", data: any = {}) {
   const header = {
     "Content-Type": "application/json",
     Accept: "application/json",
-    Authorization: `Bearer ${ChatGPT}`,
+    Authorization: `Bearer ${data.Authorization ?? ""}`,
   };
+  delete data.Authorization;
   const response = await fetch(url, {
     method: "POST",
     cache: "no-store",
