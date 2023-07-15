@@ -2,6 +2,7 @@ export const appURL: string = "https://kyomo.vercel.app";
 export const example: string = "Ví dụ";
 export const kanji: string = "Hán tự";
 export const mean: string = "Ý nghĩa";
+export const login: string = "Đăng nhập";
 export const N1: string = "N1";
 export const N2: string = "N2";
 export const N3: string = "N3";

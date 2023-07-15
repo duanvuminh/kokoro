@@ -8,7 +8,7 @@ export const metadata = generateMetadataHomePage;
 export default function Page() {
   return (
     <Fragment>
-      <TongleMenuPartClient />
+      <TongleMenuPartClient value={true} />
       <SearchPartClient />
       <TabPartClient/>
     </Fragment>

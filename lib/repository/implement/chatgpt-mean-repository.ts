@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { injectable } from "inversify";
 import { ChatGPT, IMeanRepository, client, index } from "lib/repository";
 import { _postData } from "lib/api/api";

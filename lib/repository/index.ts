@@ -1,5 +1,6 @@
 export * from "./angolia-repository";
 export * from "./chat-gpt-repository";
+export * from "./firestore-repository";
 export * from "./i-mean-repository";
 export * from "./i-mean-utils-repository";
 export * from "./i-post-model";

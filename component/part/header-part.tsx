@@ -1,5 +1,5 @@
-import { LogoPart, MenuIconEmptyPart } from "component/part";
-import { MenuIconPartClient } from "component/part-client";
+import { LogoPart } from "component/part";
+import { LoginButtonPart, MenuIconPartClient } from "component/part-client";
 
 export function HeaderPart(): JSX.Element {
   return (
@@ -7,7 +7,7 @@ export function HeaderPart(): JSX.Element {
       <nav className="flex items-center justify-between sticky top-0 bg-white">
         <MenuIconPartClient />
         <LogoPart />
-        <MenuIconEmptyPart />
+        <LoginButtonPart />
       </nav>
     </header>
   );
