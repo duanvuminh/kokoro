@@ -1,4 +1,5 @@
 import { GoogleLoginPartClient } from "component/part-client";
+import { googleLogin } from "lib/const";
 import { Fragment } from "react";
 import { SetLoginPartClient } from "component/part-client";
 
@@ -18,8 +19,8 @@ export const metadata = {
 export default function Page() {
   return (
     <Fragment>
-      <SetLoginPartClient value={true}/>
-      <GoogleLoginPartClient>Google Login</GoogleLoginPartClient>
+      <SetLoginPartClient value={true} />
+      <GoogleLoginPartClient>{googleLogin}</GoogleLoginPartClient>
     </Fragment>
   );
 }

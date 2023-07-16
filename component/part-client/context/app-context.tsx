@@ -1,3 +1,5 @@
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "lib/repository";
 import React, { Fragment, useEffect } from "react";
 
 interface IAppContext {
@@ -28,12 +30,13 @@ export function AppProvider({
 }: {
   children: JSX.Element;
 }): JSX.Element {
-  const [isSearchPage, toggleSearchPage] = React.useState(
-    defaultState.isSearchPage
-  );
   const [level, setLevel] = React.useState(defaultState.level);
   const [token, setToken] = React.useState(defaultState.token);
   const [isLoginPage, setLoginPage] = React.useState(defaultState.isLoginPage);
+  const [isSearchPage, toggleSearchPage] = React.useState(
+    defaultState.isSearchPage
+  );
+
   return (
     <AppContext.Provider
       value={{
@@ -58,24 +61,4 @@ export function useSearch() {
     throw new Error("useSearch must be used within a SearchProvider");
   }
   return context;
-}
-
-export function TongleMenuPartClient({ value }: { value: boolean }) {
-  const { toggleSearchPage } = useSearch();
-  useEffect(() => {
-    toggleSearchPage!(value);
-    return () => toggleSearchPage!(!value);
-  }, []);
-
-  return <Fragment />;
-}
-
-export function SetLoginPartClient({ value }: { value: boolean }) {
-  const { setLoginPage } = useSearch();
-  useEffect(() => {
-    setLoginPage!(value);
-    return () => setLoginPage!(!value);
-  }, []);
-
-  return <Fragment />;
 }
