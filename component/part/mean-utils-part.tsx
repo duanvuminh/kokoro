@@ -1,4 +1,7 @@
-import { kyomoGetPostData } from "lib/api/api";
+import { ButtonTextPart } from "component/part";
+import { kyomoGetPostData } from "lib/api/api_server";
+import { editPost } from "lib/const";
+import { Fragment } from "react";
 
 export async function MeanUtilsPart({
   postId,
@@ -6,7 +9,14 @@ export async function MeanUtilsPart({
   postId: string;
 }): Promise<JSX.Element> {
   const content = await getData(postId);
-  return <p>{content}</p>;
+  return (
+    <Fragment>
+      <div>{content}</div>
+      <ButtonTextPart href={`/edit-post/${postId}`} className="float-right">
+        <sub>{editPost}</sub>
+      </ButtonTextPart>
+    </Fragment>
+  );
 }
 
 async function getData(postId: string) {

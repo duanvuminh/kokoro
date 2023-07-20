@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["kanjivg.tagaini.net"],
   },
   experimental: {
-    serverActions: true,
+    serverActions: true
   },
 };
 

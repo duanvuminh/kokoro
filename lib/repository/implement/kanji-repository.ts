@@ -1,3 +1,4 @@
+"use server"
 import { PostContentPart } from "component/part";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";
@@ -37,7 +38,7 @@ export class KanjiRepository extends BasePostModel {
         name: this.postId,
         description: `Hán tự ${this.postId}, cách nhớ ${this.postId}`,
       },
-      educationalLevel: hantuListConst[this.postId],
+      educationalLevel: hantuListConst()[this.postId],
     };
   }
 }

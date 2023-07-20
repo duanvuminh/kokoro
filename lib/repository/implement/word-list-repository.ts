@@ -1,4 +1,4 @@
-import { DayInMonthPartClient } from "component/part-client";
+"use server"
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
 import {

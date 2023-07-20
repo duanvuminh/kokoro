@@ -1,3 +1,4 @@
+"use server"
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
 import * as SinglePage from "mdx/mdx-single-page";

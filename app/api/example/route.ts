@@ -8,13 +8,17 @@ export async function GET(request: NextRequest) {
     TYPES.IMeanUtilsRepository
   );
   let res = "";
-  const postId = request.nextUrl.searchParams.get("postId");
+  const { searchParams } = new URL(request.url);
+  const postId = searchParams.get("postId");
   if (postId !== undefined) {
     res = await meanUtilsRepo.getExample(postId!);
     return NextResponse.json({ result: res });
   }
   if (res == "") {
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
   return NextResponse.json({ result: res });
 }

@@ -6,7 +6,8 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function GET(request: NextRequest) {
   const meanRepo = myContainer.get<IMeanRepository>(TYPES.IMeanRepository);
   let res = "";
-  const postId = request.nextUrl.searchParams.get("postId");
+  const { searchParams } = new URL(request.url);
+  const postId = searchParams.get("postId");
   if (postId !== undefined) {
     res = await meanRepo.getMean(postId!);
   }

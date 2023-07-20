@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "lib/repository";
-import React, { Fragment, useEffect } from "react";
+import React from "react";
 
 interface IAppContext {
   //Show header left close button
@@ -36,7 +36,12 @@ export function AppProvider({
   const [isSearchPage, toggleSearchPage] = React.useState(
     defaultState.isSearchPage
   );
-
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const token = await user.getIdToken();
+      setToken!(token);
+    }
+  });
   return (
     <AppContext.Provider
       value={{

@@ -19,3 +19,6 @@ export const summaryTitle: string = "Cách viết";
 export const svgPath: string = "https://kanjivg.tagaini.net/kanjivg/kanji/";
 export const translate: string = "Dịch, ý nghĩa";
 export const tuVung: string = "Từ vựng";
+export const editPost:string = "Gửi ý kiến phản hồi";
+export const editPostAdmin:string = "update post";
+export const deletePostAdmin:string = "delete post";

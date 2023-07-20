@@ -1,6 +1,7 @@
+"use server"
 import { injectable } from "inversify";
 import { IMeanRepository } from "lib/repository";
-import { _postData } from "lib/api/api";
+import { _postData } from "lib/api/api_server";
 import { trimMean } from "lib/util";
 
 @injectable()

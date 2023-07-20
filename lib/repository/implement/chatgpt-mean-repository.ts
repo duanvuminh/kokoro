@@ -1,7 +1,8 @@
+"use server";
 import "reflect-metadata";
 import { injectable } from "inversify";
-import { ChatGPT, IMeanRepository, client, index } from "lib/repository";
-import { _postData } from "lib/api/api";
+import { ChatGPT, IMeanRepository, indexAngolia } from "lib/repository";
+import { _postData } from "lib/api/api_server";
 import { trimMean } from "lib/util";
 
 @injectable()
@@ -21,7 +22,7 @@ export class ChatGptMeanRepository implements IMeanRepository {
 
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
-    const angolia = await index.getObjects([query]);
+    const angolia = await indexAngolia.getObjects([query]);
     if (angolia.results[0] != null) {
       return trimMean(angolia.results[0].mean);
     }
@@ -61,7 +62,7 @@ export class ChatGptMeanRepository implements IMeanRepository {
       }
       if (result != "") {
         const saveObject = { objectID: query, mean: result };
-        index.saveObjects([saveObject]);
+        indexAngolia.saveObjects([saveObject]);
       }
       return result;
     });

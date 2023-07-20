@@ -1,6 +1,5 @@
-"use server";
-import { myContainer } from "inversify.config";
 import { DayInMonthPartClient } from "component/part-client";
+import { myContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";

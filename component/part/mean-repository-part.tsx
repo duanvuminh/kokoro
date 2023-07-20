@@ -1,4 +1,3 @@
-"use server";
 import Loading from "app/loading";
 import { MeanUtilsPart } from "component/part";
 import { MeanUtilsPartClient } from "component/part-client";
@@ -17,7 +16,7 @@ export async function MeanRepositoryPart({
 }: Props): Promise<JSX.Element> {
   if (postId == undefined || postType == undefined) return <Fragment />;
   const chars = [...postId];
-  const hantu = chars.map((c, i) => hantuListConst[c]?.hantu).join(" ");
+  const hantu = chars.map((c, i) => hantuListConst()[c]?.hantu).join(" ");
   return (
     <div className="prose">
       <h2>

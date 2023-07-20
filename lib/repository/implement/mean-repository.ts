@@ -1,3 +1,4 @@
+"use server"
 import { MeanRepositoryPart } from "component/part";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";
@@ -31,7 +32,7 @@ export class MeanRepository extends BasePostModel {
         name: this.postId,
         description: `Ý nghĩa ${this.postId}, dịch ${this.postId}`,
       },
-      educationalLevel: hantuListConst[this.postId],
+      educationalLevel: hantuListConst()[this.postId],
     };
   }
 }

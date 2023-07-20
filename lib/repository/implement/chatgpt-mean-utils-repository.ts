@@ -1,5 +1,6 @@
+"use server";
 import { injectable } from "inversify";
-import { _postData } from "lib/api/api";
+import { _postData } from "lib/api/api_server";
 import { ChatGPT, IMeanUtilsRepository } from "lib/repository";
 
 @injectable()
