@@ -4,7 +4,7 @@ import { trimMean } from "lib/util";
 import { Metadata } from "next";
 import { Fragment } from "react";
 
-export const metadata = ({
+export const generateMetadata = ({
   params: { id },
 }: {
   params: { id: string };
