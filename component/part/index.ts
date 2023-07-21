@@ -9,4 +9,6 @@ export * from "./menu-icon-part-emty";
 export * from "./post-content-part";
 export * from "./post-content-summary-part";
 export * from "./subject-repository-part";
+export * from "./login-button-part";
+
 

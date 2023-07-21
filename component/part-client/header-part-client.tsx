@@ -1,9 +1,9 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ButtonTextPart, MenuIconEmptyPart } from "component/part";
-import { useSearch } from "component/part-client";
+import { useAppContext } from "component/part-client";
 
 export function MenuIconPartClient(): JSX.Element {
-  const { isSearchPage } = useSearch();
+  const { isSearchPage } = useAppContext();
   return isSearchPage ? (
     <MenuIconEmptyPart />
   ) : (
