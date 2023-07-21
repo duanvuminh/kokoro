@@ -14,7 +14,7 @@ export function MeanUtilsPartClientHook(postId: string) {
     kyomoGetPostDataClient(`/api/example?postId=${postId}`).then((data) => {
       setState({
         isLoading: false,
-        displayText: data.result.split(/\d./g).filter((e: string) => e !== ""),
+        displayText: data.result.split(/\d\./g).filter((e: string) => e !== ""),
       });
     });
   };
