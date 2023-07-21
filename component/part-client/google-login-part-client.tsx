@@ -1,7 +1,7 @@
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
-  signInWithRedirect,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "lib/repository";
 import { useRouter } from "next/navigation";
@@ -27,7 +27,7 @@ export function GoogleLoginPartClient({
   const cusAriaLabel = ariaLabel || "";
   const login = () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    signInWithPopup(auth, provider);
   };
   return (
     <button className="btn-text" aria-label={cusAriaLabel} onClick={login}>
