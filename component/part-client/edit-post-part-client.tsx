@@ -9,7 +9,7 @@ export function EditPostPartClient({
 }: {
   postId: string;
   defaultValue: string;
-}) {
+}):JSX.Element {
   const onChange = async (event: any) => {
     kyomoPostPostDataClient("/api/distribute-post", {
       postId: postId,

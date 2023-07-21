@@ -4,6 +4,6 @@ export interface IPostModel {
   postId: string;
   getJsonLd(): {};
   getMetadata(): Metadata;
-  getMdx(): (props: any) => JSX.Element|Promise<JSX.Element>;
-  showDetail(): (props: any) => JSX.Element|Promise<JSX.Element>;
+  getSource(): (props: any) => JSX.Element|Promise<JSX.Element>;
+  content(): (props: any) => JSX.Element|Promise<JSX.Element>;
 }

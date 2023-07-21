@@ -9,11 +9,11 @@ import * as KanjiList from "mdx/mdx-kanji";
 export class KanjiRepository extends BasePostModel {
   override PageContentList = KanjiList;
 
-  public override showDetail() {
+  public override content() {
     return () =>
       PostContentPart({
         postId: this.postId,
-        Content: super.showDetail(),
+        Content: super.content(),
       });
   }
   public override getMetadata() {

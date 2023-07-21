@@ -46,7 +46,7 @@ export default function Page({
   let post = postFactory.Create(postType, postId);
 
   const jsonLd = post.getJsonLd();
-  const Content = post.showDetail();
+  const Content = post.content();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />

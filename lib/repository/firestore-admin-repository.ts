@@ -2,7 +2,7 @@ import * as admin from "firebase-admin";
 import { cert } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 
-var serviceAccount = require("kyomo-1590f-firebase-adminsdk-kry7c-8bd128f8ed.json");
+var serviceAccount = require("firebase-admin.json");
 
 if (admin.apps.length == 0)
   admin.initializeApp({

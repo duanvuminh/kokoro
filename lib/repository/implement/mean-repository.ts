@@ -7,7 +7,7 @@ import { BasePostModel } from "lib/model";
 @injectable()
 export class MeanRepository extends BasePostModel {
   PageContentList: any;
-  public override showDetail() {
+  public override content() {
     return MeanRepositoryPart;
   }
   public override getMetadata() {
