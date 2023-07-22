@@ -18,7 +18,7 @@ export const generateStaticParams = () => {
     ...allkaniPath,
     ...allwordListPath,
     ...allkaniListPath,
-    ...allSinglePagePath
+    ...allSinglePagePath,
   ];
 };
 
@@ -47,10 +47,18 @@ export default function Page({
 
   const jsonLd = post.getJsonLd();
   const Content = post.content();
+  const Distribute = post.distribute();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />
-      <Content postId={postId} postType={postType} />
+      <div className="flex flex-col">
+        <div className="grow">
+          <Content postId={postId} postType={postType} />
+        </div>
+        <div className="grow float-right">
+          <Distribute postId={postId} postType={postType}/>
+        </div>
+      </div>
     </Fragment>
   );
 }

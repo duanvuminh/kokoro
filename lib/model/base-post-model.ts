@@ -1,10 +1,21 @@
-import { MdxWrapPart } from "component/part";
+import { ButtonTextPart, MdxWrapPart } from "component/part";
+import {
+  DistributePartClient,
+  EditPostContextPartClient,
+} from "component/part-client";
 import { injectable } from "inversify";
 import { IPostModel } from "lib/repository";
 import { Default } from "mdx/mdx-component";
+import { Fragment, ReactNode } from "react";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
+  distribute(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
+    return DistributePartClient;
+  }
+  editPost(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
+    return Fragment;
+  }
   getSource(): (props: any) => JSX.Element | Promise<JSX.Element> {
     const _post = this._getPost(this.postId);
     return () => MdxWrapPart({ children: _post.default() });
