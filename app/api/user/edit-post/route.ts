@@ -4,10 +4,11 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
-  authAdmin
+  return authAdmin
     .verifyIdToken(data.token)
     .then((_) => {
-      indexAngolia.deleteObject(data.objectID);
+      const saveObject = { objectID: data.postId, mean1: data.value };
+      indexAngolia.partialUpdateObject(saveObject);
       return NextResponse.json({ result: "ok" });
     })
     .catch((error) => {

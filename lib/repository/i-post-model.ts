@@ -9,4 +9,5 @@ export interface IPostModel {
   content(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
   userEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
   adminEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
+  selectorEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
 }

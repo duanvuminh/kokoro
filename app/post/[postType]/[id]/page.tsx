@@ -47,7 +47,7 @@ export default function Page({
 
   const jsonLd = post.getJsonLd();
   const Content = post.content();
-  const Distribute = post.userEdit();
+  const SelectorEdit = post.selectorEdit();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />
@@ -56,7 +56,7 @@ export default function Page({
           <Content postId={postId} postType={postType} />
         </div>
         <div className="grow float-right">
-          <Distribute postId={postId} postType={postType}/>
+          <SelectorEdit postId={postId} postType={postType} />
         </div>
       </div>
     </Fragment>

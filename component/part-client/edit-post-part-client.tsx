@@ -11,14 +11,14 @@ export function EditPostPartClient({
   defaultValue: string;
 }):JSX.Element {
   const onChange = async (event: any) => {
-    kyomoPostPostDataClient("/api/distribute-post", {
+    kyomoPostPostDataClient("/api/user/edit-post", {
       postId: postId,
       value: event.target.value,
     });
   };
   const onClickSave = async (event: any) => {
     const token = await auth.currentUser?.getIdToken();
-    kyomoPostPostDataClient("/api/edit-post", {
+    kyomoPostPostDataClient("/api/admin/edit-post", {
       postId: postId,
       value: event.target.value,
       token: token,
@@ -26,7 +26,7 @@ export function EditPostPartClient({
   };
   const onClickDelete = async (event: any) => {
     const token = await auth.currentUser?.getIdToken();
-    kyomoPostPostDataClient("/api/delete-post", {
+    kyomoPostPostDataClient("/api/admin/delete-post", {
       postId: postId,
       value: event.target.value,
       token: token,

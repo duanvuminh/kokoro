@@ -1,6 +1,6 @@
 import { editGithub, githubRepository } from "lib/const";
 
-export function DistributePartClient({
+export function UserEditPart({
   postId,
   postType,
 }: {

@@ -1,5 +1,4 @@
-import { MdxWrapPart } from "component/part";
-import { DistributePartClient } from "component/part-client";
+import { UserEditPart, MdxWrapPart, SelectorEditPart } from "component/part";
 import { injectable } from "inversify";
 import { IPostModel } from "lib/repository";
 import { Default } from "mdx/mdx-component";
@@ -7,8 +6,11 @@ import { Fragment, ReactNode } from "react";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
+  selectorEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
+    return SelectorEditPart;
+  }
   userEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
-    return DistributePartClient;
+    return UserEditPart;
   }
   adminEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
     return Fragment;
