@@ -7,6 +7,6 @@ export interface IPostModel {
   getMetadata(): Metadata;
   getSource(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
   content(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
-  distribute(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
-  editPost(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
+  userEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
+  adminEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element>;
 }

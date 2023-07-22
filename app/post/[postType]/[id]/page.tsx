@@ -47,7 +47,7 @@ export default function Page({
 
   const jsonLd = post.getJsonLd();
   const Content = post.content();
-  const Distribute = post.distribute();
+  const Distribute = post.userEdit();
   return (
     <Fragment>
       <JsonLdPart jsonLd={jsonLd} />
