@@ -1,5 +1,6 @@
 "use server"
-import { MeanRepositoryPart } from "component/part";
+import { MeanRepositoryPart, MeanUtilsPart } from "component/part";
+import { UserEditMeanPartClient } from "component/part-client";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";
 import { BasePostModel } from "lib/model";
@@ -7,6 +8,15 @@ import { BasePostModel } from "lib/model";
 @injectable()
 export class MeanRepository extends BasePostModel {
   PageContentList: any;
+  
+  public override userEdit() {
+    return UserEditMeanPartClient;
+  }
+
+  public override getSource() {
+    return MeanUtilsPart;
+  }
+
   public override content() {
     return MeanRepositoryPart;
   }
