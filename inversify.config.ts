@@ -13,7 +13,7 @@ import {
   WordListRepository,
 } from "lib/repository";
 import { KanjiListRepository } from "lib/repository/implement/kanji-list-repository";
-import { IPostFactoryModel, PostFactoryImplementModel } from "./lib/model";
+import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 
 const myContainer = new Container();
 myContainer
