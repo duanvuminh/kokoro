@@ -13,7 +13,7 @@ export abstract class BasePostModel implements IPostModel {
     return UserEditPart;
   }
   adminEdit(): (props: any) => ReactNode | JSX.Element | Promise<JSX.Element> {
-    return Fragment;
+    return UserEditPart;
   }
   getSource(): (props: any) => JSX.Element | Promise<JSX.Element> {
     const _post = this._getPost(this.postId);

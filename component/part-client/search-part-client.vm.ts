@@ -12,7 +12,7 @@ const listbox = [
     ratio: 1,
     displayField: "id",
     data: (query: string) =>
-      kyomoGetPostData(`/api/kanji/search?kanji=${query}`).then(
+      kyomoGetPostData(`/api/kanji-search?kanji=${query}`).then(
         (search) => search.result
       ),
     searchType: "contains",

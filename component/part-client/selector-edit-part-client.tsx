@@ -1,15 +1,18 @@
 import { auth } from "lib/repository";
 import { Fragment } from "react";
+import { useAppContext } from "./context/app-context";
 
 export function SelectorEditPartClient({
-  children1,
-  children2,
+  user,
+  admin,
 }: {
-  children1: any;
-  children2: any;
+  user: any;
+  admin: any;
 }) {
+  const { token } = useAppContext();
   const email = auth.currentUser?.email ?? "";
-  if (email == "") return <Fragment />;
-  if (email != "duanvuminh@gmail.com") return <Fragment>{children1}</Fragment>;
-  return <Fragment>{children2}</Fragment>;
+  console.log(email);
+  if (token== "" || email == "") return <Fragment />;
+  if (email != "duanvuminh@gmail.com") return <Fragment>{user}</Fragment>;
+  return <Fragment>{admin}</Fragment>;
 }

@@ -25,3 +25,4 @@ export const editPostAdmin:string = "update post";
 export const deletePostAdmin:string = "delete post";
 export const githubRepository:string = "https://github.com/duanvuminh/kokoro/tree/master/mdx";
 export const editGithub:string = "Edit this page on GitHub";
+export const userEditMean:string = "Đóng góp";

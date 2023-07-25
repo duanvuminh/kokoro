@@ -20,8 +20,8 @@ export async function SelectorEditPart({
   const AdminEdit = post.adminEdit();
   return (
     <SelectorEditPartClient
-      children1={<UserEdit />}
-      children2={<AdminEdit />}
+      user={<UserEdit postId={postId} postType={postType}/>}
+      admin={<AdminEdit postId={postId} postType={postType}/>}
     />
   );
 }
