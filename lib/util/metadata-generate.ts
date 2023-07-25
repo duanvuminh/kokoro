@@ -5,7 +5,7 @@ export const generateMetadataHomePage =  {
   openGraph: {
     title: "Học tiếng nhật cùng kyo",
     description: "Học tiếng nhật mỗi ngày",
-    url: `https://${process.env.VERCEL_URL}/`,
+    url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/`,
     siteName: "Kokoro",
     type: "website",
   },
@@ -20,7 +20,7 @@ export function generateMetadataForKanjiList(id: string) {
     openGraph: {
       title: `Danh sách ${contextText} hán tự`,
       description: `Danh sách ${contextText} hán tự`,
-      url: `https://${process.env.VERCEL_URL}/post/subject/${id}`,
+      url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/subject/${id}`,
       siteName: "Kokoro",
       type: "website",
     },
@@ -49,7 +49,7 @@ export function generateMetadataForWordList(id: string) {
     openGraph: {
       title: `Danh sách ${contextText} từ vựng`,
       description: `Danh sách ${contextText} từ vựng`,
-      url: `https://${process.env.VERCEL_URL}/post/subject/${id}`,
+      url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/subject/${id}`,
       siteName: "Kokoro",
       type: "website",
     },

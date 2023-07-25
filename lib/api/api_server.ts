@@ -18,8 +18,8 @@ export async function _postData(url = "", data: any = {}) {
 
 export async function kyomoGetPostData(url = "") {
   let host = "http://localhost:3000";
-  if (process.env.VERCEL_URL != undefined) {
-    host = `https://${process.env.VERCEL_URL}`;
+  if (process.env.NEXT_PUBLIC_VERCEL_URL != undefined) {
+    host = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
   }
   const response = await fetch(`${host}${url}`, {
     method: "GET",
