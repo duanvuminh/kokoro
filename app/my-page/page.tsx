@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "kyo login",
     description: "kyo login",
-    url: "https://kyomo.vercel.app/login",
+    url: `https://${process.env.VERCEL_URL}/login`,
     siteName: "Kokoro",
     type: "website",
   },

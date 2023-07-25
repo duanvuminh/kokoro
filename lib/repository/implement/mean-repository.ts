@@ -35,7 +35,7 @@ export class MeanRepository extends BasePostModel {
       openGraph: {
         title: `Ý nghĩa ${this.postId}`,
         description: `Ý nghĩa ${this.postId}`,
-        url: `https://kyomo.vercel.app/post/mean/${this.postId}`,
+        url: `https://${process.env.VERCEL_URL}/post/mean/${this.postId}`,
         siteName: `kyomo`,
         type: `website`,
       },

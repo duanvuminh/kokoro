@@ -24,7 +24,7 @@ export class KanjiRepository extends BasePostModel {
       openGraph: {
         title: `Hán tự ${this.postId}`,
         description: `Cách nhớ ${this.postId}`,
-        url: `https://kyomo.vercel.app/post/kanji/${this.postId}`,
+        url: `https://${process.env.VERCEL_URL}/post/kanji/${this.postId}`,
         siteName: `kyomo`,
         type: `website`,
       },

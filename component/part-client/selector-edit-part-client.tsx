@@ -11,7 +11,6 @@ export function SelectorEditPartClient({
 }) {
   const { token } = useAppContext();
   const email = auth.currentUser?.email ?? "";
-  console.log(email);
   if (token== "" || email == "") return <Fragment />;
   if (email != "duanvuminh@gmail.com") return <Fragment>{user}</Fragment>;
   return <Fragment>{admin}</Fragment>;
