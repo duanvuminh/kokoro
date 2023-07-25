@@ -2,7 +2,7 @@
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
-    domains: ["kanjivg.tagaini.net"],
+    domains: ["kanjivg.tagaini.net","lh3.googleusercontent.com"],
   },
   experimental: {
     serverActions: true
