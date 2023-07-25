@@ -1,11 +1,11 @@
 import { Fragment, useEffect } from "react";
 import { useAppContext } from "./app-context";
 
-export function TongleMenuPartClient({ value }: { value: boolean }) {
-  const { toggleSearchPage } = useAppContext();
+export function DisplayHeaderCloseButtonPartClient({ value }: { value: boolean }) {
+  const { setShowCloseButton } = useAppContext();
   useEffect(() => {
-    toggleSearchPage!(value);
-    return () => toggleSearchPage!(!value);
+    setShowCloseButton!(value);
+    return () => setShowCloseButton!(!value);
   }, []);
   return <Fragment />;
 }

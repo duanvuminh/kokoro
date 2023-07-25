@@ -4,18 +4,18 @@ import React, { useEffect } from "react";
 
 interface IAppContext {
   //Show header left close button
-  isSearchPage: boolean;
+  showCloseButton: boolean;
   // N1,N2
   level: number;
   // token login
   token: string;
-  toggleSearchPage?: (value: boolean) => void;
+  setShowCloseButton?: (value: boolean) => void;
   setLevel?: (value: number) => void;
   setToken?: (value: string) => void;
 }
 
 const defaultState = {
-  isSearchPage: false,
+  showCloseButton: false,
   level: 0,
   token: "",
   isLoginPage: false,
@@ -30,27 +30,27 @@ export function AppProvider({
 }): JSX.Element {
   const [level, setLevel] = React.useState(defaultState.level);
   const [token, setToken] = React.useState(defaultState.token);
-  const [isSearchPage, toggleSearchPage] = React.useState(
-    defaultState.isSearchPage
+  const [showCloseButton, setShowCloseButton] = React.useState(
+    defaultState.showCloseButton
   );
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const token = await user.getIdToken();
         setToken!(token);
-      }else{
+      } else {
         setToken!("");
       }
     });
-    return ()=>{}
+    return () => {};
   }, []);
   return (
     <AppContext.Provider
       value={{
-        isSearchPage,
+        showCloseButton,
         level,
         token,
-        toggleSearchPage,
+        setShowCloseButton,
         setLevel,
         setToken,
       }}
