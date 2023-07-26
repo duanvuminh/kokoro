@@ -3,8 +3,8 @@ import { ButtonTextPart, MenuIconEmptyPart } from "component/part";
 import { useAppContext } from "component/part-client";
 
 export function MenuIconPartClient(): JSX.Element {
-  const { isSearchPage } = useAppContext();
-  return isSearchPage ? (
+  const { showCloseButton } = useAppContext();
+  return showCloseButton ? (
     <MenuIconEmptyPart />
   ) : (
     <ButtonTextPart href="/" ariaLabel="tìm kiếm" className="sm:invisible">
