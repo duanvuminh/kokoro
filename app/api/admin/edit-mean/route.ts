@@ -6,11 +6,11 @@ export async function POST(request: NextRequest) {
   const data = await request.json();
   return authAdmin
     .verifyIdToken(data.token)
-    .then((_) => {
+    .then(async (_) => {
       const email = _.email ?? "";
       if (email == "duanvuminh@gmail.com") {
-        const saveObject = { objectID: data.postId, mean: data.value };
-        indexAngolia.partialUpdateObject(saveObject);
+        const angolia = await indexAngolia.getObject(data.postId);
+        indexAngolia.partialUpdateObject({ ...angolia, mean: angolia.mean1 });
         return NextResponse.json({ result: "ok" });
       }
       return NextResponse.json({ result: "error" });

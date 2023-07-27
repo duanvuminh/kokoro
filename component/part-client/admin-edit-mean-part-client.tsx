@@ -15,19 +15,17 @@ export function AdminEditMeanPartClient({
   const onClick = () => {
     setOpen(true);
   };
-  const onClickSave = async (event: any) => {
+  const onClickSave = async () => {
     const token = await auth.currentUser?.getIdToken();
     kyomoPostPostDataClient("/api/admin/edit-mean", {
       postId: postId,
-      value: event.target.value,
       token: token,
     });
   };
-  const onClickDelete = async (event: any) => {
+  const onClickDelete = async () => {
     const token = await auth.currentUser?.getIdToken();
     kyomoPostPostDataClient("/api/admin/delete-mean", {
       postId: postId,
-      value: event.target.value,
       token: token,
     });
   };

@@ -2,15 +2,16 @@ import {
   kyomoGetPostDataClient,
   kyomoPostPostDataClient,
 } from "lib/api/api_client";
+import { auth } from "lib/repository";
 import { Fragment, useEffect, useState } from "react";
 
-export function EditPostPartClient({
+export async function EditPostPartClient({
   postId,
   postType,
 }: {
   postId: string;
   postType: string;
-}): JSX.Element {
+}): Promise<JSX.Element> {
   const getMean = () => {
     kyomoGetPostDataClient("/api/mean-angolia?postId=" + postId).then(
       (data) => {
@@ -20,10 +21,13 @@ export function EditPostPartClient({
       }
     );
   };
-  const onChange = async (event: any) => {
-    kyomoPostPostDataClient("/api/user/edit-mean", {
-      postId: postId,
-      value: event.target.value,
+  const onChange = (event: any) => {
+    auth.currentUser?.getIdToken().then((token) => {
+      kyomoPostPostDataClient("/api/user/edit-mean", {
+        postId: postId,
+        value: event.target.value,
+        token: token,
+      });
     });
   };
   const [content, setContent] = useState("");
@@ -46,7 +50,7 @@ export function EditPostPartClient({
       <textarea
         rows={10}
         className="w-full"
-        value={content}
+        defaultValue={content}
         onChange={onChange}
       />
     </Fragment>

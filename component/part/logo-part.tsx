@@ -5,7 +5,7 @@ export function LogoPart() {
   return (
     <p>
       <Link href="/">
-        <button className="leaading-none px-3 text-rose-600 text-4xl sm:h-40 sm:text-7xl">
+        <button className="leaading-none px-3 text-rose-600 text-4xl sm:h-28 sm:text-6xl">
           {siteName}
         </button>
       </Link>
