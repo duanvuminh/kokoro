@@ -24,11 +24,11 @@ export function MyPagePartClient() {
     email = auth.currentUser?.email ?? "";
   }
   const commonSetting = (
-    <Fragment>
+    <div>
       <TabPartClient />
       <p className="mt-4">{kanjiStroke}</p>
       <ButtonTextPart href="/post/single-page/Stroke">stroke</ButtonTextPart>
-    </Fragment>
+    </div>
   );
   return token == "" ? (
     <Fragment>
