@@ -1,6 +1,7 @@
 export const appURL: string = "https://kyomo.vercel.app";
 export const example: string = "Ví dụ";
 export const kanji: string = "Hán tự";
+export const kanjiStroke: string = "Hán tự stroke";
 export const mean: string = "Ý nghĩa";
 export const logout: string = "Thoát";
 export const googleLogin: string = "Google Login";
@@ -28,3 +29,4 @@ export const editGithub: string = "Edit this page on GitHub";
 export const userEditMean: string = "Đóng góp";
 export const avartaImage: string = "Ảnh của bạn";
 export const wellcomeMypage: string = "おはよう!";
+export const settingLevel: string = "Chọn trình độ";

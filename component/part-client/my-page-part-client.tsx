@@ -1,5 +1,10 @@
-import { GoogleLoginPartClient, useAppContext } from "component/part-client";
-import { avartaImage, logout, wellcomeMypage } from "lib/const";
+import { ButtonTextPart } from "component/part";
+import {
+  GoogleLoginPartClient,
+  TabPartClient,
+  useAppContext,
+} from "component/part-client";
+import { avartaImage, kanjiStroke, logout, wellcomeMypage } from "lib/const";
 import { auth } from "lib/repository";
 import Image from "next/image";
 import { Fragment } from "react";
@@ -18,8 +23,16 @@ export function MyPagePartClient() {
     name = auth.currentUser?.displayName ?? "";
     email = auth.currentUser?.email ?? "";
   }
+  const commonSetting = (
+    <Fragment>
+      <TabPartClient />
+      <p className="mt-4">{kanjiStroke}</p>
+      <ButtonTextPart href="/post/single-page/Stroke">stroke</ButtonTextPart>
+    </Fragment>
+  );
   return token == "" ? (
     <Fragment>
+      {commonSetting}
       <GoogleLoginPartClient />
     </Fragment>
   ) : (
@@ -29,7 +42,7 @@ export function MyPagePartClient() {
           <p>{wellcomeMypage}</p>
         </h2>
       </header>
-      <div className="flex items-center">
+      <div className="flex items-center mb-4">
         <Image
           className="rounded-full mr-4"
           src={imageUrl}
@@ -42,6 +55,7 @@ export function MyPagePartClient() {
           <p className="text-gray-600">{email}</p>
         </div>
       </div>
+      {commonSetting}
       <button
         className="btn-text float-right"
         aria-label="login"

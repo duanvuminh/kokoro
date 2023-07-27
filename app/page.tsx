@@ -1,5 +1,4 @@
-import { TabPartClient } from "component/part-client";
-import { SearchPartClient, DisplayHeaderCloseButtonPartClient } from "component/part-client";
+import { DisplayHeaderCloseButtonPartClient, HomePartClient, SearchPartClient } from "component/part-client";
 import { generateMetadataHomePage } from "lib/util";
 import { Fragment } from "react";
 
@@ -10,7 +9,7 @@ export default function Page() {
     <Fragment>
       <DisplayHeaderCloseButtonPartClient value={true} />
       <SearchPartClient />
-      <TabPartClient/>
+      <HomePartClient/>
     </Fragment>
   );
 }

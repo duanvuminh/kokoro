@@ -8,6 +8,7 @@ export * from "./drawer-part-client";
 export * from "./edit-post-part-client";
 export * from "./google-login-part-client";
 export * from "./header-part-client";
+export * from "./home-part-client";
 export * from "./mean-utils-part-client";
 export * from "./mean-utils-part-client.vm";
 export * from "./my-page-part-client";
