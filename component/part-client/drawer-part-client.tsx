@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export function DrawerPartClient({
   open,
@@ -43,18 +43,20 @@ export function DrawerPartClient({
                 >
                   <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md">
                     <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                      <div className="px-4 sm:px-6 flex justify-between">
+                      <div className="px-4 sm:px-6 flex justify-start items-center">
+                        <button
+                          type="button"
+                          className="btn-text"
+                          onClick={() => setOpen(false)}
+                        >
+                          <ArrowLeftIcon
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        </button>
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
                           {title}
                         </Dialog.Title>
-                        <button
-                          type="button"
-                          className="rounded-md text-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-                          onClick={() => setOpen(false)}
-                        >
-                          <span className="sr-only">Close panel</span>
-                          <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                        </button>
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         {children}
