@@ -3,7 +3,6 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "lib/repository";
-import { ReactNode } from "react";
 import { googleLogin } from "lib/const";
 
 export function GoogleLoginPartClient({
@@ -17,7 +16,7 @@ export function GoogleLoginPartClient({
     signInWithPopup(auth, provider);
   };
   return (
-    <button className="btn-text" aria-label={cusAriaLabel} onClick={login}>
+    <button className="btn-text float-right" aria-label={cusAriaLabel} onClick={login}>
       {googleLogin}
     </button>
   );
