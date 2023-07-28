@@ -12,7 +12,7 @@ export const metadata = generateMetadataHomePage;
 export default function Page() {
   return (
     <Fragment>
-      <HeaderPart />
+      <HeaderPart dense={false} />
       <main className="max-w-2xl p-2 sm:p-0 sm:mt-5 mx-auto">
         <DisplayHeaderCloseButtonPartClient value={true} />
         <SearchPartClient />
