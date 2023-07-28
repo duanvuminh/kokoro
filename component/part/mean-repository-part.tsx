@@ -1,4 +1,4 @@
-import Loading from "app/loading";
+import Loading from "app/(subpage)/loading";
 import { MeanUtilsPartClient } from "component/part-client";
 import { myContainer } from "inversify.config";
 import { TYPES, hantuListConst } from "lib/const";
