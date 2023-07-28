@@ -5,13 +5,13 @@ import {
 import { auth } from "lib/repository";
 import { Fragment, useEffect, useState } from "react";
 
-export async function EditPostPartClient({
+export function EditPostPartClient({
   postId,
   postType,
 }: {
   postId: string;
   postType: string;
-}): Promise<JSX.Element> {
+}): JSX.Element {
   const getMean = () => {
     kyomoGetPostDataClient("/api/mean-angolia?postId=" + postId).then(
       (data) => {
