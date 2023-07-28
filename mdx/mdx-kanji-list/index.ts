@@ -27,8 +27,6 @@ export * as N1_day_26 from "./N1_day_26.mdx"
 export * as N1_day_27 from "./N1_day_27.mdx"
 export * as N1_day_28 from "./N1_day_28.mdx"
 export * as N1_day_29 from "./N1_day_29.mdx"
-export * as N1_day_30 from "./N1_day_30.mdx"
-export * as N1_day_31 from "./N1_day_31.mdx"
 export * as N2_day_01 from "./N2_day_01.mdx"
 export * as N2_day_02 from "./N2_day_02.mdx"
 export * as N2_day_03 from "./N2_day_03.mdx"
@@ -107,21 +105,6 @@ export * as N4_day_13 from "./N4_day_13.mdx"
 export * as N4_day_14 from "./N4_day_14.mdx"
 export * as N4_day_15 from "./N4_day_15.mdx"
 export * as N4_day_16 from "./N4_day_16.mdx"
-export * as N4_day_17 from "./N4_day_17.mdx"
-export * as N4_day_18 from "./N4_day_18.mdx"
-export * as N4_day_19 from "./N4_day_19.mdx"
-export * as N4_day_20 from "./N4_day_20.mdx"
-export * as N4_day_21 from "./N4_day_21.mdx"
-export * as N4_day_22 from "./N4_day_22.mdx"
-export * as N4_day_23 from "./N4_day_23.mdx"
-export * as N4_day_24 from "./N4_day_24.mdx"
-export * as N4_day_25 from "./N4_day_25.mdx"
-export * as N4_day_26 from "./N4_day_26.mdx"
-export * as N4_day_27 from "./N4_day_27.mdx"
-export * as N4_day_28 from "./N4_day_28.mdx"
-export * as N4_day_29 from "./N4_day_29.mdx"
-export * as N4_day_30 from "./N4_day_30.mdx"
-export * as N4_day_31 from "./N4_day_31.mdx"
 export * as N5_day_01 from "./N5_day_01.mdx"
 export * as N5_day_02 from "./N5_day_02.mdx"
 export * as N5_day_03 from "./N5_day_03.mdx"
@@ -160,8 +143,6 @@ const paths: string[] = [
 "N1_day_27",
 "N1_day_28",
 "N1_day_29",
-"N1_day_30",
-"N1_day_31",
 "N2_day_01",
 "N2_day_02",
 "N2_day_03",
@@ -240,21 +221,6 @@ const paths: string[] = [
 "N4_day_14",
 "N4_day_15",
 "N4_day_16",
-"N4_day_17",
-"N4_day_18",
-"N4_day_19",
-"N4_day_20",
-"N4_day_21",
-"N4_day_22",
-"N4_day_23",
-"N4_day_24",
-"N4_day_25",
-"N4_day_26",
-"N4_day_27",
-"N4_day_28",
-"N4_day_29",
-"N4_day_30",
-"N4_day_31",
 "N5_day_01",
 "N5_day_02",
 "N5_day_03",

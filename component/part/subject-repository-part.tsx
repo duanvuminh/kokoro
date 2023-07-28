@@ -18,7 +18,7 @@ export async function SubjectRepositoryPart({
   let post = postFactory.Create(postType, postId);
   const Content = post.getSource();
   return (
-    <DayInMonthPartClient postId={postId} postType={postType}>
+    <DayInMonthPartClient postId={postId} postType={postType} days={0}>
       <Content />
     </DayInMonthPartClient>
   );
