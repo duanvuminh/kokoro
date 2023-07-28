@@ -4,7 +4,7 @@ import {
   TabPartClient,
   useAppContext,
 } from "component/part-client";
-import { avartaImage, kanjiStroke, logout, wellcomeMypage } from "lib/const";
+import { avartaImage, kanjiStroke, logout } from "lib/const";
 import { auth } from "lib/repository";
 import Image from "next/image";
 import { Fragment } from "react";
@@ -37,12 +37,7 @@ export function MyPagePartClient() {
     </Fragment>
   ) : (
     <Fragment>
-      <header className="prose">
-        <h2>
-          <p>{wellcomeMypage}</p>
-        </h2>
-      </header>
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 justify-center">
         <Image
           className="rounded-full mr-4"
           src={imageUrl}

@@ -28,5 +28,4 @@ export const githubRepository: string =
 export const editGithub: string = "Edit this page on GitHub";
 export const userEditMean: string = "Đóng góp";
 export const avartaImage: string = "Ảnh của bạn";
-export const wellcomeMypage: string = "おはよう!";
 export const settingLevel: string = "Chọn trình độ";
