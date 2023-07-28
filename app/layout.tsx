@@ -12,10 +12,7 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
       <body className="container mx-auto pb-4">
         <AppProvider>
           <Fragment>
-            <HeaderPart />
-            <main className="max-w-2xl p-2 sm:p-0 sm:mt-5 mx-auto">
-              {children}
-            </main>
+            {children}
           </Fragment>
         </AppProvider>
       </body>
