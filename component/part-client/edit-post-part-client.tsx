@@ -21,7 +21,7 @@ export function EditPostPartClient({
       }
     );
   };
-  const onChange = (event: any) => {
+  const onBlur = (event: any) => {
     auth.currentUser?.getIdToken().then((token) => {
       kyomoPostPostDataClient("/api/user/edit-mean", {
         postId: postId,
@@ -51,7 +51,7 @@ export function EditPostPartClient({
         rows={10}
         className="w-full"
         defaultValue={content}
-        onChange={onChange}
+        onBlur={onBlur}
       />
     </Fragment>
   );
