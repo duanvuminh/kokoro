@@ -148,10 +148,10 @@ export * as N5_day_23 from "./N5_day_23.mdx"
 export * as N5_day_24 from "./N5_day_24.mdx"
 export * as N5_day_25 from "./N5_day_25.mdx"
 export * as N5_day_26 from "./N5_day_26.mdx"
+export * as N5_day_27 from "./N5_day_27.mdx"
 export * as N5_day_29 from "./N5_day_29.mdx"
 export * as N5_day_30 from "./N5_day_30.mdx"
 export * as N5_day_31 from "./N5_day_31.mdx"
-export * as N５_day_27 from "./N５_day_27.mdx"
 export * as N５_day_28 from "./N５_day_28.mdx"
 const paths: string[] = [
 "N1_day_01",
@@ -304,10 +304,10 @@ const paths: string[] = [
 "N5_day_24",
 "N5_day_25",
 "N5_day_26",
+"N5_day_27",
 "N5_day_29",
 "N5_day_30",
 "N5_day_31",
-"N５_day_27",
 "N５_day_28",
 ]
 export {paths}
