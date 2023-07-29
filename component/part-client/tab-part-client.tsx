@@ -4,8 +4,6 @@ import { Fragment } from "react";
 
 export function TabPartClient() {
   const { selectTab, level } = TabPartClientHook();
-  const disableClass =
-    "inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed";
   const activeClass =
     "inline-block p-4 text-blue-600 border-blue-600 rounded-t-lg active";
   const normalClass =

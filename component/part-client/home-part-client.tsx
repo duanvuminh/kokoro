@@ -11,12 +11,12 @@ export function HomePartClient() {
   return (
     <Fragment>
       <ButtonTextPart
-        href={`/post/kanji-list/${levelList[level].name}_day_${dayStr}`}
+        href={`/post/kanji-list/${levelList[level]?.name}_day_${dayStr}`}
       >
         {kanji}
       </ButtonTextPart>
       <ButtonTextPart
-        href={`/post/word-list/${levelList[level].name}_day_${dayStr}`}
+        href={`/post/word-list/${levelList[level]?.name}_day_${dayStr}`}
       >
         {tuVung}
       </ButtonTextPart>

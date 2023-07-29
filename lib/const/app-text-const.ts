@@ -29,3 +29,4 @@ export const editGithub: string = "Edit this page on GitHub";
 export const userEditMean: string = "Đóng góp";
 export const avartaImage: string = "Ảnh của bạn";
 export const settingLevel: string = "Chọn trình độ";
+export const level_local_storage: string = "level_local_storage";

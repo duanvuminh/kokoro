@@ -1,4 +1,5 @@
 import { onAuthStateChanged } from "firebase/auth";
+import { level_local_storage } from "lib/const";
 import { auth } from "lib/repository";
 import React, { useEffect } from "react";
 
@@ -34,6 +35,9 @@ export function AppProvider({
     defaultState.showCloseButton
   );
   useEffect(() => {
+    const localLevel =
+      parseInt(localStorage.getItem(level_local_storage) ?? "0");
+    setLevel(localLevel);
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const token = await user.getIdToken();
