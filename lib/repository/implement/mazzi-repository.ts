@@ -1,11 +1,23 @@
-"use server"
+"use server";
 import { injectable } from "inversify";
-import { IMeanRepository } from "lib/repository";
 import { _postData } from "lib/api/api_server";
 import { trimMean } from "lib/util";
+import { IMazziRepository } from "lib/repository";
 
 @injectable()
-export class MazziMeanRepository implements IMeanRepository {
+export class MazziRepository implements IMazziRepository {
+  getYomi(query: string): Promise<string> {
+    const url: string = "https://mazii.net/api/search";
+    return _postData(url, {
+      query: query,
+      dict: "javi",
+      type: "word",
+      limit: 1,
+      page: 1,
+    }).then((data) => {
+      return `${data?.data?.[0]?.phonetic ?? ""}`;
+    });
+  }
   async getMean(query: string): Promise<string> {
     const url: string = "https://mazii.net/api/search";
     return _postData(url, {

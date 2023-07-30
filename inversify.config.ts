@@ -1,31 +1,31 @@
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
+import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 import {
-  ChatGptMeanRepository,
-  ChatGptMeanUtilsRepository,
-  IMeanRepository,
-  IMeanUtilsRepository,
-  IPostModel,
+  type IChatGptRepository,
+  type IPostModel,
   KanjiRepository,
+  MazziRepository,
   MeanRepository,
   SinglePageRepository,
+  type IMazziRepository,
   WordListRepository,
+  ChatGptRepository,
+  KanjiListRepository,
 } from "lib/repository";
-import { KanjiListRepository } from "lib/repository/implement/kanji-list-repository";
-import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 
 const myContainer = new Container();
+myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
 myContainer
-  .bind<IMeanRepository>(TYPES.IMeanRepository)
-  .to(ChatGptMeanRepository);
-myContainer
-  .bind<IMeanUtilsRepository>(TYPES.IMeanUtilsRepository)
-  .to(ChatGptMeanUtilsRepository);
+  .bind<IChatGptRepository>(TYPES.IChatGptRepository)
+  .to(ChatGptRepository);
+
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(WordListRepository)
   .whenTargetNamed("word-list");
+
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiListRepository)
@@ -54,6 +54,7 @@ myContainer
       return post;
     };
   });
+
 myContainer
   .bind<IPostFactoryModel>(TYPES.IPostFactoryModel)
   .to(PostFactoryImplementModel);
