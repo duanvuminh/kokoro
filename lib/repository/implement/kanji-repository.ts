@@ -10,11 +10,7 @@ export class KanjiRepository extends BasePostModel {
   override PageContentList = KanjiList;
 
   public override content() {
-    return () =>
-      PostContentPart({
-        postId: this.postId,
-        Content: super.content(),
-      });
+    return PostContentPart;
   }
   public override getMetadata() {
     return {
