@@ -9,10 +9,10 @@ type Props = {
   postType: string;
 };
 
-export async function SelectorEditPart({
+export function SelectorEditPart({
   postId,
   postType,
-}: Props): Promise<JSX.Element> {
+}: Props): JSX.Element {
   if (postId == undefined || postType == undefined) return <Fragment />;
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, postId);

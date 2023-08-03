@@ -11,10 +11,7 @@ type Props = {
   postType: string;
 };
 
-export async function MeanRepositoryPart({
-  postId,
-  postType,
-}: Props): Promise<JSX.Element> {
+export function MeanRepositoryPart({ postId, postType }: Props) {
   if (postId == undefined || postType == undefined) return <Fragment />;
   const chars = [...postId];
   const hantu = chars.map((c, i) => hantuListConst()[c]?.hantu).join(" ");

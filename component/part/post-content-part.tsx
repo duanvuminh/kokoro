@@ -3,13 +3,13 @@ import { myContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
-export async function PostContentPart({
+export function PostContentPart({
   postId,
   postType,
 }: {
   postId: string;
   postType: string;
-}): Promise<JSX.Element> {
+}){
   if (postId == undefined || postType == undefined) return <Fragment />;
   let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, postId);
