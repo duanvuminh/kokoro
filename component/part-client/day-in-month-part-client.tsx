@@ -6,15 +6,11 @@ import { Fragment } from "react";
 type Props = {
   postId: string;
   postType: string;
-  days: number;
-  children: any;
 };
 
 export function DayInMonthPartClient({
   postId,
   postType,
-  days,
-  children,
 }: Props): JSX.Element {
   const router = useRouter();
   const daysInMonth = [];
@@ -49,7 +45,6 @@ export function DayInMonthPartClient({
       <ButtonTextPart href={`/post/${postType}/${targetpostIdPre}/`}>
         {`day ${(target?.index ?? 2) - 1 == 0 ? 31 : (target?.index ?? 2) - 1}`}
       </ButtonTextPart>
-      {children}
     </Fragment>
   );
 }
