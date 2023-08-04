@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { level_local_storage } from "lib/const/app-text-client-const";
-import { auth } from "lib/repository";
+import { auth } from "lib/repository/firestore-repository";
 import React, { useEffect } from "react";
 
 interface IAppContext {

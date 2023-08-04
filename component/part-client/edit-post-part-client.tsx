@@ -2,7 +2,7 @@ import {
   kyomoGetPostDataClient,
   kyomoPostPostDataClient,
 } from "lib/api/api_client";
-import { auth } from "lib/repository";
+import { auth } from "lib/repository/firestore-repository";
 import { Fragment, useEffect, useState } from "react";
 
 export function EditPostPartClient({
