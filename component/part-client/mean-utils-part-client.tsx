@@ -1,5 +1,5 @@
 import { MeanUtilsPartClientHook } from "component/part-client";
-import { example, otherQuestion } from "lib/const";
+import { example, otherQuestion } from "lib/const/app-text-client-const";
 import { Fragment } from "react";
 
 export function MeanUtilsPartClient({

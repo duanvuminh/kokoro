@@ -1,4 +1,4 @@
-import { level_local_storage } from "lib/const";
+import { level_local_storage } from "lib/const/app-text-client-const";
 import { useAppContext } from "./context/app-context";
 
 export function TabPartClientHook() {

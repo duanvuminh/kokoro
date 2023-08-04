@@ -1,5 +1,6 @@
 import { TabPartClientHook } from "component/part-client";
-import { levelList, settingLevel } from "lib/const";
+import { settingLevel } from "lib/const/app-text-client-const";
+import { levelList } from "lib/const/type-client-const";
 import { Fragment } from "react";
 
 export function TabPartClient() {

@@ -3,7 +3,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "lib/repository";
-import { googleLogin } from "lib/const";
+import { googleLogin } from "lib/const/app-text-client-const";
 
 export function GoogleLoginPartClient({
   ariaLabel,

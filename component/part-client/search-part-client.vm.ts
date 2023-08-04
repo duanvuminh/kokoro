@@ -1,5 +1,5 @@
 import { kyomoGetPostData } from "lib/api/api_server";
-import { kanji, mean } from "lib/const";
+import { kanji, mean } from "lib/const/app-text-client-const";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 

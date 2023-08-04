@@ -1,4 +1,4 @@
-import { appURL, siteTitle } from "lib/const";
+import { siteTitle } from "lib/const";
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other
@@ -6,7 +6,7 @@ export function appMetadataConst(): Metadata {
   return {
     title: siteTitle,
     manifest: "/manifest.json",
-    metadataBase: new URL(appURL),
+    metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/`),
     //https://rob-ferguson.me/pwa-tips-and-tricks/
     icons: {
       icon: [

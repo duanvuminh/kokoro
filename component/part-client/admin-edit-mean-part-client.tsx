@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { deletePostAdmin, editPostAdmin, userEditMean } from "lib/const";
+import { deletePostAdmin, editPostAdmin, userEditMean } from "lib/const/app-text-client-const";
 import { DrawerPartClient, EditPostPartClient } from "component/part-client";
 import { auth } from "lib/repository";
 import { kyomoPostPostDataClient } from "lib/api/api_client";
