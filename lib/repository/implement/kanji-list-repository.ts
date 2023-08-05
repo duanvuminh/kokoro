@@ -1,4 +1,3 @@
-"use server"
 import { SubjectRepositoryPart } from "component/part";
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";

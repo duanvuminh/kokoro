@@ -1,3 +1,4 @@
+"use server"
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
@@ -59,4 +60,8 @@ myContainer
   .bind<IPostFactoryModel>(TYPES.IPostFactoryModel)
   .to(PostFactoryImplementModel);
 
-export { myContainer };
+const getContainer = () => {
+  return myContainer;
+}
+
+export { getContainer };

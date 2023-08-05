@@ -1,4 +1,3 @@
-"use server"
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
 import {

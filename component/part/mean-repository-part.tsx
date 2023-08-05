@@ -1,6 +1,6 @@
 import Loading from "app/(subpage)/loading";
 import { MeanUtilsPartClient } from "component/part-client";
-import { myContainer } from "inversify.config";
+import { getContainer } from "inversify.config";
 import { TYPES, hantuListConst } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export function MeanRepositoryPart({ postId, postType }: Props) {
   if (postId == undefined || postType == undefined) return <Fragment />;
   const chars = [...postId];
   const hantu = chars.map((c, i) => hantuListConst()[c]?.hantu).join(" ");
-  let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, postId);
   let MeanUtilsPart = post.getSource();
   return (

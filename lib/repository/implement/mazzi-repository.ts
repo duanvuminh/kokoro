@@ -1,4 +1,3 @@
-"use server";
 import { injectable } from "inversify";
 import { _postData } from "lib/api/api_server";
 import { trimMean } from "lib/util";

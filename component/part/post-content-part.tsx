@@ -1,5 +1,5 @@
 import { PostContentSummaryPart } from "component/part";
-import { myContainer } from "inversify.config";
+import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
@@ -11,7 +11,7 @@ export function PostContentPart({
   postType: string;
 }){
   if (postId == undefined || postType == undefined) return <Fragment />;
-  let postFactory = myContainer.get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, postId);
   const Content = post.getSource();
   return (

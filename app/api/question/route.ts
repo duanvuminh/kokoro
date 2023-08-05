@@ -1,10 +1,10 @@
-import { myContainer } from "inversify.config";
+import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IChatGptRepository } from "lib/repository";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
-  const meanUtilsRepo = myContainer.get<IChatGptRepository>(
+  const meanUtilsRepo = getContainer().get<IChatGptRepository>(
     TYPES.IChatGptRepository
   );
   const { searchParams } = new URL(request.url);

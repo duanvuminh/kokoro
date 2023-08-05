@@ -1,4 +1,3 @@
-"use server"
 import { PostContentPart } from "component/part";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";

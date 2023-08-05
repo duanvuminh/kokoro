@@ -1,4 +1,3 @@
-"use server";
 import { MeanRepositoryPart, MeanUtilsPart } from "component/part";
 import {
   AdminEditMeanPartClient,
