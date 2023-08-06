@@ -1,4 +1,3 @@
-import { DayInMonthPartClient } from "component/part-client";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
@@ -7,11 +6,13 @@ import { Fragment } from "react";
 type Props = {
   postId: string;
   postType: string;
+  children:any;
 };
 
 export function SubjectRepositoryPart({
   postId,
   postType,
+  children
 }: Props): JSX.Element {
   if (postId == undefined || postType == undefined) return <Fragment />;
   let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
@@ -19,7 +20,7 @@ export function SubjectRepositoryPart({
   const Content = post.getSource();
   return (
     <Fragment>
-      <DayInMonthPartClient postId={postId} postType={postType} />
+      {children}
       <Content />
     </Fragment>
   );

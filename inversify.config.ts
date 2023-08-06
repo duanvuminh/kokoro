@@ -1,4 +1,4 @@
-"use server"
+"use server";
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
@@ -14,6 +14,8 @@ import {
   WordListRepository,
   ChatGptRepository,
   KanjiListRepository,
+  WordListDecoratorRepository,
+  KanjiListDecoratorRepository,
 } from "lib/repository";
 
 const myContainer = new Container();
@@ -21,16 +23,24 @@ myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
 myContainer
   .bind<IChatGptRepository>(TYPES.IChatGptRepository)
   .to(ChatGptRepository);
-
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(WordListRepository)
+  .whenTargetNamed("word-list-origin");
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(WordListDecoratorRepository)
   .whenTargetNamed("word-list");
 
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiListRepository)
+  .whenTargetNamed("kanji-list-origin");
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(KanjiListDecoratorRepository)
   .whenTargetNamed("kanji-list");
+
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiRepository)
@@ -44,7 +54,7 @@ myContainer
   .to(MeanRepository)
   .whenTargetNamed("mean");
 myContainer
-  .bind<interfaces.Factory<IPostModel>>(TYPES.IPostModelFactory)
+  .bind<interfaces.Factory<IPostModel>>(TYPES.IPostFactoryCreator)
   .toFactory((context) => {
     return (targetName: string, postId: string) => {
       let post = context.container.getNamed<IPostModel>(
@@ -52,6 +62,7 @@ myContainer
         targetName
       );
       post.postId = postId;
+      post.postType = targetName;
       return post;
     };
   });
@@ -62,6 +73,6 @@ myContainer
 
 const getContainer = () => {
   return myContainer;
-}
+};
 
 export { getContainer };

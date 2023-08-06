@@ -12,5 +12,6 @@ export * from "./post-content-summary-part";
 export * from "./selector-edit-part";
 export * from "./subject-repository-part";
 export * from "./user-edit-part";
+export * from "./day-in-month-part";
 
 

@@ -11,7 +11,7 @@ export class PostFactoryImplementModel implements IPostFactoryModel {
   private _postFactory: (targetName: string, postId: string) => IPostModel;
 
   constructor(
-    @inject(TYPES.IPostModelFactory)
+    @inject(TYPES.IPostFactoryCreator)
     factory: (targetName: string, postId: string) => IPostModel
   ) {
     this._postFactory = factory;

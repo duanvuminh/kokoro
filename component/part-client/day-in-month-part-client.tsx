@@ -11,7 +11,7 @@ type Props = {
 export function DayInMonthPartClient({
   postId,
   postType,
-}: Props): JSX.Element {
+}: Props) {
   const router = useRouter();
   const daysInMonth = [];
   for (let i = 1; i < 32; i++) {

@@ -5,6 +5,8 @@ import { Default } from "mdx/mdx-component";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
+  postType!: string;
+
   selectorEdit() {
     return SelectorEditPart;
   }
