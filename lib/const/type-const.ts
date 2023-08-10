@@ -5,5 +5,7 @@ const TYPES = {
   IPostModel: Symbol.for("IPostModel"),
   IPostFactoryCreator: Symbol.for("Factory<IPostModel>"),
   IPostFactoryModel: Symbol.for("IPostFactoryModel"),
+  WordListRepository:Symbol.for("WordListRepository"),
+  KanjiListRepository: Symbol.for("KanjiListRepository"),
 };
 export { TYPES };

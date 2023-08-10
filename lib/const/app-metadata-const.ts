@@ -1,4 +1,4 @@
-import { siteTitle } from "lib/const";
+import { siteTitle } from "lib/const/app-text-const";
 import type { Metadata } from "next";
 
 //https://beta.nextjs.org/docs/api-reference/metadata#other

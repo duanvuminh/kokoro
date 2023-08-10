@@ -23,19 +23,14 @@ myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
 myContainer
   .bind<IChatGptRepository>(TYPES.IChatGptRepository)
   .to(ChatGptRepository);
-myContainer
-  .bind<IPostModel>(TYPES.IPostModel)
-  .to(WordListRepository)
-  .whenTargetNamed("word-list-origin");
+
+myContainer.bind<IPostModel>(TYPES.WordListRepository).to(WordListRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(WordListDecoratorRepository)
   .whenTargetNamed("word-list");
 
-myContainer
-  .bind<IPostModel>(TYPES.IPostModel)
-  .to(KanjiListRepository)
-  .whenTargetNamed("kanji-list-origin");
+myContainer.bind<IPostModel>(TYPES.KanjiListRepository).to(KanjiListRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(KanjiListDecoratorRepository)

@@ -5,7 +5,27 @@ import { Default } from "mdx/mdx-component";
 
 @injectable()
 export abstract class BasePostModel implements IPostModel {
-  postType!: string;
+  private _postType:string | undefined;
+  get postType(): string {
+    if(this._postType==undefined){
+      return "";
+    }
+    return this._postType;
+  }
+  set postType(value: string) {
+    this._postType= value;
+  }
+
+  private _postId:string | undefined;
+  get postId(): string {
+    if(this._postId==undefined){
+      return "";
+    }
+    return this._postId;
+  }
+  set postId(value: string) {
+    this._postId= value;
+  }
 
   selectorEdit() {
     return SelectorEditPart;
@@ -20,7 +40,6 @@ export abstract class BasePostModel implements IPostModel {
     const _post = this._getPost(this.postId);
     return () => MdxWrapPart({ children: _post.default() });
   }
-  postId!: string;
 
   abstract PageContentList: any;
 

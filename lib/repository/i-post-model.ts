@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export interface IPostModel {
-  postId: string;
-  postType: string;
+  get postId(): string;
+  set postId(value: string);
+  get postType(): string;
+  set postType(value: string);
   getJsonLd(): {};
   getMetadata(): Metadata;
   getSource(): (props: any) => JSX.Element | Promise<JSX.Element>;

@@ -1,50 +1,71 @@
 import { DayInMonthPart } from "component/part";
 import { injectable } from "inversify";
-import { getContainer } from "inversify.config";
-import { TYPES } from "lib/const";
 import { type IPostModel, IPostTypeListModel } from "lib/repository";
 import { Metadata } from "next";
 
 @injectable()
 export class BasePostTypeListModel implements IPostTypeListModel, IPostModel {
   private _post: IPostModel | undefined;
-  private postfix = "-origin";
-  private get post(): IPostModel {
-    if (this._post != undefined) return this._post;
-    this._post = getContainer().getNamed<IPostModel>(
-      TYPES.IPostModel,
-      this.postType + this.postfix
-    );
-    this._post.postId = this.postId;
-    this._post.postType = this.postType;
-    return this._post;
+  private _postType:string | undefined;
+  get postType(): string {
+    if(this._postType==undefined){
+      return "";
+    }
+    return this._postType;
   }
-  postId!: string;
-  postType!: string;
+  set postType(value: string) {
+    if (this._post) {
+      this._post.postType = value;
+    }
+    this._postType= value;
+  }
+
+  private _postId:string | undefined;
+  get postId(): string {
+    if(this._postId==undefined){
+      return "";
+    }
+    return this._postId;
+  }
+  set postId(value: string) {
+    if (this._post) {
+      this._post.postId = value;
+    }
+    this._postId= value;
+  }
+
+  constructor(
+    post: IPostModel
+  ) {
+    this._post = post;
+  }
 
   getJsonLd(): {} {
-    return this.post.getJsonLd();
+    return this._post!.getJsonLd();
   }
   getMetadata(): Metadata {
-    return this.post.getMetadata();
+    return this._post!.getMetadata();
   }
   getSource(): (props: any) => JSX.Element | Promise<JSX.Element> {
-    return this.post.getSource();
+    return this._post!.getSource();
   }
   content(): (props: any) => JSX.Element | Promise<JSX.Element> {
-    const Content = this.post.content() as any;
+    const Content = this._post!.content() as any;
     const LinkPices = this.linkPices();
-    console.log(LinkPices)
-    return (props:any) => Content({...props,children: LinkPices({postId: this.postId,postType:this.postType})});
+    return (props: any) =>
+      Content({
+        ...props,
+        children: LinkPices({ postId: this.postId, postType: this.postType }),
+      });
   }
   userEdit(): (props: any) => JSX.Element {
-    return this.post.userEdit();
+    return this._post!.userEdit();
   }
   adminEdit(): (props: any) => JSX.Element {
-    return this.post.adminEdit();
+    return this._post!.adminEdit();
   }
   selectorEdit(): (props: any) => JSX.Element {
-    return this.post.selectorEdit();
+    return this._post!.selectorEdit();
   }
 
   breakToPices() {
