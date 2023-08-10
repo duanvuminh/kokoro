@@ -25,6 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# pwa gen files
+sw.js
+workbox-*.*
+
 # local env files
 .env*.local
 
