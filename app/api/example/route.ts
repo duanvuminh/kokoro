@@ -9,9 +9,9 @@ export async function GET(request: NextRequest) {
   );
   let res = "";
   const { searchParams } = new URL(request.url);
-  const postId = searchParams.get("postId");
-  if (postId !== undefined) {
-    res = await meanUtilsRepo.getExample(postId!);
+  const id = searchParams.get("id");
+  if (id !== undefined) {
+    res = await meanUtilsRepo.getExample(id!);
     return NextResponse.json({ result: res });
   }
   if (res == "") {

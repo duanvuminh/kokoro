@@ -5,10 +5,10 @@ import { type IPostModel } from "lib/repository";
 
 @injectable()
 export class KanjiListDecoratorRepository extends BasePostTypeListModel {
-    constructor(
-        @inject(TYPES.KanjiListRepository)
-        post: IPostModel
-      ) {
-        super(post);
-      }
+  constructor(
+    @inject(TYPES.KanjiListRepository)
+    post: IPostModel
+  ) {
+    super(post);
+  }
 }

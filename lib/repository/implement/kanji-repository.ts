@@ -13,13 +13,13 @@ export class KanjiRepository extends BasePostModel {
   }
   public override getMetadata() {
     return {
-      title: `Hán tự ${this.postId}`,
-      keywords: [`Hán tự ${this.postId}`, `Cách nhớ ${this.postId}`],
-      description: `Cách nhớ ${this.postId}`,
+      title: `Hán tự ${this.id}`,
+      keywords: [`Hán tự ${this.id}`, `Cách nhớ ${this.id}`],
+      description: `Cách nhớ ${this.id}`,
       openGraph: {
-        title: `Hán tự ${this.postId}`,
-        description: `Cách nhớ ${this.postId}`,
-        url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/kanji/${this.postId}`,
+        title: `Hán tự ${this.id}`,
+        description: `Cách nhớ ${this.id}`,
+        url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/kanji/${this.id}`,
         siteName: `kyomo`,
         type: `website`,
       },
@@ -30,10 +30,10 @@ export class KanjiRepository extends BasePostModel {
       "@context": `https://schema.org`,
       "@type": `TextDigitalDocument`,
       about: {
-        name: this.postId,
-        description: `Hán tự ${this.postId}, cách nhớ ${this.postId}`,
+        name: this.id,
+        description: `Hán tự ${this.id}, cách nhớ ${this.id}`,
       },
-      educationalLevel: hantuListConst()[this.postId],
+      educationalLevel: hantuListConst()[this.id],
     };
   }
 }

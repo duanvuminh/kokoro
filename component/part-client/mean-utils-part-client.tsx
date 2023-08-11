@@ -3,11 +3,11 @@ import { example, otherQuestion } from "lib/const/app-text-client-const";
 import { Fragment } from "react";
 
 export function MeanUtilsPartClient({
-  postId,
+  id,
 }: {
-  postId: string;
+  id: string;
 }): JSX.Element {
-  const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(postId);
+  const { onClick, handleKeyDown, state } = MeanUtilsPartClientHook(id);
   const listItems = state.displayText.map((text, index) => (
     <p key={index}>{`${index + 1}.${text}`}</p>
   ));

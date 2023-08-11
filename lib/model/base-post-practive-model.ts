@@ -1,10 +1,10 @@
-import { DayInMonthPart } from "component/part";
+import { AddToPractivePart } from "component/part/add-to-practive-part";
 import { injectable } from "inversify";
-import { type IPostModel, IPostTypeListModel } from "lib/repository";
+import { type IPostModel, IPostPractiveModel } from "lib/repository";
 import { Metadata } from "next";
 
 @injectable()
-export class BasePostTypeListModel implements IPostTypeListModel, IPostModel {
+export class BasePostPractiveModel implements IPostPractiveModel, IPostModel {
   private _post: IPostModel | undefined;
   private _postType:string | undefined;
   get postType(): string {
@@ -39,6 +39,9 @@ export class BasePostTypeListModel implements IPostTypeListModel, IPostModel {
   ) {
     this._post = post;
   }
+  addToList() {
+    return AddToPractivePart;
+  };
 
   getJsonLd(): {} {
     return this._post!.getJsonLd();
@@ -51,11 +54,11 @@ export class BasePostTypeListModel implements IPostTypeListModel, IPostModel {
   }
   content(): (props: any) => JSX.Element | Promise<JSX.Element> {
     const Content = this._post!.content() as any;
-    const LinkPices = this.linkPices();
+    const AddToList = this.addToList();
     return (props: any) =>
       Content({
         ...props,
-        children: LinkPices({ id: this.id, postType: this.postType }),
+        children: AddToList({ id: this.id, postType: this.postType }),
       });
   }
   userEdit(): (props: any) => JSX.Element {
@@ -66,12 +69,5 @@ export class BasePostTypeListModel implements IPostTypeListModel, IPostModel {
   }
   selectorEdit(): (props: any) => JSX.Element {
     return this._post!.selectorEdit();
-  }
-
-  breakToPices() {
-    console.log("manual break long content to small pices");
-  }
-  linkPices() {
-    return DayInMonthPart;
   }
 }

@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 
 type Props = {
-  postId: string;
+  id: string;
   postType: string;
 };
 
 export function DayInMonthPartClient({
-  postId,
+  id,
   postType,
 }: Props) {
   const router = useRouter();
@@ -17,21 +17,21 @@ export function DayInMonthPartClient({
   for (let i = 1; i < 32; i++) {
     daysInMonth.push({ index: i, id: "day_" + zeroPad(i, 2) });
   }
-  const target = daysInMonth.find((day) => postId.includes(day.id));
+  const target = daysInMonth.find((day) => id.includes(day.id));
   const option = daysInMonth.map((day) => (
     <option value={day.id} key={day.index}>{`day ${day.index}`}</option>
   ));
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const targetpostId =
-      postId.substring(0, postId.length - 6) + event.target.value;
-    router.push(`/post/${postType}/${targetpostId}/`);
+    const targetid =
+      id.substring(0, id.length - 6) + event.target.value;
+    router.push(`/post/${postType}/${targetid}/`);
   };
-  const targetpostIdNext =
-    postId.substring(0, postId.length - 6) +
+  const targetidNext =
+    id.substring(0, id.length - 6) +
     "day_" +
     zeroPad(((target?.index ?? 1) % 31) + 1, 2);
-  const targetpostIdPre =
-    postId.substring(0, postId.length - 6) +
+  const targetidPre =
+    id.substring(0, id.length - 6) +
     "day_" +
     zeroPad((target?.index ?? 2) - 1 == 0 ? 31 : (target?.index ?? 2) - 1, 2);
   return (
@@ -39,10 +39,10 @@ export function DayInMonthPartClient({
       <select id="years" defaultValue={target?.id} onChange={onChange}>
         {option}
       </select>
-      <ButtonTextPart href={`/post/${postType}/${targetpostIdNext}/`}>
+      <ButtonTextPart href={`/post/${postType}/${targetidNext}/`}>
         {`day ${((target?.index ?? 1) % 31) + 1}`}
       </ButtonTextPart>
-      <ButtonTextPart href={`/post/${postType}/${targetpostIdPre}/`}>
+      <ButtonTextPart href={`/post/${postType}/${targetidPre}/`}>
         {`day ${(target?.index ?? 2) - 1 == 0 ? 31 : (target?.index ?? 2) - 1}`}
       </ButtonTextPart>
     </Fragment>

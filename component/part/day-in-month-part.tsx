@@ -2,14 +2,14 @@ import { DayInMonthPartClient } from "component/part-client";
 import { Fragment } from "react";
 
 type Props = {
-  postId: string;
+  id: string;
   postType: string;
 };
 
-export function DayInMonthPart({ postId, postType }: Props) {
+export function DayInMonthPart({ id, postType }: Props) {
   return (
     <Fragment>
-      <DayInMonthPartClient postId={postId} postType={postType} />
+      <DayInMonthPartClient id={id} postType={postType} />
     </Fragment>
   );
 }

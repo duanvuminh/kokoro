@@ -2,11 +2,11 @@ import { kyomoGetPostData } from "lib/api/api_server";
 import { Fragment } from "react";
 
 export async function MeanUtilsPart({
-  postId,
+  id,
 }: {
-  postId: string;
+  id: string;
 }): Promise<JSX.Element> {
-  const content = await getData(postId);
+  const content = await getData(id);
   return (
     <Fragment>
       <div>{content}</div>
@@ -14,7 +14,7 @@ export async function MeanUtilsPart({
   );
 }
 
-async function getData(postId: string) {
-  const content = await kyomoGetPostData(`/api/mean?postId=${postId}`);
+async function getData(id: string) {
+  const content = await kyomoGetPostData(`/api/mean?id=${id}`);
   return content.result;
 }

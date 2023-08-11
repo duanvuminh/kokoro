@@ -7,9 +7,9 @@ export async function GET(request: NextRequest) {
   const meanRepo = getContainer().get<IChatGptRepository>(TYPES.IChatGptRepository);
   let res = "";
   const { searchParams } = new URL(request.url);
-  const postId = searchParams.get("postId");
-  if (postId !== undefined) {
-    res = await meanRepo.getMean(postId!);
+  const id = searchParams.get("id");
+  if (id !== undefined) {
+    res = await meanRepo.getMean(id!);
   }
   if (res == "") {
     return NextResponse.json(

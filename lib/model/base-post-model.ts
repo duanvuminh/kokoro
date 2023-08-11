@@ -16,15 +16,15 @@ export abstract class BasePostModel implements IPostModel {
     this._postType= value;
   }
 
-  private _postId:string | undefined;
-  get postId(): string {
-    if(this._postId==undefined){
+  private _id:string | undefined;
+  get id(): string {
+    if(this._id==undefined){
       return "";
     }
-    return this._postId;
+    return this._id;
   }
-  set postId(value: string) {
-    this._postId= value;
+  set id(value: string) {
+    this._id= value;
   }
 
   selectorEdit() {
@@ -37,19 +37,19 @@ export abstract class BasePostModel implements IPostModel {
     return UserEditPart;
   }
   getSource():(props: any) => JSX.Element | Promise<JSX.Element>{
-    const _post = this._getPost(this.postId);
+    const _post = this._getPost(this.id);
     return () => MdxWrapPart({ children: _post.default() });
   }
 
   abstract PageContentList: any;
 
   getMetadata() {
-    const _post = this._getPost(this.postId);
+    const _post = this._getPost(this.id);
     return _post?.metadata;
   }
 
   getJsonLd() {
-    const _post = this._getPost(this.postId);
+    const _post = this._getPost(this.id);
     return _post?.jsonLd ?? {};
   }
 

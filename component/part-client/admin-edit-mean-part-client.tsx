@@ -5,10 +5,10 @@ import { auth } from "lib/repository/firestore-repository";
 import { kyomoPostPostDataClient } from "lib/api/api_client";
 
 export function AdminEditMeanPartClient({
-  postId,
+  id,
   postType,
 }: {
-  postId: string;
+  id: string;
   postType: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -18,14 +18,14 @@ export function AdminEditMeanPartClient({
   const onClickSave = async () => {
     const token = await auth.currentUser?.getIdToken();
     kyomoPostPostDataClient("/api/admin/edit-mean", {
-      postId: postId,
+      id: id,
       token: token,
     });
   };
   const onClickDelete = async () => {
     const token = await auth.currentUser?.getIdToken();
     kyomoPostPostDataClient("/api/admin/delete-mean", {
-      postId: postId,
+      id: id,
       token: token,
     });
   };
@@ -34,8 +34,8 @@ export function AdminEditMeanPartClient({
       <button className="btn-text float-right" onClick={onClick}>
         <sub>{userEditMean}</sub>
       </button>
-      <DrawerPartClient title={postId} open={open} setOpen={setOpen}>
-        <EditPostPartClient postId={postId} postType={postType} />
+      <DrawerPartClient title={id} open={open} setOpen={setOpen}>
+        <EditPostPartClient id={id} postType={postType} />
         <button
           className="btn-text float-right"
           aria-label="save"

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export interface IPostModel {
-  get postId(): string;
-  set postId(value: string);
+  get id(): string;
+  set id(value: string);
   get postType(): string;
   set postType(value: string);
   getJsonLd(): {};

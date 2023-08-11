@@ -14,9 +14,9 @@ export class WordListRepository extends BasePostModel {
     return SubjectRepositoryPart;
   }
   public override getMetadata() {
-    return generateMetadataForKanjiList(this.postId);
+    return generateMetadataForKanjiList(this.id);
   }
   public override getJsonLd() {
-    return generateJsonLDForKanjiList(this.postId);
+    return generateJsonLDForKanjiList(this.id);
   }
 }

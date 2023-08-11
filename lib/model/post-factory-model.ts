@@ -3,20 +3,20 @@ import { TYPES } from "lib/const";
 import { IPostModel } from "lib/repository";
 
 export interface IPostFactoryModel {
-  Create(targetName: string, postID: string): IPostModel;
+  Create(postType: string, id: string): IPostModel;
 }
 
 @injectable()
 export class PostFactoryImplementModel implements IPostFactoryModel {
-  private _postFactory: (targetName: string, postId: string) => IPostModel;
+  private _postFactory: (postType: string, id: string) => IPostModel;
 
   constructor(
     @inject(TYPES.IPostFactoryCreator)
-    factory: (targetName: string, postId: string) => IPostModel
+    factory: (postType: string, id: string) => IPostModel
   ) {
     this._postFactory = factory;
   }
-  public Create(targetName: string, postID: string): IPostModel {
-    return this._postFactory(targetName, postID);
+  public Create(targetName: string, id: string): IPostModel {
+    return this._postFactory(targetName, id);
   }
 }

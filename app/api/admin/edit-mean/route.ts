@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     .then(async (_) => {
       const email = _.email ?? "";
       if (email == "duanvuminh@gmail.com") {
-        const angolia = await indexAngolia.getObject(data.postId);
+        const angolia = await indexAngolia.getObject(data.id);
         indexAngolia.partialUpdateObject({ ...angolia, mean: angolia.mean1 });
         return NextResponse.json({ result: "ok" });
       }

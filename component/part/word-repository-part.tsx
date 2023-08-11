@@ -7,19 +7,23 @@ import Link from "next/link";
 import { Fragment, Suspense } from "react";
 
 type Props = {
-  postId: string;
+  id: string;
   postType: string;
+  children: any;
 };
 
-export function MeanRepositoryPart({ postId, postType }: Props) {
-  if (postId == undefined || postType == undefined) return <Fragment />;
-  const chars = [...postId];
+export function WordRepositoryPart({ id, postType, children }: Props) {
+  if (id == undefined || postType == undefined) return <Fragment />;
+  const chars = [...id];
   const hantu = chars.map((c, i) => hantuListConst()[c]?.hantu).join(" ");
-  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, postId);
+  let postFactory = getContainer().get<IPostFactoryModel>(
+    TYPES.IPostFactoryModel
+  );
+  let post = postFactory.Create(postType, id);
   let MeanUtilsPart = post.getSource();
   return (
     <div className="prose">
+      {children}
       <h2>
         {chars.map((c, i) => (
           <Link href={`/post/kanji/${c}`} key={i}>
@@ -28,10 +32,10 @@ export function MeanRepositoryPart({ postId, postType }: Props) {
         ))}
       </h2>
       <h3>{hantu}</h3>
-      <Suspense fallback={<Loading />} key={postId}>
-        <MeanUtilsPart postId={postId} />
+      <Suspense fallback={<Loading />} key={id}>
+        <MeanUtilsPart id={id} />
       </Suspense>
-      <MeanUtilsPartClient postId={postId} />
+      <MeanUtilsPartClient id={id} />
     </div>
   );
 }

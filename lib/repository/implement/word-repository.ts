@@ -1,4 +1,4 @@
-import { MeanRepositoryPart, MeanUtilsPart } from "component/part";
+import { WordRepositoryPart, MeanUtilsPart } from "component/part";
 import {
   AdminEditMeanPartClient,
   UserEditMeanPartClient,
@@ -8,7 +8,7 @@ import { hantuListConst } from "lib/const";
 import { BasePostModel } from "lib/model";
 
 @injectable()
-export class MeanRepository extends BasePostModel {
+export class WordRepository extends BasePostModel {
   PageContentList: any;
 
   public override userEdit() {
@@ -24,17 +24,17 @@ export class MeanRepository extends BasePostModel {
   }
 
   public override content() {
-    return MeanRepositoryPart;
+    return WordRepositoryPart;
   }
   public override getMetadata() {
     return {
-      title: `Ý nghĩa ${this.postId}`,
-      keywords: [`Ý nghĩa ${this.postId}`, `Dịch ${this.postId}`],
-      description: `Ý nghĩa ${this.postId}`,
+      title: `Ý nghĩa ${this.id}`,
+      keywords: [`Ý nghĩa ${this.id}`, `Dịch ${this.id}`],
+      description: `Ý nghĩa ${this.id}`,
       openGraph: {
-        title: `Ý nghĩa ${this.postId}`,
-        description: `Ý nghĩa ${this.postId}`,
-        url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/mean/${this.postId}`,
+        title: `Ý nghĩa ${this.id}`,
+        description: `Ý nghĩa ${this.id}`,
+        url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/post/mean/${this.id}`,
         siteName: `kyomo`,
         type: `website`,
       },
@@ -45,10 +45,10 @@ export class MeanRepository extends BasePostModel {
       "@context": `https://schema.org`,
       "@type": `TextDigitalDocument`,
       about: {
-        name: this.postId,
-        description: `Ý nghĩa ${this.postId}, dịch ${this.postId}`,
+        name: this.id,
+        description: `Ý nghĩa ${this.id}, dịch ${this.id}`,
       },
-      educationalLevel: hantuListConst()[this.postId],
+      educationalLevel: hantuListConst()[this.id],
     };
   }
 }

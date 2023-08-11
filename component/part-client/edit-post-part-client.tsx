@@ -6,14 +6,14 @@ import { auth } from "lib/repository/firestore-repository";
 import { Fragment, useEffect, useState } from "react";
 
 export function EditPostPartClient({
-  postId,
+  id,
   postType,
 }: {
-  postId: string;
+  id: string;
   postType: string;
 }): JSX.Element {
   const getMean = () => {
-    kyomoGetPostDataClient("/api/mean-angolia?postId=" + postId).then(
+    kyomoGetPostDataClient("/api/mean-angolia?id=" + id).then(
       (data) => {
         if (data.result != "") {
           setContent(data.result);
@@ -24,7 +24,7 @@ export function EditPostPartClient({
   const onBlur = (event: any) => {
     auth.currentUser?.getIdToken().then((token) => {
       kyomoPostPostDataClient("/api/user/edit-mean", {
-        postId: postId,
+        id: id,
         value: event.target.value,
         token: token,
       });
@@ -33,7 +33,7 @@ export function EditPostPartClient({
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    kyomoGetPostDataClient("/api/mean-for-edit-angolia?postId=" + postId).then(
+    kyomoGetPostDataClient("/api/mean-for-edit-angolia?id=" + id).then(
       (data) => {
         if (data.result != "") {
           setContent(data.result);

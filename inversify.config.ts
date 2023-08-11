@@ -4,18 +4,20 @@ import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 import {
-  type IChatGptRepository,
-  type IPostModel,
+  ChatGptRepository,
+  KanjiDecoratorRepository,
+  KanjiListDecoratorRepository,
+  KanjiListRepository,
   KanjiRepository,
   MazziRepository,
-  MeanRepository,
   SinglePageRepository,
-  type IMazziRepository,
-  WordListRepository,
-  ChatGptRepository,
-  KanjiListRepository,
+  WordDecoratorRepository,
   WordListDecoratorRepository,
-  KanjiListDecoratorRepository,
+  WordListRepository,
+  WordRepository,
+  type IChatGptRepository,
+  type IMazziRepository,
+  type IPostModel,
 } from "lib/repository";
 
 const myContainer = new Container();
@@ -36,28 +38,33 @@ myContainer
   .to(KanjiListDecoratorRepository)
   .whenTargetNamed("kanji-list");
 
+myContainer.bind<IPostModel>(TYPES.KanjiRepository).to(KanjiRepository);
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
-  .to(KanjiRepository)
+  .to(KanjiDecoratorRepository)
   .whenTargetNamed("kanji");
+
+myContainer.bind<IPostModel>(TYPES.WordRepository).to(WordRepository);
+myContainer
+  .bind<IPostModel>(TYPES.IPostModel)
+  .to(WordDecoratorRepository)
+  .whenTargetNamed("mean");
+
 myContainer
   .bind<IPostModel>(TYPES.IPostModel)
   .to(SinglePageRepository)
   .whenTargetNamed("single-page");
-myContainer
-  .bind<IPostModel>(TYPES.IPostModel)
-  .to(MeanRepository)
-  .whenTargetNamed("mean");
+
 myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostFactoryCreator)
   .toFactory((context) => {
-    return (targetName: string, postId: string) => {
+    return (postType: string, id: string) => {
       let post = context.container.getNamed<IPostModel>(
         TYPES.IPostModel,
-        targetName
+        postType
       );
-      post.postId = postId;
-      post.postType = targetName;
+      post.id = id;
+      post.postType = postType;
       return post;
     };
   });

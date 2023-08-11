@@ -3,10 +3,10 @@ import { userEditMean } from "lib/const/app-text-client-const";
 import { DrawerPartClient, EditPostPartClient } from "component/part-client";
 
 export function UserEditMeanPartClient({
-  postId,
+  id,
   postType,
 }: {
-  postId: string;
+  id: string;
   postType: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -18,8 +18,8 @@ export function UserEditMeanPartClient({
       <button className="btn-text float-right" onClick={onClick}>
         <sub>{userEditMean}</sub>
       </button>
-      <DrawerPartClient title={postId} open={open} setOpen={setOpen}>
-        <EditPostPartClient postId={postId} postType={postType}/>
+      <DrawerPartClient title={id} open={open} setOpen={setOpen}>
+        <EditPostPartClient id={id} postType={postType}/>
       </DrawerPartClient>
     </Fragment>
   );

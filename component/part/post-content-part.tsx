@@ -4,19 +4,22 @@ import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
 export function PostContentPart({
-  postId,
+  id,
   postType,
+  children
 }: {
-  postId: string;
+  id: string;
   postType: string;
+  children:any;
 }){
-  if (postId == undefined || postType == undefined) return <Fragment />;
+  if (id == undefined || postType == undefined) return <Fragment />;
   let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, postId);
+  let post = postFactory.Create(postType, id);
   const Content = post.getSource();
   return (
     <Fragment>
-      <PostContentSummaryPart postId={postId} />
+      {children}
+      <PostContentSummaryPart id={id} />
       <Content />
     </Fragment>
   );

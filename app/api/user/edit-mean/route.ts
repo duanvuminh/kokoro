@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   return authAdmin
     .verifyIdToken(data.token)
     .then((_) => {
-      const saveObject = { objectID: data.postId, mean1: data.value };
+      const saveObject = { objectID: data.id, mean1: data.value };
       indexAngolia.partialUpdateObject(saveObject);
       return NextResponse.json({ result: "ok" });
     })

@@ -4,19 +4,19 @@ import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
 
 type Props = {
-  postId: string;
+  id: string;
   postType: string;
   children:any;
 };
 
 export function SubjectRepositoryPart({
-  postId,
+  id,
   postType,
   children
 }: Props): JSX.Element {
-  if (postId == undefined || postType == undefined) return <Fragment />;
+  if (id == undefined || postType == undefined) return <Fragment />;
   let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, postId);
+  let post = postFactory.Create(postType, id);
   const Content = post.getSource();
   return (
     <Fragment>

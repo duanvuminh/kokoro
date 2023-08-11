@@ -53,10 +53,10 @@ export default function Page({
       <JsonLdPart jsonLd={jsonLd} />
       <div className="flex flex-col">
         <div className="grow">
-          <Content postId={postId} postType={postType} />
+          <Content id={postId} postType={postType} />
         </div>
         <div className="grow float-right">
-          <SelectorEdit postId={postId} postType={postType} />
+          <SelectorEdit id={postId} postType={postType} />
         </div>
       </div>
     </Fragment>

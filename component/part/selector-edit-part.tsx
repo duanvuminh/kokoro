@@ -5,23 +5,23 @@ import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
 
 type Props = {
-  postId: string;
+  id: string;
   postType: string;
 };
 
 export function SelectorEditPart({
-  postId,
+  id,
   postType,
 }: Props): JSX.Element {
-  if (postId == undefined || postType == undefined) return <Fragment />;
+  if (id == undefined || postType == undefined) return <Fragment />;
   let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
-  let post = postFactory.Create(postType, postId);
+  let post = postFactory.Create(postType, id);
   const UserEdit = post.userEdit();
   const AdminEdit = post.adminEdit();
   return (
     <SelectorEditPartClient
-      user={<UserEdit postId={postId} postType={postType}/>}
-      admin={<AdminEdit postId={postId} postType={postType}/>}
+      user={<UserEdit id={id} postType={postType}/>}
+      admin={<AdminEdit id={id} postType={postType}/>}
     />
   );
 }

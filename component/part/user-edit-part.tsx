@@ -1,25 +1,25 @@
 import { editGithub, githubRepository } from "lib/const/app-text-const";
 
 export function UserEditPart({
-  postId,
+  id,
   postType,
 }: {
-  postId: string;
+  id: string;
   postType: string;
 }) {
   let path = "";
   switch (postType) {
     case "word-list":
-      path = "/mdx-word-list/" + postId + ".mdx";
+      path = "/mdx-word-list/" + id + ".mdx";
       break;
     case "kanji-list":
-      path = "/mdx-kanji-list/" + postId + ".mdx";
+      path = "/mdx-kanji-list/" + id + ".mdx";
       break;
     case "kanji":
-      path = "/mdx-kanji/" + postId + ".mdx";
+      path = "/mdx-kanji/" + id + ".mdx";
       break;
     case "single-page":
-      path = "/mdx-single-page/" + postId + ".mdx";
+      path = "/mdx-single-page/" + id + ".mdx";
       break;
     default:
       break;
