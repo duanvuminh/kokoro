@@ -1,4 +1,4 @@
-import { AddToPracticePart } from "component/part/add-to-Practice-part";
+import { AddToPracticePart } from "component/part/add-to-practice-part";
 import { injectable } from "inversify";
 import { type IPostModel, IPostPracticeModel } from "lib/repository";
 import { Metadata } from "next";

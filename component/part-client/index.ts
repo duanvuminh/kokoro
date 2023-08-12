@@ -1,6 +1,6 @@
 "use client";
 
-export * from "./add-to-Practice-part-client";
+export * from "./add-to-practice-part-client";
 export * from "./admin-edit-mean-part-client";
 export * from "./context/app-context";
 export * from "./context/util-context";
