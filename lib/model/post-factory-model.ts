@@ -1,22 +1,22 @@
 import { inject, injectable } from "inversify";
 import { TYPES } from "lib/const";
-import { IPostModel } from "lib/repository";
+import { IPostRepository } from "lib/repository";
 
 export interface IPostFactoryModel {
-  Create(postType: string, id: string): IPostModel;
+  Create(postType: string, id: string): IPostRepository;
 }
 
 @injectable()
 export class PostFactoryImplementModel implements IPostFactoryModel {
-  private _postFactory: (postType: string, id: string) => IPostModel;
+  private _postFactory: (postType: string, id: string) => IPostRepository;
 
   constructor(
     @inject(TYPES.IPostFactoryCreator)
-    factory: (postType: string, id: string) => IPostModel
+    factory: (postType: string, id: string) => IPostRepository
   ) {
     this._postFactory = factory;
   }
-  public Create(targetName: string, id: string): IPostModel {
+  public Create(targetName: string, id: string): IPostRepository {
     return this._postFactory(targetName, id);
   }
 }

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export interface IPostModel {
+export interface IPostRepository {
   get id(): string;
   set id(value: string);
   get postType(): string;

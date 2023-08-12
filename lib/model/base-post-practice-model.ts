@@ -1,11 +1,11 @@
 import { AddToPracticePart } from "component/part/add-to-practice-part";
 import { injectable } from "inversify";
-import { type IPostModel, IPostPracticeModel } from "lib/repository";
+import { type IPostRepository, IPostPracticeRepository } from "lib/repository";
 import { Metadata } from "next";
 
 @injectable()
-export class BasePostPracticeModel implements IPostPracticeModel, IPostModel {
-  private _post: IPostModel | undefined;
+export class BasePostPracticeModel implements IPostPracticeRepository, IPostRepository {
+  private _post: IPostRepository | undefined;
   private _postType:string | undefined;
   get postType(): string {
     if(this._postType==undefined){
@@ -35,7 +35,7 @@ export class BasePostPracticeModel implements IPostPracticeModel, IPostModel {
   }
 
   constructor(
-    post: IPostModel
+    post: IPostRepository
   ) {
     this._post = post;
   }

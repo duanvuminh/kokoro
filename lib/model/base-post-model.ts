@@ -1,10 +1,10 @@
 import { UserEditPart, MdxWrapPart, SelectorEditPart } from "component/part";
 import { injectable } from "inversify";
-import { IPostModel } from "lib/repository";
+import { IPostRepository } from "lib/repository";
 import { Default } from "mdx/mdx-component";
 
 @injectable()
-export abstract class BasePostModel implements IPostModel {
+export abstract class BasePostModel implements IPostRepository {
   private _postType:string | undefined;
   get postType(): string {
     if(this._postType==undefined){
