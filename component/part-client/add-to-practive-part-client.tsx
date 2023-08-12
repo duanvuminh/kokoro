@@ -7,7 +7,7 @@ type Props = {
   postType: string;
 };
 
-export function AddToPractivePartClient({ id, postType }: Props) {
+export function AddToPracticePartClient({ id, postType }: Props) {
   useEffect(() => {
     UserSettingRepository.setPost(
       new PostModel({ postType: postType, id: id })

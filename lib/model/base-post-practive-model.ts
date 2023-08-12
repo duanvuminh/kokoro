@@ -1,10 +1,10 @@
-import { AddToPractivePart } from "component/part/add-to-practive-part";
+import { AddToPracticePart } from "component/part/add-to-Practice-part";
 import { injectable } from "inversify";
-import { type IPostModel, IPostPractiveModel } from "lib/repository";
+import { type IPostModel, IPostPracticeModel } from "lib/repository";
 import { Metadata } from "next";
 
 @injectable()
-export class BasePostPractiveModel implements IPostPractiveModel, IPostModel {
+export class BasePostPracticeModel implements IPostPracticeModel, IPostModel {
   private _post: IPostModel | undefined;
   private _postType:string | undefined;
   get postType(): string {
@@ -40,7 +40,7 @@ export class BasePostPractiveModel implements IPostPractiveModel, IPostModel {
     this._post = post;
   }
   addToList() {
-    return AddToPractivePart;
+    return AddToPracticePart;
   };
 
   getJsonLd(): {} {

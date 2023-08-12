@@ -5,6 +5,8 @@ import {
 import { PostModel } from "lib/model/post-model";
 
 export class UserSettingRepository {
+  static limitPracticePost = 50;
+
   static clear(): void {
     localStorage.clear();
   }
@@ -25,14 +27,24 @@ export class UserSettingRepository {
   static setPosts(value: PostModel[]) {
     localStorage.setItem(posts_local_storage, JSON.stringify(value));
   }
+
   static setPost(value: PostModel) {
     let posts = this.getPosts();
-    if (posts.findIndex(item => item.id == value.id && item.postType == value.postType) === -1) posts.push(value);
+    if (posts.length > this.limitPracticePost) return;
+    if (
+      posts.findIndex(
+        (item) => item.id == value.id && item.postType == value.postType
+      ) === -1
+    )
+      posts.push(value);
     this.setPosts(posts);
   }
+
   static removePost(value: PostModel) {
     let posts = this.getPosts();
-    const index = posts.findIndex(item => item.id == value.id && item.postType == value.postType);
+    const index = posts.findIndex(
+      (item) => item.id == value.id && item.postType == value.postType
+    );
     if (index != -1) posts.splice(index, 1);
     this.setPosts(posts);
   }

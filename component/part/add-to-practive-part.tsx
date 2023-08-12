@@ -1,4 +1,4 @@
-import { AddToPractivePartClient } from "component/part-client";
+import { AddToPracticePartClient } from "component/part-client";
 import { Fragment } from "react";
 
 type Props = {
@@ -6,10 +6,10 @@ type Props = {
   postType: string;
 };
 
-export function AddToPractivePart({ id, postType }: Props) {
+export function AddToPracticePart({ id, postType }: Props) {
   return (
     <Fragment>
-      <AddToPractivePartClient id={id} postType={postType} />
+      <AddToPracticePartClient id={id} postType={postType} />
     </Fragment>
   );
 }
