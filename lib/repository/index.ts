@@ -3,7 +3,7 @@ export * from "./chat-gpt-repository";
 export * from "./i-chat-gpt-repository";
 export * from "./i-mazzi-repository";
 export * from "./i-post-repository";
-export * from "./i-post-practice-repository";
+export * from "./i-post-practice-able-repository";
 export * from "./i-post-type-list-repository";
 export * from "./implement/chat-gpt-repository";
 export * from "./implement/kanji-decorator-repository";
