@@ -15,6 +15,7 @@ export const searchNoData: string = "Không có kết quả";
 export const searchPlaceHolder: string = "Tìm kiếm trên kyo";
 export const translate: string = "Dịch, ý nghĩa";
 export const tuVung: string = "Từ vựng";
+export const practice: string = "Luyện tập";
 export const editPost: string = "Đóng góp";
 export const editPostAdmin: string = "update post";
 export const deletePostAdmin: string = "delete post";

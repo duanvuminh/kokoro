@@ -5,7 +5,7 @@ import {
 import { PostModel } from "lib/model/post-model";
 
 export class UserSettingRepository {
-  static limitPracticePost = 50;
+  static limitPracticePost = 20;
 
   static clear(): void {
     localStorage.clear();

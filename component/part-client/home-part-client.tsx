@@ -1,6 +1,6 @@
 import { useAppContext } from "component/part-client";
 import { ButtonTextPart } from "component/part/button-text-part";
-import { kanji, tuVung } from "lib/const/app-text-client-const";
+import { kanji, practice, tuVung } from "lib/const/app-text-client-const";
 import { levelList } from "lib/const/type-client-const";
 import { Fragment } from "react";
 
@@ -20,6 +20,9 @@ export function HomePartClient() {
         href={`/post/word-list/${levelList[level]?.name}_day_${dayStr}`}
       >
         {tuVung}
+      </ButtonTextPart>
+      <ButtonTextPart href={`/post/practice-list/all`}>
+        {practice}
       </ButtonTextPart>
     </Fragment>
   );

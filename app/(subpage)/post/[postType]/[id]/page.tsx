@@ -1,25 +1,13 @@
 import { JsonLdPart } from "component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel, PostParameterModel } from "lib/model";
-import { paths as kaniPath } from "mdx/mdx-kanji";
-import { paths as kaniListPath } from "mdx/mdx-kanji-list";
-import { paths as singlePagePath } from "mdx/mdx-single-page";
-import { paths as wordListPath } from "mdx/mdx-word-list";
+import { IPostFactoryModel } from "lib/model";
+import { PostRouterRepository } from "lib/repository";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
 export const generateStaticParams = () => {
-  const allkaniPath = getAllPath("kanji", kaniPath);
-  const allwordListPath = getAllPath("word-list", wordListPath);
-  const allkaniListPath = getAllPath("kanji-list", kaniListPath);
-  const allSinglePagePath = getAllPath("kanji-list", singlePagePath);
-  return [
-    ...allkaniPath,
-    ...allwordListPath,
-    ...allkaniListPath,
-    ...allSinglePagePath,
-  ];
+  return PostRouterRepository.generateStaticParams();
 };
 
 export const generateMetadata = ({
@@ -28,7 +16,9 @@ export const generateMetadata = ({
   params: { postType: string; id: string };
 }): Metadata => {
   const postId = decodeURIComponent(id);
-  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryModel>(
+    TYPES.IPostFactoryModel
+  );
   let post = postFactory.Create(postType, postId);
 
   const metadata = post.getMetadata();
@@ -42,7 +32,9 @@ export default function Page({
 }) {
   const postId = decodeURIComponent(id);
 
-  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryModel>(
+    TYPES.IPostFactoryModel
+  );
   let post = postFactory.Create(postType, postId);
 
   const jsonLd = post.getJsonLd();
@@ -61,8 +53,4 @@ export default function Page({
       </div>
     </Fragment>
   );
-}
-
-function getAllPath(postType: string, paths: string[]): PostParameterModel[] {
-  return paths.map((path) => new PostParameterModel(postType, path));
 }

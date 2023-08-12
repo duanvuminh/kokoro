@@ -16,5 +16,4 @@ export * from "./implement/word-decorator-repository";
 export * from "./implement/word-list-decorator-repository";
 export * from "./implement/word-list-repository";
 export * from "./implement/word-repository";
-
-
+export * from "./post-router-repository";

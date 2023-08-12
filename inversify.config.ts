@@ -59,13 +59,24 @@ myContainer
   .bind<interfaces.Factory<IPostModel>>(TYPES.IPostFactoryCreator)
   .toFactory((context) => {
     return (postType: string, id: string) => {
-      let post = context.container.getNamed<IPostModel>(
-        TYPES.IPostModel,
-        postType
-      );
-      post.id = id;
-      post.postType = postType;
-      return post;
+      try{
+        let post = context.container.getNamed<IPostModel>(
+          TYPES.IPostModel,
+          postType
+        );
+        post.id = id;
+        post.postType = postType;
+        return post;
+      }catch(e){
+        let post = context.container.getNamed<IPostModel>(
+          TYPES.IPostModel,
+          "single-page"
+        );
+        post.id = "NotFound";
+        post.postType = postType;
+        return post;
+      }
+      
     };
   });
 
