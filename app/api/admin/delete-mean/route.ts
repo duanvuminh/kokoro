@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
-  authAdmin
+  return authAdmin
     .verifyIdToken(data.token)
     .then((_) => {
       const email = _.email ?? "";
