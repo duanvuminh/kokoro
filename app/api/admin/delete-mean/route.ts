@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       }
       return NextResponse.json({ result: "error" });
     })
-    .catch((error) => {
+    .catch((_) => {
       return NextResponse.json({ result: "error" });
     });
 }
