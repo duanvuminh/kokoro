@@ -84,7 +84,7 @@ export class ChatGptRepository implements IChatGptRepository {
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     const angolia = await indexAngolia.mean.getObjects([query]);
-    if (angolia.results[0] != null) {
+    if (angolia.results[0]?.mean != null) {
       return trimMean(angolia.results[0].mean);
     }
     return _postData(url, {
