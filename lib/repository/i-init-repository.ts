@@ -1,3 +1,3 @@
 export interface IInitRepository {
-  init(): void;
+  init( { postType, id }:{ postType: string; id: string }): void;
 }

@@ -2,7 +2,7 @@ import { JsonLdPart } from "component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
-import { PostRouterRepository } from "lib/repository";
+import { IInitRepository, PostRouterRepository } from "lib/repository";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
@@ -30,8 +30,13 @@ export default function Page({
 }: {
   params: { postType: string; id: string };
 }) {
-  //init data
   const postId = decodeURIComponent(id);
+
+  //init data
+  let initRepository = getContainer().get<IInitRepository>(
+    TYPES.IInitRepository
+  );
+  initRepository.init({ postType, id: postId });
 
   let postFactory = getContainer().get<IPostFactoryModel>(
     TYPES.IPostFactoryModel

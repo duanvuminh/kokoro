@@ -18,6 +18,8 @@ import {
   type IChatGptRepository,
   type IMazziRepository,
   type IPostRepository,
+  IInitRepository,
+  InitRepository,
 } from "lib/repository";
 
 const myContainer = new Container();
@@ -54,6 +56,10 @@ myContainer
   .bind<IPostRepository>(TYPES.IPostModel)
   .to(SinglePageRepository)
   .whenTargetNamed("single-page");
+
+myContainer
+  .bind<IInitRepository>(TYPES.IInitRepository)
+  .to(InitRepository);
 
 myContainer
   .bind<interfaces.Factory<IPostRepository>>(TYPES.IPostFactoryCreator)

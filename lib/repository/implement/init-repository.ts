@@ -1,11 +1,15 @@
 import { injectable } from "inversify";
 import { IInitRepository, indexAngolia } from "lib/repository";
-
 @injectable()
 export class InitRepository implements IInitRepository {
-  init(): void {
-    // const saveObject = { objectID: "query", mean: "result" };
-    // indexAngolia.mean.saveObject([saveObject]);
+  init({ postType, id }: { postType: string; id: string }): void {
+    const saveObject = { objectID: id, level: "n1" };
+    if (postType == "kanji" || postType == "mean")
+      indexAngolia[postType as keyof typeof indexAngolia].partialUpdateObjects(
+        [saveObject],
+        {
+          createIfNotExists: true,
+        }
+      );
   }
-  
 }

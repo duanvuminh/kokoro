@@ -3,6 +3,7 @@ const TYPES = {
   IMazziRepository: Symbol.for("IMazziRepository"),
   IMazziRepositoryContructor: Symbol.for("IMazziRepositoryContructor"),
   IPostModel: Symbol.for("IPostModel"),
+  IInitRepository: Symbol.for("IInitRepository"),
   IPostFactoryCreator: Symbol.for("Factory<IPostModel>"),
   IPostFactoryModel: Symbol.for("IPostFactoryModel"),
   WordListRepository:Symbol.for("WordListRepository"),
