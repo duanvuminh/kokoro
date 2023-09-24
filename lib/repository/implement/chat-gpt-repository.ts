@@ -123,7 +123,9 @@ export class ChatGptRepository implements IChatGptRepository {
       }
       if (result != "") {
         const saveObject = { objectID: query, mean: result };
-        indexAngolia.mean.saveObjects([saveObject]);
+        indexAngolia.mean.partialUpdateObjects([saveObject], {
+          createIfNotExists: true,
+        });
       }
       return result;
     });
