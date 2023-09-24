@@ -30,6 +30,7 @@ export default function Page({
 }: {
   params: { postType: string; id: string };
 }) {
+  //init data
   const postId = decodeURIComponent(id);
 
   let postFactory = getContainer().get<IPostFactoryModel>(

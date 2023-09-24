@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     .verifyIdToken(data.token)
     .then((_) => {
       const saveObject = { objectID: data.id, mean1: data.value };
-      indexAngolia.partialUpdateObject(saveObject);
+      indexAngolia.mean.partialUpdateObject(saveObject);
       return NextResponse.json({ result: "ok" });
     })
     .catch((error) => {

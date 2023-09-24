@@ -83,7 +83,7 @@ export class ChatGptRepository implements IChatGptRepository {
   }
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
-    const angolia = await indexAngolia.getObjects([query]);
+    const angolia = await indexAngolia.mean.getObjects([query]);
     if (angolia.results[0] != null) {
       return trimMean(angolia.results[0].mean);
     }
@@ -123,7 +123,7 @@ export class ChatGptRepository implements IChatGptRepository {
       }
       if (result != "") {
         const saveObject = { objectID: query, mean: result };
-        indexAngolia.saveObjects([saveObject]);
+        indexAngolia.mean.saveObjects([saveObject]);
       }
       return result;
     });

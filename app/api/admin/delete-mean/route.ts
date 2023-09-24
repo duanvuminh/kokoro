@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     .then((_) => {
       const email = _.email ?? "";
       if (email == "duanvuminh@gmail.com") {
-        indexAngolia.deleteObject(data.objectID);
+        indexAngolia.mean.deleteObject(data.objectID);
         return NextResponse.json({ result: "ok" });
       }
       return NextResponse.json({ result: "error" });

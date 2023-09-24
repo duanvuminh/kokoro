@@ -9,7 +9,7 @@ export async function MeanUtilsPart({
   const content = await getData(id);
   return (
     <Fragment>
-      <div>{content}</div>
+      <div className="whitespace-normal">{content}</div>
     </Fragment>
   );
 }
