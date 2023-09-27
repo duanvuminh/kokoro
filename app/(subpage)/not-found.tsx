@@ -1,8 +1,8 @@
-export default function Loading() {
+export default function NotFound() {
   return (
     <div className="flex h-screen">
       <div className="m-auto">
-        <h3>Loading...</h3>
+        <h3>Không tìm thấy trang</h3>
       </div>
     </div>
   );

@@ -21,6 +21,7 @@ import {
   IInitRepository,
   InitRepository,
 } from "lib/repository";
+import { notFound } from "next/navigation";
 
 const myContainer = new Container();
 myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
@@ -74,15 +75,8 @@ myContainer
         post.postType = postType;
         return post;
       }catch(e){
-        let post = context.container.getNamed<IPostRepository>(
-          TYPES.IPostModel,
-          "single-page"
-        );
-        post.id = "NotFound";
-        post.postType = postType;
-        return post;
+        notFound();
       }
-      
     };
   });
 
