@@ -4,6 +4,7 @@ export * from "./i-chat-gpt-repository";
 export * from "./i-init-repository";
 export * from "./i-mazzi-repository";
 export * from "./i-post-repository";
+export * from "./i-post-practice-repository";
 export * from "./i-post-type-list-repository";
 export * from "./implement/chat-gpt-repository";
 export * from "./implement/init-repository";

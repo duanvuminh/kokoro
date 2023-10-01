@@ -1,10 +1,10 @@
 import { AddToPracticePart } from "component/part/add-to-practice-part";
 import { injectable } from "inversify";
-import { type IPostRepository } from "lib/repository";
+import { type IPostPracticeRepository, type IPostRepository } from "lib/repository";
 import { Metadata } from "next";
 
 @injectable()
-export class BasePostPracticeModel implements IPostRepository {
+export class BasePostPracticeModel implements IPostPracticeRepository,IPostRepository {
   private _post: IPostRepository | undefined;
   private _postType:string | undefined;
   get postType(): string {
@@ -39,9 +39,6 @@ export class BasePostPracticeModel implements IPostRepository {
   ) {
     this._post = post;
   }
-  addToList() {
-    return AddToPracticePart;
-  };
 
   getJsonLd(): {} {
     return this._post!.getJsonLd();
@@ -69,5 +66,9 @@ export class BasePostPracticeModel implements IPostRepository {
   }
   selectorEdit(): (props: any) => JSX.Element {
     return this._post!.selectorEdit();
+  }
+
+  addToList() {
+    return AddToPracticePart;
   }
 }

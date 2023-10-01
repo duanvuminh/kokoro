@@ -75,6 +75,7 @@ myContainer
         post.postType = postType;
         return post;
       }catch(e){
+        console.log(e);
         notFound();
       }
     };

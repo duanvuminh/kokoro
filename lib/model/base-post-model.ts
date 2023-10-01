@@ -27,6 +27,15 @@ export abstract class BasePostModel implements IPostRepository {
     this._id= value;
   }
 
+  abstract PageContentList: any;
+  private _getPost(postId: string) {
+    const id = postId as keyof typeof this.PageContentList;
+    if (this.PageContentList[id] !== undefined) {
+      return this.PageContentList[id];
+    }
+    return Default;
+  }
+
   selectorEdit() {
     return SelectorEditPart;
   }
@@ -40,28 +49,15 @@ export abstract class BasePostModel implements IPostRepository {
     const _post = this._getPost(this.id);
     return () => MdxWrapPart({ children: _post.default() });
   }
-
-  abstract PageContentList: any;
-
   getMetadata() {
     const _post = this._getPost(this.id);
     return _post?.metadata;
   }
-
   getJsonLd() {
     const _post = this._getPost(this.id);
     return _post?.jsonLd ?? {};
   }
-
   content():(props: any) => JSX.Element | Promise<JSX.Element>{
     return this.getSource();
-  }
-
-  private _getPost(postId: string) {
-    const id = postId as keyof typeof this.PageContentList;
-    if (this.PageContentList[id] !== undefined) {
-      return this.PageContentList[id];
-    }
-    return Default;
   }
 }
