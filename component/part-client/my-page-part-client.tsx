@@ -4,8 +4,8 @@ import {
   TabPartClient,
   useAppContext,
 } from "component/part-client";
-import { avartaImage, kanjiStroke, logout } from "lib/const/app-text-client-const";
-import { auth } from "lib/service/firestore-repository";
+import { avartaImage, kanjiStroke, logout } from "lib/app/const/app-text-client-const";
+import { auth } from "lib/app/service/firestore-repository";
 import Image from "next/image";
 import { Fragment } from "react";
 

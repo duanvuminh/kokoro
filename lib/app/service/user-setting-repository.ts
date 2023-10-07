@@ -1,7 +1,7 @@
 import {
   level_local_storage,
   posts_local_storage,
-} from "lib/const/app-text-client-const";
+} from "lib/app/const/app-text-client-const";
 import { PostModel } from "lib/model/post-model";
 
 export class UserSettingRepository {

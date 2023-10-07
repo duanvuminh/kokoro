@@ -1,4 +1,4 @@
-import { hantuListConst } from "lib/const";
+import { hantuListConst } from "lib/app/const";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {

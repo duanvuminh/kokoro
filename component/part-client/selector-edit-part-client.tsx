@@ -1,4 +1,4 @@
-import { auth } from "lib/service/firestore-repository";
+import { auth } from "lib/app/service/firestore-repository";
 import { Fragment } from "react";
 import { useAppContext } from "./context/app-context";
 

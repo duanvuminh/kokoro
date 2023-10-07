@@ -1,4 +1,4 @@
-import { siteName } from "lib/const/app-text-const";
+import { siteName } from "lib/app/const/app-text-const";
 import Link from "next/link";
 
 export function LogoPart({ dense }: { dense: boolean }) {

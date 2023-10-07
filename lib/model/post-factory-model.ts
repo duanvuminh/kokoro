@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
-import { TYPES } from "lib/const";
-import { IPostRepository } from "lib/service";
+import { TYPES } from "lib/app/const";
+import { IPostRepository } from "lib/app/service";
 
 export interface IPostFactoryModel {
   Create(postType: string, id: string): IPostRepository;

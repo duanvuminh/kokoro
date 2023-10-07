@@ -1,5 +1,5 @@
 import { ButtonTextPart } from "component/part";
-import { zeroPad } from "lib/util/string-client-util";
+import { zeroPad } from "lib/app/util/string-client-util";
 import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 

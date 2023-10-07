@@ -5,10 +5,10 @@ import {
   IChatGptRepository,
   type IMazziRepository,
   indexAngolia,
-} from "lib/service";
-import { _postData } from "lib/api/api_server";
-import { trimMean } from "lib/util";
-import { TYPES } from "lib/const";
+} from "lib/app/service";
+import { _postData } from "lib/repository/api/api_server";
+import { trimMean } from "lib/app/util";
+import { TYPES } from "lib/app/const";
 
 @injectable()
 export class ChatGptRepository implements IChatGptRepository {

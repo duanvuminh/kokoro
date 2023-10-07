@@ -1,7 +1,7 @@
 "use server";
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
-import { TYPES } from "lib/const";
+import { TYPES } from "lib/app/const";
 import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 import {
   ChatGptRepository,
@@ -20,7 +20,7 @@ import {
   type IPostRepository,
   IInitRepository,
   InitRepository,
-} from "lib/service";
+} from "lib/app/service";
 import { notFound } from "next/navigation";
 
 const myContainer = new Container();

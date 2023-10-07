@@ -1,4 +1,4 @@
-import { kyomoGetPostData } from "lib/api/api_server";
+import { kyomoGetPostData } from "lib/repository/api/api_server";
 import { Fragment } from "react";
 
 export async function MeanUtilsPart({

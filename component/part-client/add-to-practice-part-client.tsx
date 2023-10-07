@@ -1,5 +1,5 @@
 import { PostModel } from "lib/model/post-model";
-import { UserSettingRepository } from "lib/service/user-setting-repository";
+import { UserSettingRepository } from "lib/app/service/user-setting-repository";
 import { Fragment, useEffect } from "react";
 
 type Props = {

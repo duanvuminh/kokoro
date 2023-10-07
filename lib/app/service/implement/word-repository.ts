@@ -4,7 +4,7 @@ import {
   UserEditMeanPartClient,
 } from "component/part-client";
 import { injectable } from "inversify";
-import { hantuListConst } from "lib/const";
+import { hantuListConst } from "lib/app/const";
 import { BasePostModel } from "lib/model";
 
 @injectable()

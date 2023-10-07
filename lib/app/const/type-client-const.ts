@@ -1,4 +1,4 @@
-import { N1, N2, N3, N4, N5 } from "lib/const/app-text-client-const";
+import { N1, N2, N3, N4, N5 } from "lib/app/const/app-text-client-const";
 
 interface Level {
   id: number;

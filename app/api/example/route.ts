@@ -1,6 +1,6 @@
 import { getContainer } from "inversify.config";
-import { TYPES } from "lib/const";
-import { IChatGptRepository } from "lib/service";
+import { TYPES } from "lib/app/const";
+import { IChatGptRepository } from "lib/app/service";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {

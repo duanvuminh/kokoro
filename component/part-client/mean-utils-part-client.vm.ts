@@ -1,4 +1,4 @@
-import { kyomoGetPostDataClient } from "lib/api/api_client";
+import { kyomoGetPostDataClient } from "lib/repository/api/api_client";
 import { useState } from "react";
 
 export function MeanUtilsPartClientHook(id: string) {
