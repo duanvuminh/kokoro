@@ -20,7 +20,7 @@ import {
   type IPostRepository,
   IInitRepository,
   InitRepository,
-} from "lib/repository";
+} from "lib/service";
 import { notFound } from "next/navigation";
 
 const myContainer = new Container();

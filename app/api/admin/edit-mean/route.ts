@@ -1,5 +1,5 @@
-import { indexAngolia } from "lib/repository/angolia-repository";
-import { authAdmin } from "lib/repository/firestore-admin-repository";
+import { indexAngolia } from "lib/service/angolia-repository";
+import { authAdmin } from "lib/service/firestore-admin-repository";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {

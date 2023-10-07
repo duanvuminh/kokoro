@@ -2,7 +2,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "lib/repository/firestore-repository";
+import { auth } from "lib/service/firestore-repository";
 import { googleLogin } from "lib/const/app-text-client-const";
 
 export function GoogleLoginPartClient({

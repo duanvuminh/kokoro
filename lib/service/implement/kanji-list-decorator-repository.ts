@@ -1,7 +1,7 @@
 import { inject, injectable, targetName } from "inversify";
 import { TYPES } from "lib/const";
 import { BasePostTypeListModel } from "lib/model";
-import { type IPostRepository } from "lib/repository";
+import { type IPostRepository } from "lib/service";
 
 @injectable()
 export class KanjiListDecoratorRepository extends BasePostTypeListModel {

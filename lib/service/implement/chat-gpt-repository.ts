@@ -5,7 +5,7 @@ import {
   IChatGptRepository,
   type IMazziRepository,
   indexAngolia,
-} from "lib/repository";
+} from "lib/service";
 import { _postData } from "lib/api/api_server";
 import { trimMean } from "lib/util";
 import { TYPES } from "lib/const";

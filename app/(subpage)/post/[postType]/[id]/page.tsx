@@ -2,7 +2,7 @@ import { JsonLdPart } from "component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
-import { IInitRepository, PostRouterRepository } from "lib/repository";
+import { IInitRepository, PostRouterRepository } from "lib/service";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
