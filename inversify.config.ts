@@ -4,24 +4,21 @@ import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/app/const";
 import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 import {
-  ChatGptRepository,
   KanjiDecoratorRepository,
   KanjiListDecoratorRepository,
   KanjiListRepository,
   KanjiRepository,
-  MazziRepository,
   SinglePageRepository,
   WordDecoratorRepository,
   WordListDecoratorRepository,
   WordListRepository,
   WordRepository,
-  type IChatGptRepository,
-  type IMazziRepository,
   type IPostRepository,
   IInitRepository,
   InitRepository,
 } from "lib/app/service";
 import { notFound } from "next/navigation";
+import { ChatGptRepository, IChatGptRepository, IMazziRepository, MazziRepository } from "lib/repository";
 
 const myContainer = new Container();
 myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);

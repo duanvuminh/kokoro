@@ -1,14 +1,9 @@
 import "reflect-metadata";
 import { inject, injectable } from "inversify";
-import {
-  ChatGPT,
-  IChatGptRepository,
-  type IMazziRepository,
-  indexAngolia,
-} from "lib/app/service";
 import { _postData } from "lib/repository/api/api_server";
 import { trimMean } from "lib/app/util";
 import { TYPES } from "lib/app/const";
+import { ChatGPT, indexAngolia, type IChatGptRepository, type IMazziRepository } from "lib/repository";
 
 @injectable()
 export class ChatGptRepository implements IChatGptRepository {

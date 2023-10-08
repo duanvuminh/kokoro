@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
 import { _postData } from "lib/repository/api/api_server";
 import { trimMean } from "lib/app/util";
-import { IMazziRepository } from "lib/app/service";
+import { IMazziRepository } from "lib/repository";
 
 @injectable()
 export class MazziRepository implements IMazziRepository {

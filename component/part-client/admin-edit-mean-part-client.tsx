@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { deletePostAdmin, editPostAdmin, userEditMean } from "lib/app/const/app-text-client-const";
 import { DrawerPartClient, EditPostPartClient } from "component/part-client";
-import { auth } from "lib/app/service/firestore-repository";
+import { auth } from "lib/repository/firestore-repository";
 import { kyomoPostPostDataClient } from "lib/repository/api/api_client";
 
 export function AdminEditMeanPartClient({

@@ -1,4 +1,4 @@
-import { indexAngolia } from "lib/app/service/angolia-repository";
+import { indexAngolia } from "lib/repository/angolia-repository";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {

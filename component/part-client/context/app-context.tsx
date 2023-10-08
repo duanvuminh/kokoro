@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "lib/app/service/firestore-repository";
+import { auth } from "lib/repository/firestore-repository";
 import { UserSettingRepository } from "lib/app/service/user-setting-repository";
 import React, { useEffect } from "react";
 
