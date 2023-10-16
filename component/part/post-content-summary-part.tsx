@@ -1,4 +1,4 @@
-import { summaryTitle, svgPath } from "lib/app/const/app-text-const";
+import { summaryTitle, svgPath } from "lib/const/app-text-const";
 import Image from "next/image";
 
 export function PostContentSummaryPart({

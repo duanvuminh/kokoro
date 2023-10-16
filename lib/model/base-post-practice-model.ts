@@ -1,6 +1,6 @@
 import { AddToPracticePart } from "component/part/add-to-practice-part";
 import { injectable } from "inversify";
-import { type IPostPracticeRepository, type IPostRepository } from "lib/app/service";
+import { type IPostPracticeRepository, type IPostRepository } from "lib/service";
 import { Metadata } from "next";
 
 @injectable()

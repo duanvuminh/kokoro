@@ -1,4 +1,4 @@
-import { editGithub, githubRepository } from "lib/app/const/app-text-const";
+import { editGithub, githubRepository } from "lib/const/app-text-const";
 
 export function UserEditPart({
   id,

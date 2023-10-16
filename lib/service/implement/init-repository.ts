@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { IInitRepository } from "lib/app/service";
+import { IInitRepository } from "lib/service";
 @injectable()
 export class InitRepository implements IInitRepository {
   init({ postType, id }: { postType: string; id: string }): void {

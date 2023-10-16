@@ -1,5 +1,5 @@
 import { getContainer } from "inversify.config";
-import { TYPES } from "lib/app/const";
+import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import { Fragment } from "react";
 

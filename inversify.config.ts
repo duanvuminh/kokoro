@@ -1,7 +1,7 @@
 "use server";
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
-import { TYPES } from "lib/app/const";
+import { TYPES } from "lib/const";
 import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
 import {
   KanjiDecoratorRepository,
@@ -16,7 +16,7 @@ import {
   type IPostRepository,
   IInitRepository,
   InitRepository,
-} from "lib/app/service";
+} from "lib/service";
 import { notFound } from "next/navigation";
 import { ChatGptRepository, IChatGptRepository, IMazziRepository, MazziRepository } from "lib/repository";
 

@@ -1,6 +1,6 @@
 import { HeaderPart } from "component/part";
 import { AppProvider } from "component/part-client";
-import { appMetadataConst } from "lib/app/const";
+import { appMetadataConst } from "lib/const";
 import { Fragment } from "react";
 import "./globals.css";
 

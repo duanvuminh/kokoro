@@ -1,7 +1,7 @@
 import Loading from "app/(subpage)/loading";
 import { MeanUtilsPartClient } from "component/part-client";
 import { getContainer } from "inversify.config";
-import { TYPES, hantuListConst } from "lib/app/const";
+import { TYPES, hantuListConst } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
 import Link from "next/link";
 import { Fragment, Suspense } from "react";

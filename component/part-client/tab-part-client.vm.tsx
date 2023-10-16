@@ -1,4 +1,4 @@
-import { UserSettingRepository } from "lib/app/service/user-setting-repository";
+import { UserSettingRepository } from "lib/service/user-setting-repository";
 import { useAppContext } from "./context/app-context";
 
 export function TabPartClientHook() {

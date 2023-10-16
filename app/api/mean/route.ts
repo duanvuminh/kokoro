@@ -1,5 +1,5 @@
 import { getContainer } from "inversify.config";
-import { TYPES } from "lib/app/const";
+import { TYPES } from "lib/const";
 import { IChatGptRepository } from "lib/repository";
 import { NextResponse, type NextRequest } from "next/server";
 

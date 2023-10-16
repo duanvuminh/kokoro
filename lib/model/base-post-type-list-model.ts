@@ -1,6 +1,6 @@
 import { DayInMonthPart } from "component/part";
 import { injectable } from "inversify";
-import { type IPostRepository, IPostTypeListRepository } from "lib/app/service";
+import { type IPostRepository, IPostTypeListRepository } from "lib/service";
 import { Metadata } from "next";
 
 @injectable()

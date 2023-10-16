@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { _postData } from "lib/repository/api/api_server";
-import { trimMean } from "lib/app/util";
+import { trimMean } from "lib/util";
 import { IMazziRepository } from "lib/repository";
 
 @injectable()

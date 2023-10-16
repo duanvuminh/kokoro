@@ -1,7 +1,7 @@
 import { useAppContext } from "component/part-client";
 import { ButtonTextPart } from "component/part/button-text-part";
-import { kanji, practice, tuVung } from "lib/app/const/app-text-client-const";
-import { levelList } from "lib/app/const/type-client-const";
+import { kanji, practice, tuVung } from "lib/const/app-text-client-const";
+import { levelList } from "lib/const/type-client-const";
 import { Fragment } from "react";
 
 export function HomePartClient() {

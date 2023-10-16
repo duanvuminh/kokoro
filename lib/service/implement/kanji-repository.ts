@@ -1,6 +1,6 @@
 import { PostContentPart } from "component/part";
 import { injectable } from "inversify";
-import { hantuListConst } from "lib/app/const";
+import { hantuListConst } from "lib/const";
 import { BasePostModel } from "lib/model";
 import * as KanjiList from "mdx/mdx-kanji";
 

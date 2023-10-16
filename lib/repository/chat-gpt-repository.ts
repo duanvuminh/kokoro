@@ -1,8 +1,8 @@
 import "reflect-metadata";
 import { inject, injectable } from "inversify";
 import { _postData } from "lib/repository/api/api_server";
-import { trimMean } from "lib/app/util";
-import { TYPES } from "lib/app/const";
+import { trimMean } from "lib/util";
+import { TYPES } from "lib/const";
 import { ChatGPT, indexAngolia, type IChatGptRepository, type IMazziRepository } from "lib/repository";
 
 @injectable()
@@ -41,6 +41,7 @@ export class ChatGptRepository implements IChatGptRepository {
       return data.choices?.[0].message.content ?? "";
     });
   }
+
   async getExample(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     return _postData(url, {
@@ -76,6 +77,7 @@ export class ChatGptRepository implements IChatGptRepository {
       return data.choices?.[0].message.content ?? "";
     });
   }
+  
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     const angolia = await indexAngolia.mean.getObjects([query]);

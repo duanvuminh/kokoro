@@ -4,7 +4,7 @@ import {
   HomePartClient,
   SearchPartClient,
 } from "component/part-client";
-import { generateMetadataHomePage } from "lib/app/util";
+import { generateMetadataHomePage } from "lib/util";
 import { Fragment } from "react";
 
 export const metadata = generateMetadataHomePage;
