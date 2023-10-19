@@ -1,4 +1,4 @@
-import { ButtonTextPart } from "component/part";
+import { ButtonTextPart } from "app/component/part";
 import { zeroPad } from "lib/util/string-client-util";
 import { useRouter } from "next/navigation";
 import { Fragment } from "react";

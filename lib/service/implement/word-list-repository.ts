@@ -5,7 +5,7 @@ import {
   generateMetadataForKanjiList,
 } from "lib/util";
 import * as SubjectList from "mdx/mdx-word-list";
-import { SubjectRepositoryPart } from "component/part";
+import { SubjectRepositoryPart } from "app/component/part";
 
 @injectable()
 export class WordListRepository extends BasePostModel {

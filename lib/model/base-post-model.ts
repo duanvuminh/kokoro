@@ -1,4 +1,4 @@
-import { UserEditPart, MdxWrapPart, SelectorEditPart } from "component/part";
+import { UserEditPart, MdxWrapPart, SelectorEditPart } from "app/component/part";
 import { injectable } from "inversify";
 import { IPostRepository } from "lib/service";
 import { Default } from "mdx/mdx-component";

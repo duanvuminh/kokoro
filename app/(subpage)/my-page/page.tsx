@@ -1,4 +1,4 @@
-import { MyPagePartClient } from "component/part-client";
+import { MyPagePartClient } from "app/component/part-client";
 
 export const metadata = {
   title: "kyo login",

@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { userEditMean } from "lib/const/app-text-client-const";
-import { DrawerPartClient, EditPostPartClient } from "component/part-client";
+import { DrawerPartClient, EditPostPartClient } from "app/component/part-client";
 
 export function UserEditMeanPartClient({
   id,

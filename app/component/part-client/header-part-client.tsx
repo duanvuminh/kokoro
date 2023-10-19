@@ -1,6 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ButtonTextPart, MenuIconEmptyPart } from "component/part";
-import { useAppContext } from "component/part-client";
+import { ButtonTextPart, MenuIconEmptyPart } from "app/component/part";
+import { useAppContext } from "app/component/part-client";
 
 export function MenuIconPartClient(): JSX.Element {
   const { showCloseButton } = useAppContext();

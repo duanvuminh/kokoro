@@ -1,4 +1,4 @@
-import { PostContentSummaryPart } from "component/part";
+import { PostContentSummaryPart } from "app/component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
 import { IPostFactoryModel } from "lib/model";

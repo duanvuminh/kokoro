@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { SearchPartClientHook } from "component/part-client";
+import { SearchPartClientHook } from "app/component/part-client";
 import { searchNoData, searchPlaceHolder } from "lib/const/app-text-client-const";
 
 const Turnstone = require("turnstone");

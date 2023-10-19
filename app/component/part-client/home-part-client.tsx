@@ -1,5 +1,5 @@
-import { useAppContext } from "component/part-client";
-import { ButtonTextPart } from "component/part/button-text-part";
+import { useAppContext } from "app/component/part-client";
+import { ButtonTextPart } from "app/component/part/button-text-part";
 import { kanji, practice, tuVung } from "lib/const/app-text-client-const";
 import { levelList } from "lib/const/type-client-const";
 import { Fragment } from "react";

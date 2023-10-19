@@ -1,4 +1,4 @@
-import { SubjectRepositoryPart } from "component/part";
+import { SubjectRepositoryPart } from "app/component/part";
 import { injectable } from "inversify";
 import { BasePostModel } from "lib/model";
 import {

@@ -1,4 +1,4 @@
-import { HeaderPart } from "component/part";
+import { HeaderPart } from "app/component/part";
 import { Fragment } from "react";
 
 export default function RootLayout({ children }: { children: JSX.Element }) {

@@ -1,4 +1,4 @@
-import { AddToPracticePartClient } from "component/part-client";
+import { AddToPracticePartClient } from "app/component/part-client";
 import { Fragment } from "react";
 
 type Props = {

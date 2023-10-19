@@ -1,9 +1,9 @@
-import { HeaderPart } from "component/part";
+import { HeaderPart } from "app/component/part";
 import {
   DisplayHeaderCloseButtonPartClient,
   HomePartClient,
   SearchPartClient,
-} from "component/part-client";
+} from "app/component/part-client";
 import { generateMetadataHomePage } from "lib/util";
 import { Fragment } from "react";
 

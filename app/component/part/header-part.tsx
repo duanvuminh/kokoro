@@ -1,5 +1,5 @@
-import { LoginButtonPart, LogoPart } from "component/part";
-import { MenuIconPartClient } from "component/part-client";
+import { LoginButtonPart, LogoPart } from "app/component/part";
+import { MenuIconPartClient } from "app/component/part-client";
 
 export function HeaderPart({dense}:{dense:boolean}): JSX.Element {
   return (

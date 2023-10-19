@@ -1,4 +1,4 @@
-import { DayInMonthPartClient } from "component/part-client";
+import { DayInMonthPartClient } from "app/component/part-client";
 import { Fragment } from "react";
 
 type Props = {

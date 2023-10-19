@@ -1,5 +1,5 @@
 import Loading from "app/(subpage)/loading";
-import { MeanUtilsPartClient } from "component/part-client";
+import { MeanUtilsPartClient } from "app/component/part-client";
 import { getContainer } from "inversify.config";
 import { TYPES, hantuListConst } from "lib/const";
 import { IPostFactoryModel } from "lib/model";
