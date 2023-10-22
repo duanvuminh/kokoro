@@ -1,7 +1,7 @@
 import { JsonLdPart } from "app/component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "app/(subpage)/post/views";
+import { IPostFactoryPage } from "app/(subpage)/post/page";
 import { IInitService, RouterService } from "lib/service";
 import type { Metadata } from "next";
 import { Fragment } from "react";
@@ -16,7 +16,7 @@ export const generateMetadata = ({
   params: { postType: string; id: string };
 }): Metadata => {
   const postId = decodeURIComponent(id);
-  const postFactory = getContainer().get<IPostFactoryModel>(
+  const postFactory = getContainer().get<IPostFactoryPage>(
     TYPES.IPostFactoryModel
   );
   const post = postFactory.Create(postType, postId);
@@ -38,7 +38,7 @@ export default function Page({
   );
   initRepository.init({ postType, id: postId });
 
-  const postFactory = getContainer().get<IPostFactoryModel>(
+  const postFactory = getContainer().get<IPostFactoryPage>(
     TYPES.IPostFactoryModel
   );
   let post = postFactory.Create(postType, postId);

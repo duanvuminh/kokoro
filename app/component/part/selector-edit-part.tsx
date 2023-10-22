@@ -1,7 +1,7 @@
 import { SelectorEditPartClient } from "app/component/part-client";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "app/(subpage)/post/views";
+import { IPostFactoryPage } from "app/(subpage)/post/page";
 import { Fragment } from "react";
 
 type Props = {
@@ -14,7 +14,7 @@ export function SelectorEditPart({
   postType,
 }: Props): JSX.Element {
   if (id == undefined || postType == undefined) return <Fragment />;
-  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryPage>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, id);
   const UserEdit = post.userEdit();
   const AdminEdit = post.adminEdit();

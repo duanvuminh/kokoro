@@ -1,10 +1,10 @@
-import { IPostRepository } from "app/(subpage)/post/views";
+import { IPostPage } from "app/(subpage)/post/page";
 import { MdxWrapPart, SelectorEditPart, UserEditPart } from "app/component/part";
 import { injectable } from "inversify";
 import { Default } from "mdx/mdx-component";
 
 @injectable()
-export abstract class BasePostModel implements IPostRepository {
+export abstract class BasePostPage implements IPostPage {
   private _postType:string | undefined;
   get postType(): string {
     if(this._postType==undefined){

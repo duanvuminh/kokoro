@@ -1,11 +1,11 @@
 import { DayInMonthPart } from "app/component/part";
 import { injectable } from "inversify";
 import { Metadata } from "next";
-import type { IPostRepository, IPostTypeListRepository } from "app/(subpage)/post/views";
+import type { IPostPage, IPostTypeListPage } from "app/(subpage)/post/page";
 
 @injectable()
-export class BasePostTypeListModel implements IPostTypeListRepository, IPostRepository {
-  private _post: IPostRepository | undefined;
+export class BasePostTypeListPage implements IPostTypeListPage, IPostPage {
+  private _post: IPostPage | undefined;
   private _postType:string | undefined;
   get postType(): string {
     if(this._postType==undefined){
@@ -35,7 +35,7 @@ export class BasePostTypeListModel implements IPostTypeListRepository, IPostRepo
   }
 
   constructor(
-    post: IPostRepository
+    post: IPostPage
   ) {
     this._post = post;
   }

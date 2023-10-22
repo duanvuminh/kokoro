@@ -2,7 +2,7 @@
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel, PostFactoryImplementModel } from "app/(subpage)/post/views";
+import { IPostFactoryPage, PostFactoryImplementPage } from "app/(subpage)/post/page";
 import { DictionaryService, IDictionaryService, IInitService, InitRepository } from "lib/service";
 import { notFound } from "next/navigation";
 import {
@@ -12,17 +12,17 @@ import {
   MazziRepository,
 } from "lib/repository";
 import {
-  IPostRepository,
-  KanjiDecoratorRepository,
-  KanjiListDecoratorRepository,
-  KanjiListRepository,
-  KanjiRepository,
-  SinglePageRepository,
-  WordDecoratorRepository,
-  WordListDecoratorRepository,
-  WordListRepository,
-  WordRepository,
-} from "app/(subpage)/post/views";
+  IPostPage,
+  KanjiDecoratorPage,
+  KanjiListDecoratorPage,
+  KanjiListPage,
+  KanjiPage,
+  SinglePagePage,
+  WordDecoratorPage,
+  WordListDecoratorPage,
+  WordListPage,
+  WordPage,
+} from "app/(subpage)/post/page";
 
 const myContainer = new Container();
 myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
@@ -34,46 +34,46 @@ myContainer
   .to(DictionaryService);
 
 myContainer
-  .bind<IPostRepository>(TYPES.WordListRepository)
-  .to(WordListRepository);
+  .bind<IPostPage>(TYPES.WordListRepository)
+  .to(WordListPage);
 myContainer
-  .bind<IPostRepository>(TYPES.IPostModel)
-  .to(WordListDecoratorRepository)
+  .bind<IPostPage>(TYPES.IPostModel)
+  .to(WordListDecoratorPage)
   .whenTargetNamed("word-list");
 
 myContainer
-  .bind<IPostRepository>(TYPES.KanjiListRepository)
-  .to(KanjiListRepository);
+  .bind<IPostPage>(TYPES.KanjiListRepository)
+  .to(KanjiListPage);
 myContainer
-  .bind<IPostRepository>(TYPES.IPostModel)
-  .to(KanjiListDecoratorRepository)
+  .bind<IPostPage>(TYPES.IPostModel)
+  .to(KanjiListDecoratorPage)
   .whenTargetNamed("kanji-list");
 
-myContainer.bind<IPostRepository>(TYPES.KanjiRepository).to(KanjiRepository);
+myContainer.bind<IPostPage>(TYPES.KanjiRepository).to(KanjiPage);
 myContainer
-  .bind<IPostRepository>(TYPES.IPostModel)
-  .to(KanjiDecoratorRepository)
+  .bind<IPostPage>(TYPES.IPostModel)
+  .to(KanjiDecoratorPage)
   .whenTargetNamed("kanji");
 
-myContainer.bind<IPostRepository>(TYPES.WordRepository).to(WordRepository);
+myContainer.bind<IPostPage>(TYPES.WordRepository).to(WordPage);
 myContainer
-  .bind<IPostRepository>(TYPES.IPostModel)
-  .to(WordDecoratorRepository)
+  .bind<IPostPage>(TYPES.IPostModel)
+  .to(WordDecoratorPage)
   .whenTargetNamed("mean");
 
 myContainer
-  .bind<IPostRepository>(TYPES.IPostModel)
-  .to(SinglePageRepository)
+  .bind<IPostPage>(TYPES.IPostModel)
+  .to(SinglePagePage)
   .whenTargetNamed("single-page");
 
 myContainer.bind<IInitService>(TYPES.IInitRepository).to(InitRepository);
 
 myContainer
-  .bind<interfaces.Factory<IPostRepository>>(TYPES.IPostFactoryCreator)
+  .bind<interfaces.Factory<IPostPage>>(TYPES.IPostFactoryCreator)
   .toFactory((context) => {
     return (postType: string, id: string) => {
       try {
-        let post = context.container.getNamed<IPostRepository>(
+        let post = context.container.getNamed<IPostPage>(
           TYPES.IPostModel,
           postType
         );
@@ -88,8 +88,8 @@ myContainer
   });
 
 myContainer
-  .bind<IPostFactoryModel>(TYPES.IPostFactoryModel)
-  .to(PostFactoryImplementModel);
+  .bind<IPostFactoryPage>(TYPES.IPostFactoryModel)
+  .to(PostFactoryImplementPage);
 
 const getContainer = () => {
   return myContainer;

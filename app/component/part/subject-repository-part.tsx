@@ -1,6 +1,6 @@
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "app/(subpage)/post/views";
+import { IPostFactoryPage } from "app/(subpage)/post/page";
 import { Fragment } from "react";
 
 type Props = {
@@ -15,7 +15,7 @@ export function SubjectRepositoryPart({
   children
 }: Props): JSX.Element {
   if (id == undefined || postType == undefined) return <Fragment />;
-  let postFactory = getContainer().get<IPostFactoryModel>(TYPES.IPostFactoryModel);
+  let postFactory = getContainer().get<IPostFactoryPage>(TYPES.IPostFactoryModel);
   let post = postFactory.Create(postType, id);
   const Content = post.getSource();
   return (

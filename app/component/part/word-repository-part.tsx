@@ -2,7 +2,7 @@ import Loading from "app/(subpage)/loading";
 import { MeanUtilsPartClient } from "app/component/part-client";
 import { getContainer } from "inversify.config";
 import { TYPES, hantuListConst } from "lib/const";
-import { IPostFactoryModel } from "app/(subpage)/post/views";
+import { IPostFactoryPage } from "app/(subpage)/post/page";
 import Link from "next/link";
 import { Fragment, Suspense } from "react";
 
@@ -16,7 +16,7 @@ export function WordRepositoryPart({ id, postType, children }: Props) {
   if (id == undefined || postType == undefined) return <Fragment />;
   const chars = [...id];
   const hantu = chars.map((c, i) => hantuListConst()[c]?.hantu).join(" ");
-  let postFactory = getContainer().get<IPostFactoryModel>(
+  let postFactory = getContainer().get<IPostFactoryPage>(
     TYPES.IPostFactoryModel
   );
   let post = postFactory.Create(postType, id);

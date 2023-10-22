@@ -1,11 +1,11 @@
 import { PostContentPart } from "app/component/part";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";
-import { BasePostModel } from "app/(subpage)/post/views";
+import { BasePostPage } from "app/(subpage)/post/page";
 import * as KanjiList from "mdx/mdx-kanji";
 
 @injectable()
-export class KanjiRepository extends BasePostModel {
+export class KanjiPage extends BasePostPage {
   override PageContentList = KanjiList;
 
   public override content() {
