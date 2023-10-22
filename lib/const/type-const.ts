@@ -10,5 +10,6 @@ const TYPES = {
   KanjiListRepository: Symbol.for("KanjiListRepository"),
   KanjiRepository: Symbol.for("KanjiRepository"),
   WordRepository: Symbol.for("WordRepository"),
+  IDictionaryService: Symbol.for("IDictionaryService"),
 };
 export { TYPES };

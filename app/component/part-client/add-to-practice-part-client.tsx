@@ -1,5 +1,5 @@
-import { PostModel } from "lib/model/post-model";
-import { UserSettingRepository } from "lib/service/user-setting-repository";
+import { PostModel } from "app/(subpage)/post/views/post-model";
+import { UserSettingService } from "lib/service/user-setting-service";
 import { Fragment, useEffect } from "react";
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 export function AddToPracticePartClient({ id, postType }: Props) {
   useEffect(() => {
-    UserSettingRepository.setPost(
+    UserSettingService.setPost(
       new PostModel({ postType: postType, id: id })
     );
     return () => {};

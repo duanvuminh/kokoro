@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "lib/repository/firestore-repository";
-import { UserSettingRepository } from "lib/service/user-setting-repository";
+import { UserSettingService } from "lib/service/user-setting-service";
 import React, { useEffect } from "react";
 
 interface IAppContext {
@@ -35,7 +35,7 @@ export function AppProvider({
     defaultState.showCloseButton
   );
   useEffect(() => {
-    const localLevel = UserSettingRepository.getLevel();
+    const localLevel = UserSettingService.getLevel();
     setLevel(localLevel);
     onAuthStateChanged(auth, async (user) => {
       if (user) {

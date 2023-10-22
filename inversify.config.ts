@@ -2,8 +2,17 @@
 import "reflect-metadata";
 import { Container, interfaces } from "inversify";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel, PostFactoryImplementModel } from "lib/model";
+import { IPostFactoryModel, PostFactoryImplementModel } from "app/(subpage)/post/views";
+import { DictionaryService, IDictionaryService, IInitService, InitRepository } from "lib/service";
+import { notFound } from "next/navigation";
 import {
+  ChatGptRepository,
+  IChatGptRepository,
+  IMazziRepository,
+  MazziRepository,
+} from "lib/repository";
+import {
+  IPostRepository,
   KanjiDecoratorRepository,
   KanjiListDecoratorRepository,
   KanjiListRepository,
@@ -13,26 +22,28 @@ import {
   WordListDecoratorRepository,
   WordListRepository,
   WordRepository,
-  type IPostRepository,
-  IInitRepository,
-  InitRepository,
-} from "lib/service";
-import { notFound } from "next/navigation";
-import { ChatGptRepository, IChatGptRepository, IMazziRepository, MazziRepository } from "lib/repository";
+} from "app/(subpage)/post/views";
 
 const myContainer = new Container();
 myContainer.bind<IMazziRepository>(TYPES.IMazziRepository).to(MazziRepository);
 myContainer
   .bind<IChatGptRepository>(TYPES.IChatGptRepository)
   .to(ChatGptRepository);
+myContainer
+  .bind<IDictionaryService>(TYPES.IDictionaryService)
+  .to(DictionaryService);
 
-myContainer.bind<IPostRepository>(TYPES.WordListRepository).to(WordListRepository);
+myContainer
+  .bind<IPostRepository>(TYPES.WordListRepository)
+  .to(WordListRepository);
 myContainer
   .bind<IPostRepository>(TYPES.IPostModel)
   .to(WordListDecoratorRepository)
   .whenTargetNamed("word-list");
 
-myContainer.bind<IPostRepository>(TYPES.KanjiListRepository).to(KanjiListRepository);
+myContainer
+  .bind<IPostRepository>(TYPES.KanjiListRepository)
+  .to(KanjiListRepository);
 myContainer
   .bind<IPostRepository>(TYPES.IPostModel)
   .to(KanjiListDecoratorRepository)
@@ -55,15 +66,13 @@ myContainer
   .to(SinglePageRepository)
   .whenTargetNamed("single-page");
 
-myContainer
-  .bind<IInitRepository>(TYPES.IInitRepository)
-  .to(InitRepository);
+myContainer.bind<IInitService>(TYPES.IInitRepository).to(InitRepository);
 
 myContainer
   .bind<interfaces.Factory<IPostRepository>>(TYPES.IPostFactoryCreator)
   .toFactory((context) => {
     return (postType: string, id: string) => {
-      try{
+      try {
         let post = context.container.getNamed<IPostRepository>(
           TYPES.IPostModel,
           postType
@@ -71,7 +80,7 @@ myContainer
         post.id = id;
         post.postType = postType;
         return post;
-      }catch(e){
+      } catch (e) {
         console.log(e);
         notFound();
       }

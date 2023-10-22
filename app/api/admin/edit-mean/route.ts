@@ -1,16 +1,20 @@
-import { indexAngolia } from "lib/repository/angolia-repository";
+import { getContainer } from "inversify.config";
+import { TYPES } from "lib/const";
 import { authAdmin } from "lib/repository/firestore-admin-repository";
+import { IDictionaryService } from "lib/service";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
+  const meanUtilsRepo = getContainer().get<IDictionaryService>(
+    TYPES.IDictionaryService
+  );
   return authAdmin
     .verifyIdToken(data.token)
     .then(async (_) => {
       const email = _.email ?? "";
-      if (email == "duanvuminh@gmail.com") {
-        const angolia = await indexAngolia.mean.getObject(data.id);
-        indexAngolia.mean.partialUpdateObject({ ...angolia, mean: angolia.mean1 });
+      let ret = await meanUtilsRepo.partialUpdateMean(email,data)
+      if (ret) {
         return NextResponse.json({ result: "ok" });
       }
       return NextResponse.json({ result: "error" });

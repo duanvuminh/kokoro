@@ -1,7 +1,7 @@
 import { inject, injectable } from "inversify";
 import { TYPES } from "lib/const";
-import { BasePostPracticeModel } from "lib/model";
-import { type IPostRepository } from "lib/service";
+import { BasePostPracticeModel } from "app/(subpage)/post/views";
+import type { IPostRepository } from "app/(subpage)/post/views";
 
 @injectable()
 export class WordDecoratorRepository extends BasePostPracticeModel {

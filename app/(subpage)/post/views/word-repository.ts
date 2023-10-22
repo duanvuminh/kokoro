@@ -5,7 +5,7 @@ import {
 } from "app/component/part-client";
 import { injectable } from "inversify";
 import { hantuListConst } from "lib/const";
-import { BasePostModel } from "lib/model";
+import { BasePostModel } from "app/(subpage)/post/views";
 
 @injectable()
 export class WordRepository extends BasePostModel {

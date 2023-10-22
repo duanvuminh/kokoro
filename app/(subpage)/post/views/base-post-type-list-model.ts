@@ -1,10 +1,10 @@
-import { AddToPracticePart } from "app/component/part/add-to-practice-part";
+import { DayInMonthPart } from "app/component/part";
 import { injectable } from "inversify";
-import { type IPostPracticeRepository, type IPostRepository } from "lib/service";
 import { Metadata } from "next";
+import type { IPostRepository, IPostTypeListRepository } from "app/(subpage)/post/views";
 
 @injectable()
-export class BasePostPracticeModel implements IPostPracticeRepository,IPostRepository {
+export class BasePostTypeListModel implements IPostTypeListRepository, IPostRepository {
   private _post: IPostRepository | undefined;
   private _postType:string | undefined;
   get postType(): string {
@@ -51,11 +51,11 @@ export class BasePostPracticeModel implements IPostPracticeRepository,IPostRepos
   }
   content(): (props: any) => JSX.Element | Promise<JSX.Element> {
     const Content = this._post!.content() as any;
-    const AddToList = this.addToList();
+    const LinkPices = this.linkPices();
     return (props: any) =>
       Content({
         ...props,
-        children: AddToList({ id: this.id, postType: this.postType }),
+        children: LinkPices({ id: this.id, postType: this.postType }),
       });
   }
   userEdit(): (props: any) => JSX.Element {
@@ -68,7 +68,10 @@ export class BasePostPracticeModel implements IPostPracticeRepository,IPostRepos
     return this._post!.selectorEdit();
   }
 
-  addToList() {
-    return AddToPracticePart;
+  breakToPices() {
+    console.log("manual break long content to small pices");
+  }
+  linkPices() {
+    return DayInMonthPart;
   }
 }

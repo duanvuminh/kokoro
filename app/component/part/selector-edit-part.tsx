@@ -1,7 +1,7 @@
 import { SelectorEditPartClient } from "app/component/part-client";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "lib/model";
+import { IPostFactoryModel } from "app/(subpage)/post/views";
 import { Fragment } from "react";
 
 type Props = {

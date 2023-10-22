@@ -1,14 +1,14 @@
+import { BasePostModel } from "app/(subpage)/post/views";
+import { SubjectRepositoryPart } from "app/component/part";
 import { injectable } from "inversify";
-import { BasePostModel } from "lib/model";
 import {
   generateJsonLDForKanjiList,
   generateMetadataForKanjiList,
 } from "lib/util";
-import * as SubjectList from "mdx/mdx-word-list";
-import { SubjectRepositoryPart } from "app/component/part";
+import * as SubjectList from "mdx/mdx-kanji-list";
 
 @injectable()
-export class WordListRepository extends BasePostModel {
+export class KanjiListRepository extends BasePostModel {
   PageContentList: any = SubjectList;
   public override content() {
     return SubjectRepositoryPart;

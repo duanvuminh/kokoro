@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { BasePostModel } from "lib/model";
+import { BasePostModel } from "app/(subpage)/post/views";
 import * as SinglePage from "mdx/mdx-single-page";
 
 @injectable()

@@ -1,15 +1,19 @@
-import { indexAngolia } from "lib/repository/angolia-repository";
+import { getContainer } from "inversify.config";
+import { TYPES } from "lib/const";
 import { authAdmin } from "lib/repository/firestore-admin-repository";
+import { IDictionaryService } from "lib/service";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
+  const meanUtilsRepo = getContainer().get<IDictionaryService>(
+    TYPES.IDictionaryService
+  );
   return authAdmin
     .verifyIdToken(data.token)
     .then((_) => {
       const email = _.email ?? "";
-      if (email == "duanvuminh@gmail.com") {
-        indexAngolia.mean.deleteObject(data.objectID);
+      if (meanUtilsRepo.deleteMeanFromDb(email, data.objectID)) {
         return NextResponse.json({ result: "ok" });
       }
       return NextResponse.json({ result: "error" });

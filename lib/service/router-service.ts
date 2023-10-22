@@ -1,10 +1,13 @@
-import { PostParameterModel } from "lib/model";
 import { paths as kaniPath } from "mdx/mdx-kanji";
 import { paths as kaniListPath } from "mdx/mdx-kanji-list";
 import { paths as singlePagePath } from "mdx/mdx-single-page";
 import { paths as wordListPath } from "mdx/mdx-word-list";
 
-export class PostRouterRepository {
+class PostParameterModel {
+  constructor(public postType: string, public id: string) {}
+}
+
+export class RouterService {
   static generateStaticParams(): PostParameterModel[] {
     // kanji/日
     const allkaniPath = this.getAllPath("kanji", kaniPath);

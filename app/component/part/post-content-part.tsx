@@ -1,7 +1,7 @@
 import { PostContentSummaryPart } from "app/component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "lib/model";
+import { IPostFactoryModel } from "app/(subpage)/post/views";
 import { Fragment } from "react";
 export function PostContentPart({
   id,

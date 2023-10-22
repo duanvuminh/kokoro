@@ -1,13 +1,13 @@
 import { JsonLdPart } from "app/component/part";
 import { getContainer } from "inversify.config";
 import { TYPES } from "lib/const";
-import { IPostFactoryModel } from "lib/model";
-import { IInitRepository, PostRouterRepository } from "lib/service";
+import { IPostFactoryModel } from "app/(subpage)/post/views";
+import { IInitService, RouterService } from "lib/service";
 import type { Metadata } from "next";
 import { Fragment } from "react";
 
 export const generateStaticParams = () => {
-  return PostRouterRepository.generateStaticParams();
+  return RouterService.generateStaticParams();
 };
 
 export const generateMetadata = ({
@@ -33,7 +33,7 @@ export default function Page({
   const postId = decodeURIComponent(id);
 
   //init data
-  const initRepository = getContainer().get<IInitRepository>(
+  const initRepository = getContainer().get<IInitService>(
     TYPES.IInitRepository
   );
   initRepository.init({ postType, id: postId });

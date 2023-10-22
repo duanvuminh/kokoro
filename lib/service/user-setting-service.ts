@@ -2,9 +2,9 @@ import {
   level_local_storage,
   posts_local_storage,
 } from "lib/const/app-text-client-const";
-import { PostModel } from "lib/model/post-model";
+import { PostModel } from "app/(subpage)/post/views/post-model";
 
-export class UserSettingRepository {
+export class UserSettingService {
   static limitPracticePost = 20;
 
   static clear(): void {

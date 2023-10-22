@@ -1,20 +1,10 @@
 import "reflect-metadata";
-import { inject, injectable } from "inversify";
+import { injectable } from "inversify";
 import { _postData } from "lib/repository/api/api_server";
-import { trimMean } from "lib/util";
-import { TYPES } from "lib/const";
-import { ChatGPT, indexAngolia, type IChatGptRepository, type IMazziRepository } from "lib/repository";
+import { ChatGPT, type IChatGptRepository } from "lib/repository";
 
 @injectable()
 export class ChatGptRepository implements IChatGptRepository {
-  private _iMazzi: IMazziRepository;
-  constructor(
-    @inject(TYPES.IMazziRepository)
-    iMazzi: IMazziRepository
-  ) {
-    this._iMazzi = iMazzi;
-  }
-
   getQuestion(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
     return _postData(url, {
@@ -77,13 +67,9 @@ export class ChatGptRepository implements IChatGptRepository {
       return data.choices?.[0].message.content ?? "";
     });
   }
-  
+
   async getMean(query: string): Promise<string> {
     const url: string = "https://api.openai.com/v1/chat/completions";
-    const angolia = await indexAngolia.mean.getObjects([query]);
-    if (angolia.results[0]?.mean != null) {
-      return trimMean(angolia.results[0].mean);
-    }
     return _postData(url, {
       Authorization: ChatGPT,
       model: "gpt-3.5-turbo",
@@ -114,16 +100,6 @@ export class ChatGptRepository implements IChatGptRepository {
       frequency_penalty: 0,
     }).then(async (data) => {
       let result = (data.choices?.[0].message.content ?? "") as string;
-      if (!result.includes("(")) {
-        const yomi = await this._iMazzi.getYomi(query);
-        result = result != "" ? trimMean(`(${yomi})${result}`) : result;
-      }
-      if (result != "") {
-        const saveObject = { objectID: query, mean: result };
-        indexAngolia.mean.partialUpdateObjects([saveObject], {
-          createIfNotExists: true,
-        });
-      }
       return result;
     });
   }
