@@ -6,14 +6,14 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
-  const meanUtilsRepo = getContainer().get<IDictionaryService>(
+  const iDictionaryService = getContainer().get<IDictionaryService>(
     TYPES.IDictionaryService
   );
   return authAdmin
     .verifyIdToken(data.token)
     .then(async (_) => {
       const email = _.email ?? "";
-      let ret = await meanUtilsRepo.partialUpdateMean(email,data)
+      let ret = await iDictionaryService.partialUpdateMean(email,data)
       if (ret) {
         return NextResponse.json({ result: "ok" });
       }

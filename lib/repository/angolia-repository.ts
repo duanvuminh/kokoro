@@ -1,8 +1,8 @@
 const algoliasearch = require("algoliasearch");
 
 export class AngoliaClass {
-  private static get Angolia(): any {
-    return process.env;
+  private static get Angolia(): string {
+    return process.env.Angolia??"";
   }
   private static client = algoliasearch("EI7K5E2KYY", this.Angolia);
   private static indexAngolia = {

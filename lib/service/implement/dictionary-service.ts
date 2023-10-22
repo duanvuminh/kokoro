@@ -1,5 +1,8 @@
 import { inject, injectable } from "inversify";
 import { TYPES } from "lib/const";
+import * as KanjiCollection from "mdx/mdx-kanji";
+import * as KanjiListCollection from "mdx/mdx-kanji-list";
+import * as WordListCollection from "mdx/mdx-word-list";
 import {
   type IChatGptRepository,
   type IMazziRepository,
@@ -20,6 +23,34 @@ export class DictionaryService implements IDictionaryService {
     this._iMazzi = iMazzi;
     this._iChatGptRepository = iChatGptRepository;
   }
+
+  async getPost(postType: string, postId: string) {
+    if (postType == "kanji") {
+      const id = postId as keyof typeof KanjiCollection;
+      if (KanjiCollection[id] !== undefined) {
+        return KanjiCollection[id];
+      }
+      return null;
+    }
+    if (postType == "kanji-list") {
+      const id = postId as keyof typeof KanjiListCollection;
+      if (KanjiListCollection[id] !== undefined) {
+        return KanjiListCollection[id];
+      }
+      return null;
+    }
+    if (postType == "word-list") {
+      const id = postId as keyof typeof WordListCollection;
+      if (WordListCollection[id] !== undefined) {
+        return WordListCollection[id];
+      }
+      return null;
+    }
+    if (postType == "word") {
+      return await this.getMean(postId);
+    }
+  }
+
   partialUpdateMean1(objectID: string, mean1: string): Promise<boolean> {
     const saveObject = { objectID: objectID, mean1: mean1 };
     return AngoliaClass.partialUpdateObject(saveObject);

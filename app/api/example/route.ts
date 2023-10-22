@@ -4,14 +4,14 @@ import { IDictionaryService } from "lib/service";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
-  const meanUtilsRepo = getContainer().get<IDictionaryService>(
+  const iDictionaryService = getContainer().get<IDictionaryService>(
     TYPES.IDictionaryService
   );
   let res = "";
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   if (id !== undefined) {
-    res = await meanUtilsRepo.getExample(id!);
+    res = await iDictionaryService.getExample(id!);
     return NextResponse.json({ result: res });
   }
   if (res == "") {

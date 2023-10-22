@@ -12,4 +12,5 @@ export interface IDictionaryService {
     objectID: string,
     mean1: string
   ): Promise<boolean>;
+  getPost(postType: string,postId: string): any
 }
